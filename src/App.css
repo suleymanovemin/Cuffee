@@ -2126,6 +2126,7 @@ table {
 .postImage img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
 }
 .postTitle {
@@ -2135,7 +2136,6 @@ table {
   position: absolute;
   z-index: 1;
   text-align: center;
-
 }
 .postAuthor span {
   font-size: 12px;
@@ -2154,4 +2154,40 @@ table {
   font-weight: 500;
   padding-bottom: 10px;
   color: #fff;
+}
+.postContent p {
+  font-size: 14px;
+  color: #a8a8a8;
+  font-weight: 400;
+  font-family: Jost;
+  line-height: 28px;
+}
+.comments h3 {
+  margin: 20px 0;
+  color: #333333;
+}
+.userName h5 {
+  color: #292424;
+  font-size: 16px;
+}
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.userPhoto {
+  width: 40px;
+  height: 40px;
+}
+.userPhoto img {
+  width: 100%;
+}
+.userName span {
+  color: #666;
+  font-size: 10px;
+}
+.comment p {
+  font-size: 14px;
+  color: #2a2a2a;
+  margin: 10px 0;
 }

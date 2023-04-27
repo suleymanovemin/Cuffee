@@ -30,6 +30,35 @@ function BlogDetails({ blogs }) {
         <div className="postContent">
           <p>{blog.content}</p>
         </div>
+        <div className="comments">
+          <h3>Şərhlər</h3>
+          {blog.comments.length > 0
+            ? blog.comments.map((com) => (
+                <div className="commentDetail">
+                  <div className="userProfile">
+                    <div className="userPhoto">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" />
+                    </div>
+                    <div className="userName">
+                      <h5>{com.name}</h5>
+                      <span>{com.date}</span>
+                    </div>
+                  </div>
+                  <div className="comment">
+                    <p>{com.comment}</p>
+                  </div>
+                </div>
+              ))
+            : ""}
+        </div>
+
+        <div className="addToComments">
+          <form>
+            <input type="text" />
+            <input type="text" />
+            <input type="text" />
+          </form>
+        </div>
       </div>
     </section>
   );
