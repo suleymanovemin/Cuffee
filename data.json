@@ -1,0 +1,229 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_1bf5927b-7bc2-4c75-9614-09e72eadc41c.jpg?v=1659667361",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373"
+      ],
+      "title": "French Press",
+      "price": "23",
+      "oldPrice": "28",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "category_id": 2,
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_8b20a1eb-9242-4e34-a118-ca0c120898ba.jpg?v=1659667359",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_867017ea-9c76-4f30-9353-78b4bd3abbcd.jpg?v=1659667359"
+      ],
+      "title": "Flowers Coffee",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "price": "18",
+      "category_id": 2,
+
+      "inStock": true,
+
+      "oldPrice": "30"
+    },
+    {
+      "id": 3,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_de631cf3-e53f-4237-a1a8-5d574f3dad61.jpg?v=1659667356",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_f6d7f3ef-5adc-4115-930b-5b6dcd978b58.jpg?v=1659667356"
+      ],
+      "title": "Espresso Grinder",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "oldPrice": "42",
+      "price": "26",
+      "inStock": true,
+
+      "category_id": 1
+    },
+    {
+      "id": 4,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_b2a286a5-13ae-4dec-9fbf-5ce6c3ceb9b2.jpg?v=1659667352",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_3d06eeed-48cd-4a9f-8d2b-869671a1e081.jpg?v=1659667352"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "inStock": true,
+      "title": "Dummya Coffee",
+      "price": "20",
+      "oldPrice": "45",
+
+      "category_id": 2
+    },
+    {
+      "id": 5,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_153e4a4b-2916-4fdb-948d-f0b27cb66f4d.jpg?v=1659667348",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_fcca0511-9e52-4463-9d4f-ea89a543e633.jpg?v=1659667348"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "inStock": true,
+      "oldPrice": 45,
+      "title": "Custom Variety Pack",
+      "price": "25",
+      "category_id": 3
+    },
+    {
+      "id": 6,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_e94721b2-c8e4-413d-b9b1-e06cbda614ba.jpg?v=1659667345",
+        "https://cdn.shopify.com/s/files/1/0606/8191/2503/products/3_c3ab2378-138a-423a-92bf-deaa9d86e8c0.jpg?v=1659667345"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "inStock": true,
+      "title": "Coffee Mastems Specialty",
+      "oldPrice": 48,
+      "price": "21",
+      "category_id": 1
+    },
+    {
+      "id": 7,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_7aa7889a-dbbf-44a6-8b12-a5ba83042673.jpg?v=1659667341",
+        "https://cdn.shopify.com/s/files/1/0606/8191/2503/products/2_428d4084-1ed9-4686-8379-39f0e4df5438.jpg?v=1659667341",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_0ff40b1d-c05a-4caa-a078-e4c665d10b8e.jpg?v=1659667337"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "inStock": true,
+      "title": "Coffee Grinder",
+      "price": "21",
+      "category_id": 3
+    },
+    {
+      "id": 8,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_0ff40b1d-c05a-4caa-a078-e4c665d10b8e.jpg?v=1659667337",
+        "https://cdn.shopify.com/s/files/1/0606/8191/2503/products/3_ab68766b-4b37-4693-be78-767606c60e84.jpg?v=1659667337"
+      ],
+
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "title": "Coffee Beans People",
+      "price": "19",
+      "category_id": 1
+    },
+    {
+      "id": 9,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "title": "Mockup Coffee",
+      "price": "18",
+      "category_id": 2
+    },
+    {
+      "id": 10,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "title": "Metallic Coffee",
+      "price": "17",
+      "category_id": 1
+    },
+    {
+      "id": 11,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365"
+      ],
+      "title": "Kimbo Napolitano Premium",
+      "price": "17",
+      "category_id": 3
+    },
+    {
+      "id": 12,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363"
+      ],
+      "title": "Kicking Horse Coffee",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "price": "17",
+      "category_id": 2
+    },
+    {
+      "id": 13,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363"
+      ],
+      "title": "Kicking Horse Coffee",
+      "price": "17",
+      "category_id": 2
+    },
+    {
+      "id": 14,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365"
+      ],
+      "title": "Kimbo Napolitano Premium",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+
+      "price": "17",
+      "category_id": 2
+    },
+    {
+      "id": 15,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369"
+      ],
+      "title": "Metallic Coffee",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+
+      "price": "17",
+      "category_id": 2
+    },
+    {
+      "id": 16,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+
+      "title": "Mockup Coffee",
+      "price": "18",
+      "category_id": 2
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "name": "Alı Bayramov",
+      "title": "Espresso nədir?",
+      "content": "Espresso sıx qəhvə növüdür. Adətən qəhvə dənələri üzərində yüksək təzyiqli qaynar su ilə hazırlanır və kiçik bir fincanda xidmət edilir. Espresso qəhvə həvəskarları üçün idealdır, çünki qısa müddətdə güclü kofein effekti verir.",
+      "image": "https://cdn.shopify.com/s/files/1/0606/8191/2503/articles/blog6_1024x1024.jpg?v=1659668529",
+      "date": "2022-04-26",
+      "comments": [{ "id": 1, "name": "Emre Kaya", "comment": "Əla bəyəndim" }]
+    },
+    {
+      "id": 2,
+      "name": "Aylin Mahmudova",
+      "title": "Qəhvə reseptləri: Soyuq köpüklü qəhvə",
+      "content": "Soyuq köpüklü qəhvə isti yay günlərində təravətləndirmək üçün əla seçimdir. Bu dadlı içkini hazırlamaq üçün sizə lazım olan maddələr: qəhvə, buz, süd və şəkər. Qəhvə və şəkər qarışdırılır və qaynar su əlavə edilir. Daha sonra qarışım soyuducuda soyumağa buraxılır və buzla süfrəyə verilir.",
+      "image": "https://cdn.shopify.com/s/files/1/0606/8191/2503/articles/blog6_1024x1024.jpg?v=1659668529",
+      "date": "2022-04-25",
+      "comments": [{ "id": 1, "name": "Ali Kaya", "comment": "Əla bəyəndim" }]
+    },
+    {
+      "id": 3,
+      "name": "Emre Kaya",
+      "title": "Qəhvə Dünyasında Səyahət: Braziliya",
+      "content": "Braziliya dünyanın ən böyük qəhvə istehsalçılarından biridir. Braziliya qəhvəsi aşağı turşuluğu və sıx ləzzəti ilə tanınır. Qəhvə ağacları adətən düz torpaqlarda yetişdirilir və ölkədə çoxlu müxtəlif qəhvə növləri var. Braziliya qəhvəsi xüsusilə espresso və filtr qəhvə üçün idealdır.",
+      "image": "https://cdn.shopify.com/s/files/1/0606/8191/2503/articles/blog6_1024x1024.jpg?v=1659668529",
+      "date": "2022-04-24",
+      "comments": [{ "id": 1, "name": "Elnur Kaya", "comment": "Əla bəyəndim" }]
+    }
+  ]
+}

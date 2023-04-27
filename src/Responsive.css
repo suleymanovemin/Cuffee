@@ -1,0 +1,259 @@
+@media screen and (max-width: 1024px) {
+  .navbar {
+    display: none;
+  }
+  .logo {
+    margin: 0 auto;
+  }
+  .logo img {
+    width: 90px;
+    height: 35px;
+  }
+  .profile {
+    display: none;
+  }
+  .favorite {
+    display: none;
+  }
+  .burgerMenuIcon {
+    display: block;
+  }
+  .header {
+    height: 64px;
+  }
+  .heroSwiper {
+    height: 500px;
+  }
+  .swiperImage {
+    height: 500px;
+  }
+  .swiperImage img {
+    object-fit: cover;
+  }
+  .swiperTitle h3:nth-of-type(1) {
+    font-size: 16px;
+  }
+  .swiperTitle h3:nth-of-type(2) {
+    font-size: 45px;
+  }
+  .swiperTitle h3:nth-of-type(3) {
+    font-size: 20px;
+  }
+  .coffeeItem {
+    height: 300px;
+  }
+  .coffeeItem h3 {
+    font-size: 25px;
+  }
+  .coffeeItem p {
+    font-size: 15px;
+  }
+  .cartIcon {
+    margin-right: 20px;
+  }
+  .discound{
+    right: -80px;
+  }
+  .basketActive::after{
+    display: none;
+  }
+  .totalItems{
+    display: block;
+  }
+  .quickViewProduct{
+    width: 80%;
+  }
+}
+
+/* Tablet */
+
+@media screen and (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .productIcon {
+    display: none;
+  }
+  .packagetImage{
+    width: 535px;
+  }
+  .packagetImage img{
+    width: 100%;
+  }
+  .packagetContent h1{
+  font-size: 30px;
+  }
+  .packagetContent li{
+  font-size: 15px;
+  line-height:35px;
+  }
+  .detailImage{
+    width: 418px;
+    height: 418px;
+  }
+  .ProductDetail{
+    gap: 35px;
+  }
+  .subscribe{
+    display: block;
+    
+  }
+  .subInput form{
+    display: block;
+    width: 80%;
+  }
+  .subInput form input{
+    width: 100%;
+  }
+  .subInput form button{
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+
+/* Mobile L */
+
+@media screen and (max-width: 428px) {
+  .swiperTitle h3:nth-of-type(2) {
+    font-size: 30px;
+  }
+  .swiperTitle h3:nth-of-type(3) {
+    font-size: 19px;
+  }
+  .swiperTitle {
+    padding: 0 20px;
+  }
+  .allServies {
+    display: none;
+  }
+  .allServiesSwiper {
+    display: block !important;
+  }
+  .coffeesRow {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .ham {
+    width: 60px;
+  }
+  .swiper {
+    z-index: 0 !important;
+  }
+  .burgerMenu {
+    width: 240px;
+  }
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .productDetails h3 {
+    padding-bottom: 1px;
+  }
+  .miniCart{
+    width: 290px;
+  }
+  .basketDetails h3{
+    font-size: 18px;
+  }
+  .discound{
+    right: -60px;
+  }
+  .packaged {
+    display: block;
+  }
+  .packagetImage{
+    width: 100%;
+  }
+  .packagetImage img{
+    width: 100%;
+  }
+  .ProductDetail{
+    display: block;
+  }
+  .detailContent{
+    margin-top: 110px;
+  }
+  .featuredServices{
+    grid-template-columns: repeat(1,1fr);
+  }
+  .detailImage{
+    width: 395px;
+    height: 395px;
+  }
+  .footerRow{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    grid-template-columns: repeat(1,1fr);
+  }
+  .footerAbout > ul{
+    text-align: center;
+  }
+  .socialMedia > ul{
+    justify-content: center;
+  }
+  .footerAbout h4::before{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile M */
+
+@media screen and (max-width: 375px) {
+  .swiperTitle h3:nth-of-type(2) {
+    font-size: 30px;
+  }
+  .swiperTitle h3:nth-of-type(3) {
+    font-size: 19px;
+  }
+  .swiperTitle {
+    padding: 0 20px;
+  }
+  .allServies {
+    display: none;
+  }
+  .allServiesSwiper {
+    display: block !important;
+  }
+  .coffeesRow {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .ham {
+    width: 60px;
+  }
+  .swiper {
+    z-index: 0 !important;
+  }
+  .burgerMenu {
+    width: 240px;
+  }
+  .miniCart{
+    width: 260px;
+  
+  }
+  .basketDetails {
+    font-size: 14px;
+  }
+  .discound{
+    right: -50px;
+  }
+  .detailImage{
+    width: 350px;
+    height: 350px;
+  }
+  .heroSwiperSecond .swiperTitle{
+    left: 0;
+  }
+}
+
+/* Mobile S */
+
+@media screen and (max-width: 320px){
+  .discound{
+    top: 10px;
+    right: -48px;
+  }
+  .detailImage{
+    width: 290px;
+    height: 290px;
+  }
+}
