@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function BlogDetails({ blogs }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -8,50 +10,62 @@ function BlogDetails({ blogs }) {
   const [comments, setComments] = useState([]);
   let { id } = useParams();
   const blog = blogs.find((a) => a.id === +id);
-  const comm = comments.filter((a) => a.blog_id === +id);
+  const comm = comments.filter((a) => +a.blog_id === +id);
 
   useEffect(() => {
     fetch("http://192.168.0.108:3000/blogComments")
       .then((a) => a.json())
       .then((a) => setComments(a));
-  }, []);
+  }, [comm]);
 
+
+
+  const notify = () =>
+  toast.success("Şərh Əlavə edildi!", {
+    position: "bottom-right",
+    autoClose: 4000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
   const handleCommentSubmit = (e) => {
+    
     e.preventDefault();
+
     if (name !== "" && email !== "" && comment !== "") {
       const now = new Date();
-      const day = now.getDate();
-      const month = now.getMonth() + 1;
+      const day = now.getDate()<10?"0"+now.getDate():now.getDate();
+      const month = (now.getMonth() + 1)<10?"0"+(now.getMonth() + 1):now.getMonth() + 1;
       const year = now.getFullYear();
       const hours = now.getHours();
       const minutes = now.getMinutes();
       const seconds = now.getSeconds();
-      const currentDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
-
-      const newComment = {
-        name: name,
-        email: email,
-        comment: comment,
-        date: currentDate,
-      };
+      const currentDate = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
 
       fetch(`http://192.168.0.108:3000/blogComments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...comment,
-          newComment,
+          name,
+          email,
+          comment,
+          date: currentDate,
+          blog_id: id,
         }),
       })
         .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((data) => notify())
         .catch((error) => console.log(error));
-
-      setName("");
-      setEmail("");
-      setComment("");
     }
+    setName("");
+    setEmail("");
+    setComment("");
   };
+
+
 
   return (
     <section className="postDetailsPage container">
@@ -71,13 +85,27 @@ function BlogDetails({ blogs }) {
               </span>
               <span>
                 <i className="fa-solid fa-comment"></i>
-                {blog?.comments?.length} Şərh
+                {comm?.length} Şərh
               </span>
             </div>
           </div>
         </div>
         <div className="postContent">
           <p>{blog?.content}</p>
+
+          <div className="socialMediaBlog">
+            <ul>
+              <li>
+                <i className="fa-brands fa-facebook"></i>
+              </li>
+              <li>
+                <i className="fa-brands fa-instagram"></i>
+              </li>
+              <li>
+                <i className="fa-brands fa-pinterest"></i>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="comments">
           <h3>Şərhlər</h3>
@@ -105,6 +133,8 @@ function BlogDetails({ blogs }) {
           <form onSubmit={(e) => handleCommentSubmit(e)}>
             <label htmlFor="name">Ad Soyad</label>
             <input
+              value={name}
+              placeholder="Ad Soyad"
               onChange={(e) => setName(e.target.value)}
               required
               id="name"
@@ -112,6 +142,8 @@ function BlogDetails({ blogs }) {
             />
             <label htmlFor="email">E-mail </label>
             <input
+              value={email}
+              placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
               id="email"
               required
@@ -119,6 +151,8 @@ function BlogDetails({ blogs }) {
             />
             <label htmlFor="comment">Şərhiniz</label>
             <textarea
+              value={comment}
+              placeholder="Şərhiniz..."
               onChange={(e) => setComment(e.target.value)}
               required
               id="comment"
@@ -127,6 +161,18 @@ function BlogDetails({ blogs }) {
           </form>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      />
     </section>
   );
 }

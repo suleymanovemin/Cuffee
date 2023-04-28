@@ -30,6 +30,7 @@
   .swiperImage img {
     object-fit: cover;
   }
+
   .swiperTitle h3:nth-of-type(1) {
     font-size: 16px;
   }
@@ -228,7 +229,6 @@
   }
   .miniCart{
     width: 260px;
-  
   }
   .basketDetails {
     font-size: 14px;

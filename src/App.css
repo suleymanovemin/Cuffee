@@ -2239,3 +2239,39 @@ table {
   margin-bottom: 10px;
   border-bottom: 1px solid #6e6e6e4b;
 }
+.comments + h2 {
+  text-align: center;
+}
+.socialMediaBlog ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.socialMediaBlog li {
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+  text-align: center;
+  line-height: 40px;
+  background: #eee;
+  font-size: 12px;
+  font-weight: 400;
+  color: #aaa;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: .3s;
+}
+.socialMediaBlog  i{
+  transition: .3s;
+}
+.socialMediaBlog li:hover{
+  background-color: #be9c79;
+}
+.socialMediaBlog li:hover i{
+  color: #fff;
+}
+.socialMediaBlog li i {
+  text-align: center;
+  font-size: 13px;
+  color: #000;
+}
