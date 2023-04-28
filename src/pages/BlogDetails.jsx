@@ -32,7 +32,7 @@ function BlogDetails({ blogs }) {
     theme: "light",
   });
   const handleCommentSubmit = (e) => {
-    
+
     e.preventDefault();
 
     if (name !== "" && email !== "" && comment !== "") {
@@ -64,9 +64,6 @@ function BlogDetails({ blogs }) {
     setEmail("");
     setComment("");
   };
-
-
-
   return (
     <section className="postDetailsPage container">
       <div className="postDetails">
