@@ -2191,3 +2191,51 @@ table {
   color: #2a2a2a;
   margin: 10px 0;
 }
+
+/* Comment form */
+.addToComments {
+  margin: 50px 0 200px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addToComments form {
+  width: 80%;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: start !important;
+}
+.addToComments input {
+  width: 100%;
+}
+.addToComments input,
+.addToComments textarea {
+  margin: 15px 0;
+  color: #111111;
+  background-color: #e6e3e3;
+  display: block;
+  width: 50%;
+  outline: 0;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 3px;
+  min-height: 50%;
+  max-width: 50%;
+  min-width: 50%;
+  max-height: 50%;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.addToComments input[type="submit"] {
+  color: #ffffff;
+  background-color: #f1900e;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.commentDetail {
+  width: 200px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #6e6e6e4b;
+}

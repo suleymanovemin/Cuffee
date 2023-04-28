@@ -23,9 +23,7 @@
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
       "price": "18",
       "category_id": 2,
-
       "inStock": true,
-
       "oldPrice": "30"
     },
     {
@@ -39,7 +37,6 @@
       "oldPrice": "42",
       "price": "26",
       "inStock": true,
-
       "category_id": 1
     },
     {
@@ -53,7 +50,6 @@
       "title": "Dummya Coffee",
       "price": "20",
       "oldPrice": "45",
-
       "category_id": 2
     },
     {
@@ -101,7 +97,6 @@
         "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_0ff40b1d-c05a-4caa-a078-e4c665d10b8e.jpg?v=1659667337",
         "https://cdn.shopify.com/s/files/1/0606/8191/2503/products/3_ab68766b-4b37-4693-be78-767606c60e84.jpg?v=1659667337"
       ],
-
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
       "title": "Coffee Beans People",
       "price": "19",
@@ -168,7 +163,6 @@
       ],
       "title": "Kimbo Napolitano Premium",
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
-
       "price": "17",
       "category_id": 2
     },
@@ -180,7 +174,6 @@
       ],
       "title": "Metallic Coffee",
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
-
       "price": "17",
       "category_id": 2
     },
@@ -191,7 +184,6 @@
         "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373"
       ],
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
-
       "title": "Mockup Coffee",
       "price": "18",
       "category_id": 2
@@ -205,14 +197,7 @@
       "content": "Espresso, İtaliya mənbəli olan və ən populyar kahvə növlərindən biridir. Əslində, \"espresso\" sözü İtaliyaca \"təzyiq altında su ilə keçirilmiş\" anlamına gəlir. Bu mənada, espresso hazırlanması üçün qida hazırlama texnikası və kahvə üzərinə təzyiq tətbiq edilir.\n\nEspresso, tipik olaraq küçədəki kafelərdə və ya evdə kahvə avtomatlarında hazırlanır. Ən populyar üsul, espresso makinasıdır. Bu cihaz, kahvə köpüyü və ya \"crema\" olaraq bilinən qırmızımsı qıvrımlı qatı hissə ilə birlikdə qısa bir süre ərzində su və kahvə tozunu təzyiq altında keçirir. Daha sonra, nəticə olaraq əldə edilən kəskin kahvə içki, bir neçə süd və ya sütsuz kahvə içkilərinə əlavə edilə bilər.\n\nEspresso, səthiyyəli bir kahvə dozasına malikdir və tipik olaraq 30 ml-lik bir fincanla servis olunur. İçki, güclü və tələsməkən tərkibə malik olduğu üçün, təzələdikdən sonra qısa bir müddətdə tükənməlidir.\n",
       "image": "https://cdn.shopify.com/s/files/1/0606/8191/2503/articles/blog6_1024x1024.jpg?v=1659668529",
       "date": "2022-04-26",
-      "comments": [
-        {
-          "id": 1,
-          "name": "Emre Kaya",
-          "comment": "Əla bəyəndim",
-          "date": "05.04.23 21:44"
-        }
-      ]
+      "comments": []
     },
     {
       "id": 2,
@@ -245,6 +230,45 @@
           "date": "05.04.23 21:44"
         }
       ]
+    }
+  ],
+  "blogComments": [
+    {
+      "id": 1,
+      "blog_id": 1,
+      "name": "Emre Kaya",
+      "comment": "Yaxsi ela",
+      "date": "05.04.23 21:34"
+    },
+    {
+      "id": 2,
+      "blog_id": 1,
+      "name": "Emre Kaya",
+      "comment": "Əla bəyəndim",
+      "date": "05.04.23 21:24"
+    },
+    {
+      "id": 3,
+      "blog_id": 2,
+      "name": "Emre Kaya",
+      "comment": "Əla bəyəndim",
+      "date": "05.04.23 21:44"
+    },
+    {
+      "0": "a",
+      "1": "w",
+      "2": "f",
+      "3": "d",
+      "4": "a",
+      "5": "w",
+      "6": "d",
+      "newComment": {
+        "name": "Emin Suleymanov",
+        "email": "suleymanov.ramin1998@gmail.com",
+        "comment": "awfdawd",
+        "date": "28/4/2023 19:4:11"
+      },
+      "id": 4
     }
   ]
 }
