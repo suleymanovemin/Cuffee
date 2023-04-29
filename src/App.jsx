@@ -52,7 +52,7 @@ function App({ dispatch }) {
     },
   ];
   useEffect(() => {
-    fetch("http://192.168.0.108:3000/products")
+    fetch("http://192.168.100.52:3000/products")
       .then((a) => a.json())
       .then((b) => {
         dispatch({
@@ -62,7 +62,7 @@ function App({ dispatch }) {
       });
   }, []);
   useEffect(() => {
-    fetch("http://192.168.0.108:3000/blogs")
+    fetch("http://192.168.100.52:3000/blogs")
       .then((a) => a.json())
       .then((b) => {
         dispatch({
