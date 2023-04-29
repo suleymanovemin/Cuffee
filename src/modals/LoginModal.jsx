@@ -1,33 +1,84 @@
 import { useState } from "react";
 import { connect } from "react-redux";
-function LoginModal({ isLoginModalOpen,dispatch}) {
+import { register } from "../fireBase/fireBase";
+import { login } from "../fireBase/fireBase";
+import { useNavigate } from "react-router-dom";
+
+function LoginModal({ isLoginModalOpen, dispatch, user }) {
   const [showRegister, setShowRegister] = useState(false);
   const handleRegister = (e) => {
     e.stopPropagation();
     setShowRegister(!showRegister);
   };
-  
+
   const showLoginModal = () => {
     const scrollY = window.scrollY || window.pageYOffset;
     dispatch({
-      type:"TOGGLE_MENU",
-      payload:isLoginModalOpen
-    })
+      type: "TOGGLE_MENU",
+      payload: isLoginModalOpen,
+    });
   };
-  
-  
+
+  // firebase
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
+  // register
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const user = await register(email, password);
+    setEmail("");
+    setPassword("");
+  };
+
+  // sign In
+
+  const signIn = async (e) => {
+    e.preventDefault();
+    const user = await login(email, password);
+    setEmail("");
+    setPassword("");
+
+    dispatch({
+      type: "LOGIN",
+      payload: user,
+    });
+
+    // Close login Modal
+
+    dispatch({
+      type: "TOGGLE_MENU",
+      payload: isLoginModalOpen,
+    });
+
+    localStorage.setItem("user", JSON.stringify(user));
+    if (user?.email !== "admin@gmail.com") {
+      navigate("/profile", {
+        replace: true,
+      });
+    } else {
+      navigate("/admin", {
+        replace: true,
+      });
+    }
+  };
+
   return (
     <>
       <div
         onClick={showLoginModal}
-        className={`loginModal ${isLoginModalOpen?"active":""}`}
+        className={`loginModal ${isLoginModalOpen ? "active" : ""}`}
       >
         <div
           onClick={(e) => {
             e.stopPropagation();
           }}
           className="loginForm"
-          style={{top:`${scrollY===0?50:150}px`}}
+          style={{ top: `${scrollY === 0 ? 50 : 150}px` }}
         >
           <div
             style={{ display: showRegister ? "none" : "block" }}
@@ -42,12 +93,24 @@ function LoginModal({ isLoginModalOpen,dispatch}) {
             <div className="loginTitle">
               <h2>Great to have you back!</h2>
             </div>
-            <form>
-              <input type="text" placeholder="Email adress" />
-              <input type="text" placeholder="Password" />
+            <form onSubmit={signIn}>
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="Email adress"
+              />
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                placeholder="Password"
+              />
               <div className="forgotPassword">
                 <a href="">Forgot your password?</a>
-                <button type="submit">Log in</button>
+                <button disabled={!email || !password} type="submit">
+                  Log in
+                </button>
               </div>
             </form>
             <div className="loginBox">
@@ -62,17 +125,30 @@ function LoginModal({ isLoginModalOpen,dispatch}) {
           </div>
           <>
             <form
+              onSubmit={handleSubmit}
               style={{ display: showRegister ? "block" : "none" }}
               className="registerPage"
             >
               <div onClick={showLoginModal} className="closeloginForm">
-              <i className="fa-solid fa-xmark"></i>
-            </div>
+                <i className="fa-solid fa-xmark"></i>
+              </div>
               <span>Register</span>
-              <input type="text" placeholder="Email adress" />
-              <input type="text" placeholder="Password" />
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="Email adress"
+              />
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                placeholder="Password"
+              />
               <div className="forgotPassword">
-                <button type="submit">Register</button>
+                <button disabled={!email || !password} type="submit">
+                  Register
+                </button>
               </div>
               <div className="loginBox">
                 <span onClick={handleRegister} className="btnSpan">

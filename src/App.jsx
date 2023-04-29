@@ -1,6 +1,6 @@
 import "./App.css";
 import "./Responsive.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { connect } from "react-redux";
@@ -15,8 +15,11 @@ const Blog = lazy(() => import("./pages/Blog"));
 const ProductsPage = lazy(() => import("./pages/ProductsPage"));
 import ScrollToTop from "./components/ScrolltoTop";
 import Favorites from "./pages/Favorites";
-function App({ dispatch }) {
+import AdminPanel from "./pages/AdminPanel";
+import Profile from "./pages/Profile";
+function App({ dispatch, user }) {
   let { pathname } = useLocation();
+
   const routes = [
     {
       path: "/",
@@ -50,9 +53,17 @@ function App({ dispatch }) {
       path: "/favorites",
       element: <Favorites />,
     },
+    {
+      path: "/admin",
+      element: <AdminPanel />,
+    },
+    {
+      path: "/profile",
+      element: <Profile />,
+    },
   ];
   useEffect(() => {
-    fetch("http://192.168.100.52:3000/products")
+    fetch("http://localhost:3000/products")
       .then((a) => a.json())
       .then((b) => {
         dispatch({
@@ -62,7 +73,7 @@ function App({ dispatch }) {
       });
   }, []);
   useEffect(() => {
-    fetch("http://192.168.100.52:3000/blogs")
+    fetch("http://localhost:3000/blogs")
       .then((a) => a.json())
       .then((b) => {
         dispatch({
@@ -89,5 +100,5 @@ function App({ dispatch }) {
     </>
   );
 }
-
-export default connect()(App);
+const t = (a) => a;
+export default connect(t)(App);

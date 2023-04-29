@@ -46,13 +46,10 @@ function Blog({ blogs }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
-        // isteğin başarıyla tamamlandığını göstermek için kullanıcıya bildirim gösterilebilir
         setShowModal(false);
       })
       .catch((error) => {
         console.error("Error:", error);
-        // isteğin başarısız olduğunu göstermek için kullanıcıya bildirim gösterilebilir
       });
   };
   return (

@@ -1,7 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { connect } from "react-redux";
-function Header({ isLoginModalOpen, dispatch, basket, products, favorites }) {
+import { useNavigate } from "react-router-dom";
+function Header({
+  isLoginModalOpen,
+  dispatch,
+  basket,
+  products,
+  user,
+  favorites,
+}) {
   const [searchModal, setSearchModal] = useState(false);
   const [showBurger, setShowBurger] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(false);
@@ -24,14 +32,28 @@ function Header({ isLoginModalOpen, dispatch, basket, products, favorites }) {
       setSearchModal(false);
     }
   };
+
+  // Show Login Page
+
+  const navigate = useNavigate();
   const showLoginModal = () => {
-    if (showBurger) {
-      setShowBurger(false);
+    if (!user) {
+      if (showBurger) {
+        setShowBurger(false);
+      }
+      dispatch({
+        type: "TOGGLE_MENU",
+        payload: isLoginModalOpen,
+      });
+    } else if (user?.email == "emin3@gmail.com") {
+      navigate("/admin", {
+        replace: true,
+      });
+    } else if (user?.email !== "emin3@gmail.com") {
+      navigate("/profile", {
+        replace: true,
+      });
     }
-    dispatch({
-      type: "TOGGLE_MENU",
-      payload: isLoginModalOpen,
-    });
   };
 
   const showCartModal = () => {

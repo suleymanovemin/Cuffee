@@ -8,6 +8,7 @@ const initialstate = {
   showQuickViewModal: false,
   showAddModal: false,
   loading: false,
+  user: JSON.parse(localStorage.getItem("user")) ?? false,
 };
 export default function Reducer(state = initialstate, action) {
   switch (action.type) {
@@ -34,6 +35,10 @@ export default function Reducer(state = initialstate, action) {
       };
     case "ADD_TO_FAVORITE":
       return { ...state, favorites: action.payload };
+    case "LOGIN":
+      return { ...state, user: action.payload };
+    case "LOGOUT":
+      return { ...state, user: action.payload };
     default:
       return state;
   }

@@ -424,6 +424,12 @@ nav ul a.active {
   border: none;
   cursor: pointer;
 }
+.forgotPassword button:disabled {
+  background-color: #444;
+}
+.forgotPassword button:hover:disabled {
+  background-color: #444;
+}
 .forgotPassword button:hover {
   background-color: #be9c79;
 }
@@ -2510,4 +2516,11 @@ table {
 
 #file-input::file-selector-button:hover {
   background: #0d45a5;
+}
+
+.logOut{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(128, 128, 128, 0.39) ;
+  margin-left: 20px;
 }

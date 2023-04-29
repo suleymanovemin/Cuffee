@@ -13,7 +13,7 @@ function BlogDetails({ blogs }) {
   const comm = comments.filter((a) => +a.blog_id === +id);
 
   useEffect(() => {
-    fetch("http://192.168.100.52:3000/blogComments")
+    fetch("http://localhost:3000/blogComments")
       .then((a) => a.json())
       .then((a) => setComments(a));
   }, [comm]);
@@ -45,7 +45,7 @@ function BlogDetails({ blogs }) {
       const seconds = now.getSeconds();
       const currentDate = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
 
-      fetch(`http://192.168.0.108:3000/blogComments`, {
+      fetch(`http://localhost:3000/blogComments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
