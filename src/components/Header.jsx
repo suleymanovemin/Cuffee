@@ -36,6 +36,7 @@ function Header({
   // Show Login Page
 
   const navigate = useNavigate();
+  
   const showLoginModal = () => {
     if (!user) {
       if (showBurger) {
@@ -45,11 +46,11 @@ function Header({
         type: "TOGGLE_MENU",
         payload: isLoginModalOpen,
       });
-    } else if (user?.email == "emin3@gmail.com") {
+    } else if (user?.email == "admin@gmail.com") {
       navigate("/admin", {
         replace: true,
       });
-    } else if (user?.email !== "emin3@gmail.com") {
+    } else if (user?.email !== "admin@gmail.com") {
       navigate("/profile", {
         replace: true,
       });
@@ -74,6 +75,8 @@ function Header({
     };
     window.addEventListener("scroll", handleScroll);
   });
+
+
   const deleteProduct = (id) => {
     let newBasket = [...basket.filter((a) => a.id !== id)];
     localStorage.setItem("basket", JSON.stringify(newBasket));

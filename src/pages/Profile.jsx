@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { logOut } from "../fireBase/fireBase";
 import { useNavigate } from "react-router-dom";
+import { Button, Space } from "antd";
+
 function Profile({ dispatch,user }) {
   const navigate = useNavigate();
   const LogOut = async () => {
@@ -17,7 +19,9 @@ function Profile({ dispatch,user }) {
   return (
     <div>
       İstifadəçi hesabına daxil oldunuz ({user.email})
-      <button className="logOut" onClick={LogOut}>Çıxış Et</button>
+      <Space wrap>
+        <Button onClick={LogOut} type="primary">Çıxış Et</Button>
+      </Space>
     </div>
   );
 }

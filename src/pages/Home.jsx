@@ -11,7 +11,7 @@ import AddToCartModal from "../modals/AddToCartModal";
 import HotDeal from "../components/HotDeal";
 import Footer from "../components/Footer";
 import { Toaster } from "react-hot-toast";
-import AdminPanel from "./AdminPanel";
+
 
 function Home({ user }) {
  

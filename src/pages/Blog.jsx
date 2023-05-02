@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Blog({ blogs }) {
   const [name, setName] = useState("");
   const [blogName, setBlogName] = useState("");
@@ -19,6 +21,18 @@ function Blog({ blogs }) {
       setSelectedFile(reader.result);
     };
   };
+
+  const notify = () =>
+  toast.success("Bloq Əlavə edildi!", {
+    position: "bottom-right",
+    autoClose: 4000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
   const handleSubmit = (e) => {
     e.preventDefault();
     const now = new Date();
@@ -31,7 +45,7 @@ function Blog({ blogs }) {
     const currentDate = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
 
   
-    fetch('http://192.168.0.108:3000/blogs', {
+    fetch('http://localhost:3000/blogs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -47,6 +61,7 @@ function Blog({ blogs }) {
       .then((response) => response.json())
       .then((data) => {
         setShowModal(false);
+        notify()
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -103,7 +118,7 @@ function Blog({ blogs }) {
               />
             </label>
             <button type="submit" className="submit">
-              Sign in
+              Əlavə Et
             </button>
           </form>
         </div>
@@ -172,6 +187,18 @@ function Blog({ blogs }) {
               ))
             : ""}
         </div>
+        <ToastContainer
+        position="bottom-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      />
       </div>
     </>
   );

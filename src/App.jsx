@@ -54,7 +54,7 @@ function App({ dispatch, user }) {
       element: <Favorites />,
     },
     {
-      path: "/admin",
+      path: "/admin/*",
       element: <AdminPanel />,
     },
     {
@@ -62,8 +62,10 @@ function App({ dispatch, user }) {
       element: <Profile />,
     },
   ];
+
+  const API = "http://localhost:3000";
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch(`${API}/products`)
       .then((a) => a.json())
       .then((b) => {
         dispatch({
@@ -73,7 +75,7 @@ function App({ dispatch, user }) {
       });
   }, []);
   useEffect(() => {
-    fetch("http://localhost:3000/blogs")
+    fetch(`${API}/blogs`)
       .then((a) => a.json())
       .then((b) => {
         dispatch({
@@ -95,10 +97,11 @@ function App({ dispatch, user }) {
             element={<Suspense fallback={<Loading />}>{a.element}</Suspense>}
           />
         ))}
-        <Route path="*" element={<Navigate to="/not-found" />} />
+        {/* <Route path="*" element={<Navigate to="/not-found" />} /> */}
       </Routes>
     </>
   );
 }
+
 const t = (a) => a;
 export default connect(t)(App);

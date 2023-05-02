@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import LoginModal from "../modals/LoginModal";
 import "react-toastify/dist/ReactToastify.css";
 function BlogDetails({ blogs }) {
   const [name, setName] = useState("");
@@ -16,29 +17,29 @@ function BlogDetails({ blogs }) {
     fetch("http://localhost:3000/blogComments")
       .then((a) => a.json())
       .then((a) => setComments(a));
-  }, [comm]);
-
-
+  }, []);
 
   const notify = () =>
-  toast.success("Şərh Əlavə edildi!", {
-    position: "bottom-right",
-    autoClose: 4000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: false,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-  });
+    toast.success("Şərh Əlavə edildi!", {
+      position: "bottom-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   const handleCommentSubmit = (e) => {
-
     e.preventDefault();
 
     if (name !== "" && email !== "" && comment !== "") {
       const now = new Date();
-      const day = now.getDate()<10?"0"+now.getDate():now.getDate();
-      const month = (now.getMonth() + 1)<10?"0"+(now.getMonth() + 1):now.getMonth() + 1;
+      const day = now.getDate() < 10 ? "0" + now.getDate() : now.getDate();
+      const month =
+        now.getMonth() + 1 < 10
+          ? "0" + (now.getMonth() + 1)
+          : now.getMonth() + 1;
       const year = now.getFullYear();
       const hours = now.getHours();
       const minutes = now.getMinutes();
@@ -57,7 +58,10 @@ function BlogDetails({ blogs }) {
         }),
       })
         .then((response) => response.json())
-        .then((data) => notify())
+        .then((data) => {
+          notify();
+          setComments([...comments, data]);
+        })
         .catch((error) => console.log(error));
     }
     setName("");
@@ -65,112 +69,115 @@ function BlogDetails({ blogs }) {
     setComment("");
   };
   return (
-    <section className="postDetailsPage container">
-      <div className="postDetails">
-        <div className="postImage">
-          <img src={blog?.image} alt="" />
-          <div className="postTitle">
-            <h2>{blog?.title}</h2>
-            <div className="postAuthor">
-              <span>
-                <i className="fa-solid fa-user"></i>
-                {blog?.name}
-              </span>
-              <span>
-                <i className="fa-regular fa-clock"></i>
-                {blog?.date}
-              </span>
-              <span>
-                <i className="fa-solid fa-comment"></i>
-                {comm?.length} Şərh
-              </span>
+    <>
+      <LoginModal />
+      <section className="postDetailsPage container">
+        <div className="postDetails">
+          <div className="postImage">
+            <img src={blog?.image} alt="" />
+            <div className="postTitle">
+              <h2>{blog?.title}</h2>
+              <div className="postAuthor">
+                <span>
+                  <i className="fa-solid fa-user"></i>
+                  {blog?.name}
+                </span>
+                <span>
+                  <i className="fa-regular fa-clock"></i>
+                  {blog?.date}
+                </span>
+                <span>
+                  <i className="fa-solid fa-comment"></i>
+                  {comm?.length} Şərh
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="postContent">
-          <p>{blog?.content}</p>
+          <div className="postContent">
+            <p>{blog?.content}</p>
 
-          <div className="socialMediaBlog">
-            <ul>
-              <li>
-                <i className="fa-brands fa-facebook"></i>
-              </li>
-              <li>
-                <i className="fa-brands fa-instagram"></i>
-              </li>
-              <li>
-                <i className="fa-brands fa-pinterest"></i>
-              </li>
-            </ul>
+            <div className="socialMediaBlog">
+              <ul>
+                <li>
+                  <i className="fa-brands fa-facebook"></i>
+                </li>
+                <li>
+                  <i className="fa-brands fa-instagram"></i>
+                </li>
+                <li>
+                  <i className="fa-brands fa-pinterest"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="comments">
+            <h3>Şərhlər</h3>
+            {comm.length > 0
+              ? comm.map((com) => (
+                  <div key={com.id} className="commentDetail">
+                    <div className="userProfile">
+                      <div className="userPhoto">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" />
+                      </div>
+                      <div className="userName">
+                        <h5>{com?.name}</h5>
+                        <span>{com?.date}</span>
+                      </div>
+                    </div>
+                    <div className="comment">
+                      <p>{com?.comment}</p>
+                    </div>
+                  </div>
+                ))
+              : ""}
+          </div>
+          <h2>Şərh Yaz</h2>
+          <div className="addToComments">
+            <form onSubmit={(e) => handleCommentSubmit(e)}>
+              <label htmlFor="name">Ad Soyad</label>
+              <input
+                value={name}
+                placeholder="Ad Soyad"
+                onChange={(e) => setName(e.target.value)}
+                required
+                id="name"
+                type="text"
+              />
+              <label htmlFor="email">E-mail </label>
+              <input
+                value={email}
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+                id="email"
+                required
+                type="email"
+              />
+              <label htmlFor="comment">Şərhiniz</label>
+              <textarea
+                value={comment}
+                placeholder="Şərhiniz..."
+                onChange={(e) => setComment(e.target.value)}
+                required
+                id="comment"
+              />
+              <input onClick={(e) => handleCommentSubmit(e)} type="submit" />
+            </form>
           </div>
         </div>
-        <div className="comments">
-          <h3>Şərhlər</h3>
-          {comm.length > 0
-            ? comm.map((com) => (
-                <div key={com.id} className="commentDetail">
-                  <div className="userProfile">
-                    <div className="userPhoto">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" />
-                    </div>
-                    <div className="userName">
-                      <h5>{com?.name}</h5>
-                      <span>{com?.date}</span>
-                    </div>
-                  </div>
-                  <div className="comment">
-                    <p>{com?.comment}</p>
-                  </div>
-                </div>
-              ))
-            : ""}
-        </div>
-        <h2>Şərh Yaz</h2>
-        <div className="addToComments">
-          <form onSubmit={(e) => handleCommentSubmit(e)}>
-            <label htmlFor="name">Ad Soyad</label>
-            <input
-              value={name}
-              placeholder="Ad Soyad"
-              onChange={(e) => setName(e.target.value)}
-              required
-              id="name"
-              type="text"
-            />
-            <label htmlFor="email">E-mail </label>
-            <input
-              value={email}
-              placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              id="email"
-              required
-              type="email"
-            />
-            <label htmlFor="comment">Şərhiniz</label>
-            <textarea
-              value={comment}
-              placeholder="Şərhiniz..."
-              onChange={(e) => setComment(e.target.value)}
-              required
-              id="comment"
-            />
-            <input onClick={(e) => handleCommentSubmit(e)} type="submit" />
-          </form>
-        </div>
-      </div>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={4000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover={false}
-        theme="light"
-      />
-    </section>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover={false}
+          theme="light"
+        />
+      </section>
+    </>
   );
 }
 const t = (a) => a;
