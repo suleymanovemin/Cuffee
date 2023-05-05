@@ -1,7 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { connect } from "react-redux";
-import { useNavigate } from "react-router-dom";
+
 function Header({
   isLoginModalOpen,
   dispatch,
@@ -110,6 +110,21 @@ function Header({
     setFiltered(filtered);
   };
 
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (isLoginModalOpen) {
+      dispatch({
+        type: "TOGGLE_MENU",
+        payload: isLoginModalOpen,
+      });
+    }
+    if (openSearchModal) {
+      setSearchModal(false);
+    }
+    if (showCart) {
+      setShowCart(false);
+    }
+  }, [pathname]);
   return (
     <>
       <div
@@ -172,7 +187,7 @@ function Header({
                   </p>
                 </div>
                 <div className="bottomViewCart">
-                  <Link>Səbətə Get</Link>
+                  <Link to="/basket">Səbətə Get</Link>
                   <Link>Alış-verişi Tamamla</Link>
                 </div>
               </>

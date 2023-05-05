@@ -2878,3 +2878,52 @@ table {
 .abSerIcon {
   margin-bottom: 30px;
 }
+
+/* Basket Page */
+
+.cartButtons a,
+.cartButtons button {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 18px 65px;
+  border: none;
+  background-color: #111111;
+  font-size: 14px;
+  text-align: center;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  position: relative;
+  border-radius: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.cartButtons a {
+  margin-left: 25px;
+  background: #be9c79;
+}
+.cartButtons button:hover {
+  background-color: #be9c79;
+}
+.cartButtons a:hover {
+  background-color: #111111;
+}
+.cartCheck{
+  border: 1px solid #e3e3e3;
+  padding: 40px 20px;
+  overflow: hidden;
+  margin: 30px 0;
+}
+.cartHeading{
+  text-align: start !important;
+  font-weight: 600;
+    font-size: 12px;
+    line-height: 30px;
+    color: #111111;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-family: Jost;
+    padding: 17px 20px 17px 0;
+}

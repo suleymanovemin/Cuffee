@@ -28,15 +28,7 @@ function Products({ products, dispatch, basket, favorites }) {
     dispatch({ type: "SET_BASKET", payload: newBasket });
     dispatch({ type: "SET_VIEW_ADD_MODAL", payload: true });
   };
-  useEffect(() => {
-    const storedBasket = JSON.parse(localStorage.getItem("basket"));
-    if (storedBasket) {
-      dispatch({
-        type: "SET_BASKET",
-        payload: storedBasket,
-      });
-    }
-  }, []);
+
 
   // Favorite
 
@@ -57,15 +49,6 @@ function Products({ products, dispatch, basket, favorites }) {
     });
     localStorage.setItem("favorites", JSON.stringify(favoriteProducts));
   };
-  useEffect(() => {
-    const storedFavorite = JSON.parse(localStorage.getItem("favorites"));
-    if (storedFavorite) {
-      dispatch({
-        type: "ADD_TO_FAVORITE",
-        payload: storedFavorite,
-      });
-    }
-  }, []);
   return (
     <div className="productsTitle">
       <h3>ÇOX SATILANLAR</h3>

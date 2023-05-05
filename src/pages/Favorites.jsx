@@ -33,18 +33,7 @@ function Favorites({ favorites, dispatch, basket }) {
     dispatch({ type: "SET_BASKET", payload: newBasket });
     dispatch({ type: "SET_VIEW_ADD_MODAL", payload: true });
   };
-
-  useEffect(() => {
-    const storedBasket = JSON.parse(localStorage.getItem("basket"));
-
-    if (storedBasket) {
-      dispatch({
-        type: "SET_BASKET",
-        payload: storedBasket,
-      });
-    }
-  }, []);
-
+  
   const handleDelete = (id) => {
     const newFavorites = favorites.filter((fav) => fav.id !== id);
     dispatch({

@@ -15,11 +15,28 @@ const Blog = lazy(() => import("./pages/Blog"));
 const ProductsPage = lazy(() => import("./pages/ProductsPage"));
 const Favorites = lazy(() => import("./pages/Favorites"));
 const Contact = lazy(() => import("./pages/Contact"));
+const BasketPage = lazy(() => import("./pages/BasketPage"));
 import ScrollToTop from "./components/ScrolltoTop";
 import AdminPanel from "./pages/AdminPanel";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
 function App({ dispatch, user }) {
+  useEffect(() => {
+    const storedBasket = JSON.parse(localStorage.getItem("basket"));
+    if (storedBasket) {
+      dispatch({
+        type: "SET_BASKET",
+        payload: storedBasket,
+      });
+    }
+    const storedFavorite = JSON.parse(localStorage.getItem("favorites"));
+    if (storedFavorite) {
+      dispatch({
+        type: "ADD_TO_FAVORITE",
+        payload: storedFavorite,
+      });
+    }
+  }, []);
   let { pathname } = useLocation();
 
   const routes = [
@@ -67,6 +84,10 @@ function App({ dispatch, user }) {
       path: "/profile",
       element: <Profile />,
     },
+    {
+      path: "/basket",
+      element: <BasketPage />,
+    },
   ];
 
   const API = "http://localhost:3000";
@@ -104,7 +125,7 @@ function App({ dispatch, user }) {
           />
         ))}
 
-        {/* <Route path="*" element={<Navigate to="/not-found" />} /> */}
+        <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
       {pathname !== "/not-found" && <Footer />}
     </>

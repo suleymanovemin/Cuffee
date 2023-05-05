@@ -54,23 +54,6 @@ function ProductsPage({
     dispatch({ type: "SET_VIEW_ADD_MODAL", payload: true });
   };
 
-  useEffect(() => {
-    const storedBasket = JSON.parse(localStorage.getItem("basket"));
-    if (storedBasket) {
-      dispatch({
-        type: "SET_BASKET",
-        payload: storedBasket,
-      });
-    }
-    const storedFavorite = JSON.parse(localStorage.getItem("favorites"));
-    if (storedFavorite) {
-      dispatch({
-        type: "ADD_TO_FAVORITE",
-        payload: storedFavorite,
-      });
-    }
-  }, []);
-
   const addToFavorite = (id) => {
     const favoriteProducts = [...favorites];
     const productIndex = favoriteProducts.findIndex(
