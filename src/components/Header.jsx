@@ -25,6 +25,12 @@ function Header({
   const openSearchModal = () => {
     setSearchModal(!searchModal);
     clearInput();
+    if (isLoginModalOpen) {
+      dispatch({
+        type: "TOGGLE_MENU",
+        payload: isLoginModalOpen,
+      });
+    }
   };
   const showBurgerMenu = (e) => {
     setShowBurger(!showBurger);
@@ -36,8 +42,11 @@ function Header({
   // Show Login Page
 
   const navigate = useNavigate();
-  
+
   const showLoginModal = () => {
+    if (searchModal) {
+      setSearchModal(!searchModal);
+    }
     if (!user) {
       if (showBurger) {
         setShowBurger(false);
@@ -75,7 +84,6 @@ function Header({
     };
     window.addEventListener("scroll", handleScroll);
   });
-
 
   const deleteProduct = (id) => {
     let newBasket = [...basket.filter((a) => a.id !== id)];
@@ -231,6 +239,11 @@ function Header({
                       Seçilənlər
                     </NavLink>
                   </li>
+                  <li>
+                    <NavLink onClick={showBurgerMenu} to="/contact">
+                      Əlaqə
+                    </NavLink>
+                  </li>
                 </ul>
               </div>
             </aside>
@@ -282,6 +295,9 @@ function Header({
               </li>
               <li>
                 <NavLink to="/favorites">Seçilənlər</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact">Əlaqə</NavLink>
               </li>
             </ul>
           </nav>

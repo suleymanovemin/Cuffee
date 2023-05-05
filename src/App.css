@@ -25,6 +25,7 @@ a {
 }
 
 /* Header */
+
 .mainHeader {
   position: relative;
 }
@@ -690,6 +691,7 @@ nav ul a.active {
 .loading {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1830,7 +1832,8 @@ footer {
 
 .favorites h1,
 .productsPageHeading h1,
-.blogsHeading h1 {
+.blogsHeading h1,
+.contactHeading h1 {
   margin: 20px 0;
   text-align: center;
 }
@@ -1851,7 +1854,8 @@ table {
 }
 .favoritesHeading h1,
 .productsPageHeading h1,
-.blogsHeading h1 {
+.blogsHeading h1,
+.contactHeading h1 {
   font-size: 46px;
   font-weight: 500;
   color: #fff;
@@ -1986,10 +1990,10 @@ table {
   padding: 0 15px 0 0;
   width: 25%;
 }
-.filters{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .productsFilters + .defoo {
   width: 100%;
@@ -2581,4 +2585,296 @@ table {
 }
 .ant-layout {
   height: 100vh !important ;
+}
+
+/* Contact Page */
+
+.contactHeading {
+  background-image: url("https://cdn.shopify.com/s/files/1/0606/8191/2503/files/collection.jpg?v=1659671796");
+  padding-top: 50px;
+  padding-bottom: 55px;
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.allContact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 100px 0;
+  gap: 50px;
+}
+.contactUs > h5 {
+  font-size: 34px;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+.contactUs > p {
+  font-size: 15px;
+  color: #111111;
+  line-height: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.contactInfo > div {
+  margin-top: 25px;
+  display: flex;
+  /* justify-content:center; */
+  align-items: center;
+  gap: 30px;
+}
+.contactInfo > div i {
+  font-size: 35px;
+  color: #353232;
+}
+.contactInfo > div > div + div {
+  line-height: 1.8;
+}
+.contactInfo > div h3 {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.contactInfo > div p {
+  font-size: 15px;
+  color: #111111;
+}
+.contactInfo > div p:nth-of-type(1) {
+  color: #828282;
+}
+.contactMap iframe {
+  width: 100%;
+  height: 100%;
+}
+.sendMessage {
+  text-align: center;
+}
+.sendMessage form {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+.sendMessage form > div {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.sendMessage form > div input,
+.sendMessage form > textarea {
+  outline: 0;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 3px;
+  border: 1px solid #e4e4e4;
+  color: #111111;
+  height: 60px;
+  line-height: 60px;
+  padding: 10px 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+.sendMessage form > textarea {
+  min-width: 100%;
+  max-width: 100%;
+  height: 260px;
+}
+.sendMessage input[type="submit"] {
+  background-color: #000000;
+  border-radius: 0;
+  border: none;
+  padding: 0 65px;
+  height: 55px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 21px;
+  transition: 0.3s;
+  color: #fff;
+  cursor: pointer;
+}
+.sendMessage input[type="submit"]:hover,
+.newSteller button:hover {
+  background-color: #be9c79;
+  box-shadow: none;
+  border: none;
+}
+.newSteller {
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  padding: 40px 0;
+  margin-top: 80px;
+}
+.newSteller ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.newSteller ul li:nth-of-type(1) div {
+  height: 100%;
+  border-right: 1px solid #dedede;
+}
+.newSteller h3 {
+  height: 100%;
+  border-right: 1px solid #dedede;
+  padding-right: 15px;
+}
+.subIn {
+  position: relative;
+  width: 100%;
+  max-width: 345px;
+  background-color: #f4f4f4;
+}
+.newSteller input {
+  align-items: center;
+  padding: 15px 60px 20px 15px;
+  margin-right: 45px;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #495057;
+  outline: 0;
+  height: 44px;
+  border: 0;
+  background: #f4f4f4;
+}
+.newSteller button {
+  position: absolute;
+  height: 44px;
+  border: 0;
+  padding: 0 45px;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+  background-color: #000000;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  line-height: 32px;
+  cursor: pointer;
+  transform: translate(50%, -50%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.newSteller ul li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* About Page */
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.aboutInfo p::before {
+  content: "";
+  width: 45px;
+  height: 2px;
+  background: #be9c79;
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  transform: translate(-10%, -50%);
+}
+.aboutRight img,
+.aboutLeft img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+  transform: scale(1.2);
+}
+.aboutRight img:hover,
+.aboutLeft img:hover {
+  transform: scale(1);
+}
+.aboutInfo h3 {
+  font-size: 40px;
+  color: #000000;
+  font-weight: 500;
+  line-height: 43px;
+  margin-bottom: 20px;
+}
+.aboutInfo p {
+  margin-left: 55px;
+  display: inline-block;
+  font-size: 12px;
+  color: #969696;
+  font-family: Jost;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 3.2px;
+  position: relative;
+}
+.aboutLeft {
+  margin: 0 15px;
+  padding: 0 0 70px 0;
+  margin-bottom: 70px;
+  overflow: hidden;
+}
+.aboutRight {
+  margin-bottom: 70px;
+  overflow: hidden;
+}
+.aboutIntro {
+  margin-top: 35px;
+}
+.aboutIntro p {
+  line-height: 1.6;
+  font-size: 15px;
+  color: #969696;
+  font-family: Jost;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.aboutServies {
+  padding-top: 130px;
+  padding-bottom: 130px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-image: url("https://cdn.shopify.com/s/files/1/0606/8191/2503/files/about3.jpg?v=1659671796");
+}
+.aboutServies .container {
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.aboutServiesOne {
+  text-align: center;
+}
+.aboutServiesOne h4 {
+  position: relative;
+  padding: 0 0 15px;
+  margin: 45px 0 20px;
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+}
+.aboutServiesOne h4::after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  background: #fff;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 1px;
+}
+.aboutServiesOne p {
+  font-size: 15px;
+  color: #fff;
+  line-height: 25px;
+}
+
+.abSerIcon i {
+  color: #fff;
+  font-size: 58px;
+}
+.abSerIcon {
+  margin-bottom: 30px;
 }

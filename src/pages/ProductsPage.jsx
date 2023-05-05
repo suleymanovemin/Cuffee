@@ -94,7 +94,7 @@ function ProductsPage({
   // Filters
   const [tempProducts, setTempProducts] = useState(products);
   const sortProducts = (e) => {
-    // console.log(e);
+
     switch (+e) {
       case 1:
         setTempProducts([...products]);
@@ -104,25 +104,20 @@ function ProductsPage({
           (a, b) => a.title.charCodeAt(0) - b.title.charCodeAt(0)
         );
         setTempProducts([...tempProducts]);
-
-        console.log("a - z");
         break;
       case 3:
         tempProducts.sort(
           (a, b) => b.title.charCodeAt(0) - a.title.charCodeAt(0)
         );
         setTempProducts([...tempProducts]);
-        console.log("z - a");
         break;
       case 4:
         tempProducts.sort((a, b) => +a.price - +b.price);
         setTempProducts([...tempProducts]);
-        console.log("0 - 100");
         break;
       case 5:
         tempProducts.sort((a, b) => +b.price - +a.price);
         setTempProducts([...tempProducts]);
-        console.log("100 - 0");
         break;
 
       default:

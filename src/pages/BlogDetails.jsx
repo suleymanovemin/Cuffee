@@ -160,7 +160,7 @@ function BlogDetails({ blogs }) {
                 required
                 id="comment"
               />
-              <input onClick={(e) => handleCommentSubmit(e)} type="submit" />
+              <input style={{cursor:"pointer"}} onClick={(e) => handleCommentSubmit(e)} type="submit" />
             </form>
           </div>
         </div>

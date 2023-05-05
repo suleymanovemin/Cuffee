@@ -23,6 +23,7 @@
 
 //   // Valid
 
+
 //   const navigate = useNavigate();
 //   const LogOut = async () => {
 //     await logOut();
@@ -129,6 +130,8 @@
 // export default connect(t)(AdminPanel);
 
 import { Menu } from "antd";
+import { useEffect } from "react";
+import { connect } from "react-redux";
 import { Route, Routes, useNavigate, BrowserRouter } from "react-router-dom";
 import {
   HomeOutlined,
@@ -138,7 +141,7 @@ import {
   PoweroffOutlined,
 } from "@ant-design/icons";
 
-function AdminPanel() {
+function AdminPanel({user}) {
   const navigate = useNavigate();
     useEffect(() => {
     if (!user) {
@@ -193,5 +196,5 @@ function Content() {
     </div>
   );
 }
-
-export default AdminPanel;
+const t = (a) => a;
+export default connect(t)(AdminPanel);

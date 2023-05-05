@@ -13,10 +13,12 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const BlogDetails = lazy(() => import("./pages/BlogDetails"));
 const Blog = lazy(() => import("./pages/Blog"));
 const ProductsPage = lazy(() => import("./pages/ProductsPage"));
+const Favorites = lazy(() => import("./pages/Favorites"));
+const Contact = lazy(() => import("./pages/Contact"));
 import ScrollToTop from "./components/ScrolltoTop";
-import Favorites from "./pages/Favorites";
 import AdminPanel from "./pages/AdminPanel";
 import Profile from "./pages/Profile";
+import Footer from "./components/Footer";
 function App({ dispatch, user }) {
   let { pathname } = useLocation();
 
@@ -52,6 +54,10 @@ function App({ dispatch, user }) {
     {
       path: "/favorites",
       element: <Favorites />,
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
     },
     {
       path: "/admin/*",
@@ -97,8 +103,10 @@ function App({ dispatch, user }) {
             element={<Suspense fallback={<Loading />}>{a.element}</Suspense>}
           />
         ))}
+
         {/* <Route path="*" element={<Navigate to="/not-found" />} /> */}
       </Routes>
+      {pathname !== "/not-found" && <Footer />}
     </>
   );
 }

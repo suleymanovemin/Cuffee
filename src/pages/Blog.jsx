@@ -23,45 +23,45 @@ function Blog({ blogs }) {
   };
 
   const notify = () =>
-  toast.success("Bloq Əlavə edildi!", {
-    position: "bottom-right",
-    autoClose: 4000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: false,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-  });
+    toast.success("Bloq Əlavə edildi!", {
+      position: "bottom-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   const handleSubmit = (e) => {
     e.preventDefault();
     const now = new Date();
-    const day = now.getDate()<10?"0"+now.getDate():now.getDate();
-    const month = (now.getMonth() + 1)<10?"0"+(now.getMonth() + 1):now.getMonth() + 1;
+    const day = now.getDate() < 10 ? "0" + now.getDate() : now.getDate();
+    const month =
+      now.getMonth() + 1 < 10 ? "0" + (now.getMonth() + 1) : now.getMonth() + 1;
     const year = now.getFullYear();
     const hours = now.getHours();
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
     const currentDate = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
 
-  
-    fetch('http://localhost:3000/blogs', {
-      method: 'POST',
+    fetch("http://localhost:3000/blogs", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: name,
         title: blogName,
         content: blogContent,
-        date:currentDate,
-        image: selectedFile
-      })
+        date: currentDate,
+        image: selectedFile,
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
         setShowModal(false);
-        notify()
+        notify();
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -82,7 +82,7 @@ function Blog({ blogs }) {
           }}
           className="blogModal"
         >
-          <form onSubmit={(e)=>handleSubmit(e)} className="form">
+          <form onSubmit={(e) => handleSubmit(e)} className="form">
             <p className="form-title">Bloq Əlavə Et</p>
             <div className="input-container">
               <input
@@ -188,17 +188,17 @@ function Blog({ blogs }) {
             : ""}
         </div>
         <ToastContainer
-        position="bottom-right"
-        autoClose={4000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover={false}
-        theme="light"
-      />
+          position="bottom-right"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover={false}
+          theme="light"
+        />
       </div>
     </>
   );

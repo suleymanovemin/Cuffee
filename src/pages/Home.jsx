@@ -40,7 +40,6 @@ function Home({ user }) {
       <Servies />
       <Products />
       <HotDeal notify={notify} />
-      <Footer />
       <ToastContainer />
     </>
   );
