@@ -1,5 +1,6 @@
 const initialstate = {
   products: [],
+  category: [],
   basket: [],
   favorites: [],
   blogs: [],
@@ -14,6 +15,8 @@ export default function Reducer(state = initialstate, action) {
   switch (action.type) {
     case "SET_PRODUCTS":
       return { ...state, products: action.payload };
+    case "SET_CATEGORY":
+      return { ...state, category: action.payload };
     case "SET_BLOGS":
       return { ...state, blogs: action.payload };
     case "SET_BASKET":

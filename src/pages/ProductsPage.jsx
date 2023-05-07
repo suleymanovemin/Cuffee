@@ -12,13 +12,47 @@ function ProductsPage({
   showQuickViewModal,
   favorites,
   basket,
+  category,
 }) {
-  const handleLiClick = (e) => {
+  const [tempProducts, setTempProducts] = useState(products);
+  const [filteredProducts, setFilteredProducts] = useState(tempProducts);
+  const [filters, setFilters] = useState([]);
+
+  const handleLiClick = (id, e) => {
     const lis = e.target.parentElement.children;
     for (let i = 0; i < lis.length; i++) {
       lis[i].classList.remove("active");
     }
     e.target.classList.add("active");
+
+    if (id === 0) {
+      setTempProducts([...products]);
+    } else {
+      const filteredProducts = tempProducts.filter(
+        (a) => a.category_id === +id
+      );
+      setTempProducts(filteredProducts);
+    }
+  };
+
+  const [previousFilter, setPreviousFilter] = useState(null);
+
+  const handlePriceFilter = (min, max) => {
+    if (previousFilter) {
+      setTempProducts([...products]);
+      setPreviousFilter(null);
+      return;
+    }
+
+    const filteredProducts = tempProducts.filter(
+      (product) => product.price >= min && product.price <= max
+    );
+
+    filteredProducts.sort((a, b) => a.price - b.price);
+
+    setTempProducts(filteredProducts);
+
+    setPreviousFilter({ min, max });
   };
 
   const showQuickModal = () => {
@@ -40,7 +74,6 @@ function ProductsPage({
     });
   };
 
-
   const visibleAddModal = (id) => {
     const newBasket = [...basket];
     const index = newBasket.findIndex((item) => item.id === id);
@@ -55,7 +88,6 @@ function ProductsPage({
     dispatch({ type: "SET_VIEW_ADD_MODAL", payload: true });
   };
 
-  
   const addToFavorite = (id) => {
     const favoriteProducts = [...favorites];
     const productIndex = favoriteProducts.findIndex(
@@ -78,9 +110,7 @@ function ProductsPage({
 
   // Sort
 
-  const [tempProducts, setTempProducts] = useState(products);
   const sortProducts = (e) => {
-
     switch (+e) {
       case 1:
         setTempProducts([...products]);
@@ -113,11 +143,10 @@ function ProductsPage({
 
   // Multi Filter
 
-  const [filteredProducts, setFilteredProducts] = useState(tempProducts);
-  const [filters, setFilters] = useState([]);
+  // const [filteredProducts, setFilteredProducts] = useState(tempProducts);
+  // const [filters, setFilters] = useState([]);
 
   const handleFilterChange = (e) => {
-
     const selectedFilter = e;
 
     // if (e.target.checked) {
@@ -142,7 +171,6 @@ function ProductsPage({
       setFilteredProducts(filtered);
     }
   }, [filters, products]);
-
 
   return (
     <>
@@ -221,11 +249,14 @@ function ProductsPage({
               </div>
               <div className="filtersCategories">
                 <ul>
-                  <li className="active" onClick={handleLiClick}>
-                    Coffe
+                  <li className="active" onClick={(e) => handleLiClick(0, e)}>
+                    Hamısı
                   </li>
-                  <li onClick={handleLiClick}>Tea</li>
-                  <li onClick={handleLiClick}>Soft drinks</li>
+                  {category?.map((c) => (
+                    <li onClick={(e) => handleLiClick(c.id, e)} key={c.id}>
+                      {c.name}
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="filtersSilideHeading">
@@ -233,28 +264,36 @@ function ProductsPage({
               </div>
               <div className="filtersCategories">
                 <ul className="priceFiltered">
-                  <li onClick={()=>{handleFilterChange(10)}}>
+                  <li
+                    onClick={() => {
+                      handleFilterChange(10);
+                    }}
+                  >
                     <input id="inp1" type="checkbox" />
                     <label htmlFor="inp1">
-                      <p>10 - 20</p>
+                      <p onClick={() => handlePriceFilter(10, 20)}>10 - 20</p>
                     </label>
                   </li>
-                  <li onClick={()=>{handleFilterChange(20)}}>
+                  <li
+                    onClick={() => {
+                      handleFilterChange(20);
+                    }}
+                  >
                     <input id="inp2" type="checkbox" />
                     <label htmlFor="inp2">
-                      <p>20 - 40</p>
+                      <p onClick={() => handlePriceFilter(20, 40)}>20 - 40</p>
                     </label>
                   </li>
                   <li>
                     <input id="inp3" type="checkbox" />
                     <label htmlFor="inp3">
-                      <p>10 - 20</p>
+                      <p onClick={() => handlePriceFilter(40, 60)}>40 - 60</p>
                     </label>
                   </li>
                   <li>
                     <input id="inp4" type="checkbox" />
                     <label htmlFor="inp4">
-                      <p>10 - 20</p>
+                      <p onClick={() => handlePriceFilter(60, 80)}>60 - 80</p>
                     </label>
                   </li>
                 </ul>

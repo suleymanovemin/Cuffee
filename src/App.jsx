@@ -111,6 +111,16 @@ function App({ dispatch, user }) {
         });
       });
   }, []);
+  useEffect(() => {
+    fetch(`${API}/category`)
+      .then((a) => a.json())
+      .then((b) => {
+        dispatch({
+          type: "SET_CATEGORY",
+          payload: b,
+        });
+      });
+  }, []);
 
   return (
     <>

@@ -41,9 +41,11 @@ function BlogDetails({ blogs }) {
           ? "0" + (now.getMonth() + 1)
           : now.getMonth() + 1;
       const year = now.getFullYear();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
+      const hours = now.getHours() < 10 ? "0" + now.getHours() : now.getHours();
+      const minutes =
+        now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
+      const seconds =
+        now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds();
       const currentDate = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
 
       fetch(`http://localhost:3000/blogComments`, {
@@ -160,7 +162,11 @@ function BlogDetails({ blogs }) {
                 required
                 id="comment"
               />
-              <input style={{cursor:"pointer"}} onClick={(e) => handleCommentSubmit(e)} type="submit" />
+              <input
+                style={{ cursor: "pointer" }}
+                onClick={(e) => handleCommentSubmit(e)}
+                type="submit"
+              />
             </form>
           </div>
         </div>
