@@ -94,7 +94,7 @@ function Blog({ blogs }) {
             <div className="input-container">
               <input
                 onChange={(e) => setBlogName(e.target.value)}
-                type="email"
+                type="text"
                 placeholder="Bloq Başlığı"
               />
             </div>

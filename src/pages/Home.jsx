@@ -11,6 +11,9 @@ import AddToCartModal from "../modals/AddToCartModal";
 import HotDeal from "../components/HotDeal";
 import Footer from "../components/Footer";
 import { Toaster } from "react-hot-toast";
+import LastBlogs from "../components/LastBlogs";
+import HotDealSwiper from "../components/HotDealSwiper";
+import HotDealSletter from "../components/HotDealSletter";
 
 
 function Home({ user }) {
@@ -39,7 +42,11 @@ function Home({ user }) {
       <Hero />
       <Servies />
       <Products />
-      <HotDeal notify={notify} />
+      <HotDeal  />
+      <LastBlogs/>
+      <HotDealSwiper/>
+      <HotDealSletter/>
+     
       <ToastContainer />
     </>
   );

@@ -40,6 +40,7 @@ function ProductsPage({
     });
   };
 
+
   const visibleAddModal = (id) => {
     const newBasket = [...basket];
     const index = newBasket.findIndex((item) => item.id === id);
@@ -54,6 +55,7 @@ function ProductsPage({
     dispatch({ type: "SET_VIEW_ADD_MODAL", payload: true });
   };
 
+  
   const addToFavorite = (id) => {
     const favoriteProducts = [...favorites];
     const productIndex = favoriteProducts.findIndex(
@@ -74,7 +76,8 @@ function ProductsPage({
     localStorage.setItem("favorites", JSON.stringify(favoriteProducts));
   };
 
-  // Filters
+  // Sort
+
   const [tempProducts, setTempProducts] = useState(products);
   const sortProducts = (e) => {
 
@@ -107,6 +110,39 @@ function ProductsPage({
         break;
     }
   };
+
+  // Multi Filter
+
+  const [filteredProducts, setFilteredProducts] = useState(tempProducts);
+  const [filters, setFilters] = useState([]);
+
+  const handleFilterChange = (e) => {
+
+    const selectedFilter = e;
+
+    // if (e.target.checked) {
+    //   // Filtre seçildiğinde filtreye ekleyin
+    //   setFilters([...filters, selectedFilter]);
+    // } else {
+    //   // Filtre kaldırıldığında filtreden çıkarın
+    //   setFilters(filters.filter((filter) => filter !== selectedFilter));
+    // }
+  };
+
+  useEffect(() => {
+    // Herhangi bir filtre değişikliği olduğunda ürünleri filtreleyin
+    if (filters.length === 0) {
+      // Hiçbir filtre seçilmediyse tüm ürünleri gösterin
+      setFilteredProducts(products);
+    } else {
+      // Seçilen filtrelerle ürünleri filtreleyin
+      const filtered = products.filter((product) =>
+        filters.every((filter) => product.tags.includes(filter))
+      );
+      setFilteredProducts(filtered);
+    }
+  }, [filters, products]);
+
 
   return (
     <>
@@ -197,16 +233,16 @@ function ProductsPage({
               </div>
               <div className="filtersCategories">
                 <ul className="priceFiltered">
-                  <li>
+                  <li onClick={()=>{handleFilterChange(10)}}>
                     <input id="inp1" type="checkbox" />
                     <label htmlFor="inp1">
                       <p>10 - 20</p>
                     </label>
                   </li>
-                  <li>
+                  <li onClick={()=>{handleFilterChange(20)}}>
                     <input id="inp2" type="checkbox" />
                     <label htmlFor="inp2">
-                      <p>10 - 20</p>
+                      <p>20 - 40</p>
                     </label>
                   </li>
                   <li>

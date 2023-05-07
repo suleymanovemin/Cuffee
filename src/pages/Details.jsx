@@ -216,7 +216,7 @@ function Details({
                 <del className="oldPrice">{product.oldPrice}₼</del>
               ) : (
                 ""
-              )};
+              )}
               <p>{product.price}₼</p>
             </div>
             <p className={`inStock ${!product.inStock ? "active" : ""}`}>

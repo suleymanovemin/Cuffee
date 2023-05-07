@@ -54,6 +54,7 @@ function Products({ products, dispatch, basket, favorites }) {
       <h3>ÇOX SATILANLAR</h3>
       <p>Bu həftə ən çox satılan məhsullar!</p>
       <div className="container products">
+        
         {products.slice(0, 8).map((a, index) => (
           <div onClick={() => viewProduct(a.id)} key={a.id} className="product">
             <div className="productImage">

@@ -2173,6 +2173,7 @@ table {
 }
 
 /* Blog Details */
+
 .postImage {
   position: relative;
   z-index: 1;
@@ -2259,7 +2260,145 @@ table {
   margin: 10px 0;
 }
 
+/* Blog Components */
+
+.lastBlogs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 75px 0;
+}
+.blogHeading {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 70px 0 0 40px;
+}
+.blogHeading h2 {
+  text-align: center;
+  font-family: Jost;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #111111;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 10px;
+}
+.blogHeading h2::before {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: #be9c79;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.lastBlog {
+  text-align: center;
+}
+.lastBlogPicture {
+  position: relative;
+  min-width: 374px;
+  & img {
+    width: 100%;
+    /* min-width: 450px; */
+    min-height: 300px;
+    max-height: 300px;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+  }
+  & img:hover{
+    opacity: .8;
+  }
+  & .dateOverlay {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    background-color: #fff;
+    top: 36px;
+    left: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    & span:nth-of-type(1) {
+      font-size: 14px;
+      display: block;
+      position: relative;
+      font-weight: 700;
+    }
+    & span:nth-of-type(1)::after {
+      content: "";
+      background-color: #111111;
+      width: 27px;
+      height: 1px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 4px;
+    }
+    & span:nth-of-type(2) {
+      font-size: 12px;
+      display: block;
+      padding-top: 4px;
+      letter-spacing: 0.3em;
+      font-weight: 600;
+    }
+  }
+}
+.lastBlogContent {
+  & > a:nth-of-type(1) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #83868c;
+    text-transform: uppercase;
+  }
+  & h4 {
+    padding-top: 5px;
+  }
+  & h4 > a {
+    position: relative;
+    font-size: 22px;
+    display: inline-block;
+    color: #111111;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: Jost;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  & h4 > a:hover,
+  > a:nth-of-type(1):hover {
+    color: #be9c79;
+  }
+  & h4 > a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 50px;
+    background: #be9c79;
+  }
+  & p {
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 400;
+    color: #83868c;
+  }
+}
+
 /* Comment form */
+
 .addToComments {
   margin: 50px 0 200px 0;
   display: flex;
@@ -2909,21 +3048,21 @@ table {
 .cartButtons a:hover {
   background-color: #111111;
 }
-.cartCheck{
+.cartCheck {
   border: 1px solid #e3e3e3;
   padding: 40px 20px;
   overflow: hidden;
   margin: 30px 0;
 }
-.cartHeading{
+.cartHeading {
   text-align: start !important;
   font-weight: 600;
-    font-size: 12px;
-    line-height: 30px;
-    color: #111111;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    margin-bottom: 0;
-    font-family: Jost;
-    padding: 17px 20px 17px 0;
+  font-size: 12px;
+  line-height: 30px;
+  color: #111111;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-family: Jost;
+  padding: 17px 20px 17px 0;
 }
