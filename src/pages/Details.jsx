@@ -30,11 +30,19 @@ function Details({
   let { id } = useParams();
   let product = products.find((a) => a.id === +id);
   const [simillarProduct, setSimillarProduct] = useState(
-    products.filter((a) => a.category_id === product.category_id)
+    products.filter(
+      (a) =>
+        a.category_id === product.category_id &&
+        a.id !== product.id 
+    )
   );
   useEffect(() => {
     setSimillarProduct(
-      products.filter((a) => a.category_id === product.category_id)
+      products.filter(
+        (a) =>
+          a.category_id === product.category_id &&
+          a.id !== product.id 
+      )
     );
   }, [quickViewProductId]);
   const [selectedImage, setSelectedImage] = useState(product.image[0]);

@@ -20,6 +20,7 @@ import ScrollToTop from "./components/ScrolltoTop";
 import AdminPanel from "./pages/AdminPanel";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
+import Checkout from "./pages/Checkout";
 function App({ dispatch, user }) {
   useEffect(() => {
     const storedBasket = JSON.parse(localStorage.getItem("basket"));
@@ -87,6 +88,10 @@ function App({ dispatch, user }) {
     {
       path: "/basket",
       element: <BasketPage />,
+    },
+    {
+      path: "/checkout",
+      element: <Checkout />,
     },
   ];
 

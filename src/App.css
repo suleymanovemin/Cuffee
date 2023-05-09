@@ -2311,10 +2311,10 @@ table {
     max-height: 300px;
     height: 100%;
     object-fit: cover;
-    transition: .3s;
+    transition: 0.3s;
   }
-  & img:hover{
-    opacity: .8;
+  & img:hover {
+    opacity: 0.8;
   }
   & .dateOverlay {
     position: absolute;
@@ -3020,7 +3020,7 @@ table {
 
 /* Basket Page */
 
-.cartButtons a,
+.cartButtons a,.checkOut a,
 .cartButtons button {
   display: inline-block;
   color: #fff;
@@ -3038,21 +3038,31 @@ table {
   transition: 0.3s;
   cursor: pointer;
 }
-.cartButtons a {
+.checkOut a {
+  background-color: #be9c79;
+}
+.cartButtons a{
   margin-left: 25px;
   background: #be9c79;
+}
+.cartCheck td{
+  border: 0 !important;
 }
 .cartButtons button:hover {
   background-color: #be9c79;
 }
-.cartButtons a:hover {
+.cartButtons a:hover,.checkOut a:hover {
   background-color: #111111;
 }
 .cartCheck {
+  /* width: 400px; */
   border: 1px solid #e3e3e3;
   padding: 40px 20px;
   overflow: hidden;
   margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .cartHeading {
   text-align: start !important;
@@ -3065,4 +3075,20 @@ table {
   margin-bottom: 0;
   font-family: Jost;
   padding: 17px 20px 17px 0;
+}
+.cartCheck td h2 {
+  /* font-family: Jost; */
+  padding: 17px 0;
+  font-size: 18px;
+  line-height: 30px;
+  color: #be9c79;
+}
+.eptyBasket {
+  margin: 50px 0;
+}
+
+/* CheckOut Page */
+.checkOutInformation header span{
+  
+
 }

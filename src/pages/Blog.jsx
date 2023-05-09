@@ -40,10 +40,12 @@ function Blog({ blogs }) {
     const month =
       now.getMonth() + 1 < 10 ? "0" + (now.getMonth() + 1) : now.getMonth() + 1;
     const year = now.getFullYear();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
-    const currentDate = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
+    const hours = now.getHours() < 10 ? "0" + now.getHours() : now.getHours();
+    const minutes =
+      now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
+    const seconds =
+      now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds();
+    const currentDate = `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
 
     fetch("http://localhost:3000/blogs", {
       method: "POST",

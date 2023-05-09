@@ -15,7 +15,7 @@ import LastBlogs from "../components/LastBlogs";
 import HotDealSwiper from "../components/HotDealSwiper";
 import HotDealSletter from "../components/HotDealSletter";
 
-
+import ScrollToTop from "react-scroll-to-top";
 function Home({ user }) {
  
 
@@ -32,6 +32,7 @@ function Home({ user }) {
     });
   return (
     <>
+     <ScrollToTop smooth />
       <Toaster position="top-right" />
       <Helmet>
         <title>Ana Səhifə</title>
