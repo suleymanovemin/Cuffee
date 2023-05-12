@@ -74,7 +74,9 @@ function AddToCartModal({
               </span>
             </p>
             <button onClick={visibleAddModal}>Alış-verişə davam et</button>
-            <button>Səbətə Get</button>
+            <button>
+              <Link to="/basket">Səbətə Get</Link>
+            </button>
           </div>
         </div>
         <div className="cartSwiper">

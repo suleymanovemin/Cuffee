@@ -12,9 +12,9 @@
   .profile {
     display: none;
   }
-  .favorite {
+  /* .favorite {
     display: none;
-  }
+  } */
   .burgerMenuIcon {
     display: block;
   }
@@ -64,6 +64,11 @@
   .quickViewProduct{
     width: 80%;
   }
+  .lastBlogs{
+    grid-template-columns: repeat(1,0.8fr);
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /* Tablet */
@@ -109,6 +114,11 @@
   .subInput form button{
     margin-top: 15px;
     width: 100%;
+  }
+  .lastBlogs{
+    grid-template-columns: repeat(1,0.6fr);
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -255,5 +265,10 @@
   .detailImage{
     width: 290px;
     height: 290px;
+  }
+  .lastBlogs{
+    grid-template-columns: repeat(1,0.5fr);
+    justify-content: center;
+    text-align: center;
   }
 }

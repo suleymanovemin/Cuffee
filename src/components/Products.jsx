@@ -49,6 +49,7 @@ function Products({ products, dispatch, basket, favorites }) {
     });
     localStorage.setItem("favorites", JSON.stringify(favoriteProducts));
   };
+  
   return (
     <div className="productsTitle">
       <h3>ÇOX SATILANLAR</h3>

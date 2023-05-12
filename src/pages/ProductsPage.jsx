@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useCallback } from "react";
 import Quickview from "../modals/Quickview";
 import AddToCartModal from "../modals/AddToCartModal";
 import { Select } from "antd";
@@ -88,25 +88,23 @@ function ProductsPage({
     dispatch({ type: "SET_VIEW_ADD_MODAL", payload: true });
   };
 
-  const addToFavorite = (id) => {
+  const addToFavorite = useCallback((id) => {
     const favoriteProducts = [...favorites];
-    const productIndex = favoriteProducts.findIndex(
-      (product) => product.id === id
-    );
-
+    const productIndex = favoriteProducts.findIndex((product) => product.id === id);
+  
     if (productIndex !== -1) {
       favoriteProducts.splice(productIndex, 1);
     } else {
       const productToAdd = products.find((product) => product.id === id);
       favoriteProducts.push(productToAdd);
     }
-
+  
     dispatch({
       type: "ADD_TO_FAVORITE",
       payload: favoriteProducts,
     });
     localStorage.setItem("favorites", JSON.stringify(favoriteProducts));
-  };
+  }, [favorites, products, dispatch]);
 
   // Sort
 
@@ -143,9 +141,6 @@ function ProductsPage({
 
   // Multi Filter
 
-  // const [filteredProducts, setFilteredProducts] = useState(tempProducts);
-  // const [filters, setFilters] = useState([]);
-
   const handleFilterChange = (e) => {
     const selectedFilter = e;
 
@@ -171,6 +166,7 @@ function ProductsPage({
       setFilteredProducts(filtered);
     }
   }, [filters, products]);
+
 
   return (
     <>

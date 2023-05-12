@@ -33,23 +33,21 @@ function Favorites({ favorites, dispatch, basket }) {
     dispatch({ type: "SET_BASKET", payload: newBasket });
     dispatch({ type: "SET_VIEW_ADD_MODAL", payload: true });
   };
-  
+
   const handleDelete = (id) => {
     const newFavorites = favorites.filter((fav) => fav.id !== id);
     dispatch({
-      type:"ADD_TO_FAVORITE",
-      payload:newFavorites
-    })
-  localStorage.setItem("favorites", JSON.stringify(newFavorites));
-
+      type: "ADD_TO_FAVORITE",
+      payload: newFavorites,
+    });
+    localStorage.setItem("favorites", JSON.stringify(newFavorites));
   };
 
-  
   return (
     <>
       <AddToCartModal />
       <Quickview />
-      <LoginModal/>
+      <LoginModal />
       <div className="favorites">
         <div className="favoritesHeading">
           <h1>SEÇİLƏNLƏR</h1>
@@ -73,42 +71,56 @@ function Favorites({ favorites, dispatch, basket }) {
                 </tr>
               </thead>
               <tbody>
-                {favorites.map((favorite) => (
-                  <tr key={favorite.id}>
-                    <td>
-                      <div className="favProdImage">
-                        <Link to={`/details/${favorite.id}`}>
-                          <img src={favorite.image[0]} alt={favorite.title} />
-                        </Link>
-                      </div>
-                    </td>
-                    <td>
-                      <p className="favProdTitle">
-                        <Link to={`/details/${favorite.id}`}>
-                          {favorite.title}
-                        </Link>
-                      </p>
-                    </td>
-                    <td>
-                      <p className="favProdPrice">{favorite.price}₼</p>
-                    </td>
-                    <td>
-                      <div className="tableAction">
-                        <Link
-                          className="favProdDetail"
-                          to={`/details/${favorite.id}`}
-                        >
-                          Ətaflı Bax
-                        </Link>
-                      </div>
-                    </td>
-                    <td className="deleteFavProd">
-                      <p onClick={() => handleDelete(favorite.id)}>
-                        <i className="fa-solid fa-delete-left"></i>
-                      </p>
-                    </td>
-                  </tr>
-                ))}
+                {favorites.map((favorite) => {
+                  let prod = basket.find((a) => +a.id === +favorite.id);
+
+                  return (
+                    <tr key={favorite.id}>
+                      <td>
+                        <div className="favProdImage">
+                          <Link to={`/details/${favorite.id}`}>
+                            <img src={favorite.image[0]} alt={favorite.title} />
+                          </Link>
+                        </div>
+                      </td>
+                      <td>
+                        <p className="favProdTitle">
+                          <Link to={`/details/${favorite.id}`}>
+                            {favorite.title}
+                          </Link>
+                        </p>
+                      </td>
+                      <td>
+                        <p className="favProdPrice">{favorite.price}₼</p>
+                      </td>
+                      <td>
+                        <div className="tableAction">
+                          {prod ? (
+                            <Link
+                              className="favProdDetail"
+                              to={`/details/${favorite.id}`}
+                            >
+                              Məhsul Səbətdə Var
+                            </Link>
+                          ) : (
+                            <Link
+                              className="favProdDetail"
+                              to={`/details/${favorite.id}`}
+                            >
+                              Ətaflı Bax
+                            </Link>
+                          )}
+
+                        </div>
+                      </td>
+                      <td className="deleteFavProd">
+                        <p onClick={() => handleDelete(favorite.id)}>
+                          <i className="fa-solid fa-delete-left"></i>
+                        </p>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           ) : (

@@ -39,7 +39,7 @@ function Hero() {
                     <br></br>
                     Sunt qui esse pariatur duis deserunt
                   </h3>
-                  <Link to="/products">SHOP NOW</Link>
+                  <Link to="/products">ALIŞ-VERİŞ ET</Link>
                 </div>
               </div>
             </div>
@@ -59,7 +59,7 @@ function Hero() {
                     <br></br>
                     Sunt qui esse pariatur duis deserunt
                   </h3>
-                  <Link to="products">SHOP NOW</Link>
+                  <Link to="products">ALIŞ-VERİŞ ET</Link>
                 </div>
               </div>
             </div>

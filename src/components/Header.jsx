@@ -188,7 +188,7 @@ function Header({
                 </div>
                 <div className="bottomViewCart">
                   <Link to="/basket">Səbətə Get</Link>
-                  <Link>Alış-verişi Tamamla</Link>
+                  <Link to="/checkout">Alış-verişi Tamamla</Link>
                 </div>
               </>
             ) : (
@@ -325,7 +325,14 @@ function Header({
             </div>
             <Link className="favorite" to="/favorites">
               <i className="fa-regular fa-heart"></i>
-              {favorites.length > 0 && <span className="favoriteActive"></span>}
+              {favorites.length > 0 ? (
+                <>
+                  <span className="basketActive"></span>
+                  <span className="totalItems">{favorites.length}</span>
+                </>
+              ) : (
+                <span className="favoriteActive"></span>
+              )}
             </Link>
 
             <div onClick={showCartModal} className="cartIcon">
