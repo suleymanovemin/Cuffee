@@ -109,7 +109,7 @@ function About() {
           <ul className="container">
             <li>
               <div>
-                <i class="fa-solid fa-envelope-open-text"></i>
+                <i className="fa-solid fa-envelope-open-text"></i>
               </div>
               <div>
                 <h3>

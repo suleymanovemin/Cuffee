@@ -15,9 +15,13 @@ const Blog = lazy(() => import("./pages/Blog"));
 const ProductsPage = lazy(() => import("./pages/ProductsPage"));
 const Favorites = lazy(() => import("./pages/Favorites"));
 const Contact = lazy(() => import("./pages/Contact"));
-const BasketPage = lazy(() => import("./pages/BasketPage"));
 import ScrollToTop from "./components/ScrolltoTop";
-import AdminPanel from "./pages/AdminPanel";
+const BasketPage = lazy(() => import("./pages/BasketPage"));
+const AdminPanel = lazy(() => import("./pages/adminPanel/AdminPanel"));
+const AdminLayOut = lazy(() => import("./pages/adminPanel/AdminLayOut"));
+const AdminBlog = lazy(() => import("./pages/adminPanel/AdminBlog"));
+const AdminHome = lazy(() => import("./pages/adminPanel/AdminHome"));
+const AdminProfile = lazy(() => import("./pages/adminPanel/AdminProfile"));
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
 import Checkout from "./pages/Checkout";
@@ -38,6 +42,7 @@ function App({ dispatch, user }) {
       });
     }
   }, []);
+
   let { pathname } = useLocation();
 
   const routes = [
@@ -76,10 +81,6 @@ function App({ dispatch, user }) {
     {
       path: "/contact",
       element: <Contact />,
-    },
-    {
-      path: "/admin/*",
-      element: <AdminPanel />,
     },
     {
       path: "/profile",
@@ -139,10 +140,52 @@ function App({ dispatch, user }) {
             element={<Suspense fallback={<Loading />}>{a.element}</Suspense>}
           />
         ))}
+        <Route
+          path="/admin"
+          element={
+            <Suspense fallback={<Loading />}>
+              <AdminLayOut />
+            </Suspense>
+          }
+        >
+          <Route
+            index={true}
+            element={
+              <Suspense fallback={<Loading />}>
+                <AdminHome />
+              </Suspense>
+            }
+          />
+          <Route
+            path="userList"
+            element={
+              <Suspense fallback={<Loading />}>
+                <AdminPanel />
+              </Suspense>
+            }
+          />
+          <Route
+            path="dashboard"
+            element={
+              <Suspense fallback={<Loading />}>
+                <AdminBlog />
+              </Suspense>
+            }
+          />
+          <Route
+            path="profile"
+            element={
+              <Suspense fallback={<Loading />}>
+                <AdminProfile />
+              </Suspense>
+            }
+          />
+        </Route>
 
         <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
-      {pathname !== "/not-found" && <Footer />}
+      {(pathname !== "/not-found" || pathname !== "/admin") && <Footer />}
+      {/* {pathname !== "/admin" && <Footer />} */}
     </>
   );
 }

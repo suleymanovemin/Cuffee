@@ -5,6 +5,8 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
+  updateProfile,
+  sendEmailVerification,
 } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 
@@ -21,7 +23,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth();
+export const auth = getAuth();
+
+// Register
 
 export const register = async (email, password) => {
   try {
@@ -36,6 +40,8 @@ export const register = async (email, password) => {
   }
 };
 
+// Login
+
 export const login = async (email, password) => {
   try {
     const { user } = await signInWithEmailAndPassword(auth, email, password);
@@ -45,10 +51,37 @@ export const login = async (email, password) => {
   }
 };
 
+// Logout
+
 export const logOut = async (email, password) => {
   try {
     await signOut(auth, email, password);
     return true;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
+// Update Profile
+
+export const update = async (data) => {
+  try {
+    await updateProfile(auth.currentUser, data);
+    toast.success("Profil Yeniləndi!");
+    return true;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
+// Email Verification
+
+export const emailVerification = async () => {
+  try {
+    await sendEmailVerification(auth.currentUser);
+    toast.success(
+      ` Təstiq mail'i ${auth.currentUser.email} adresinə göndərildi! `
+    );
   } catch (error) {
     toast.error(error.message);
   }

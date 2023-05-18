@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useState, useEffect,useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Quickview from "../modals/Quickview";
 import AddToCartModal from "../modals/AddToCartModal";
 import { Select } from "antd";
-
+import { Pagination } from "antd";
 function ProductsPage({
   products,
   dispatch,
@@ -28,9 +28,7 @@ function ProductsPage({
     if (id === 0) {
       setTempProducts([...products]);
     } else {
-      const filteredProducts = tempProducts.filter(
-        (a) => a.category_id === +id
-      );
+      const filteredProducts = products.filter((a) => a.category_id === +id);
       setTempProducts(filteredProducts);
     }
   };
@@ -88,23 +86,28 @@ function ProductsPage({
     dispatch({ type: "SET_VIEW_ADD_MODAL", payload: true });
   };
 
-  const addToFavorite = useCallback((id) => {
-    const favoriteProducts = [...favorites];
-    const productIndex = favoriteProducts.findIndex((product) => product.id === id);
-  
-    if (productIndex !== -1) {
-      favoriteProducts.splice(productIndex, 1);
-    } else {
-      const productToAdd = products.find((product) => product.id === id);
-      favoriteProducts.push(productToAdd);
-    }
-  
-    dispatch({
-      type: "ADD_TO_FAVORITE",
-      payload: favoriteProducts,
-    });
-    localStorage.setItem("favorites", JSON.stringify(favoriteProducts));
-  }, [favorites, products, dispatch]);
+  const addToFavorite = useCallback(
+    (id) => {
+      const favoriteProducts = [...favorites];
+      const productIndex = favoriteProducts.findIndex(
+        (product) => product.id === id
+      );
+
+      if (productIndex !== -1) {
+        favoriteProducts.splice(productIndex, 1);
+      } else {
+        const productToAdd = products.find((product) => product.id === id);
+        favoriteProducts.push(productToAdd);
+      }
+
+      dispatch({
+        type: "ADD_TO_FAVORITE",
+        payload: favoriteProducts,
+      });
+      localStorage.setItem("favorites", JSON.stringify(favoriteProducts));
+    },
+    [favorites, products, dispatch]
+  );
 
   // Sort
 
@@ -141,18 +144,6 @@ function ProductsPage({
 
   // Multi Filter
 
-  const handleFilterChange = (e) => {
-    const selectedFilter = e;
-
-    // if (e.target.checked) {
-    //   // Filtre seçildiğinde filtreye ekleyin
-    //   setFilters([...filters, selectedFilter]);
-    // } else {
-    //   // Filtre kaldırıldığında filtreden çıkarın
-    //   setFilters(filters.filter((filter) => filter !== selectedFilter));
-    // }
-  };
-
   useEffect(() => {
     // Herhangi bir filtre değişikliği olduğunda ürünleri filtreleyin
     if (filters.length === 0) {
@@ -167,6 +158,27 @@ function ProductsPage({
     }
   }, [filters, products]);
 
+  // Pagination
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(8);
+  const [totalProducts, setTotalProducts] = useState(0);
+  const [paginatedProducts, setPaginatedProducts] = useState([]);
+
+  useEffect(() => {
+    setTotalProducts(tempProducts.length);
+    setPaginatedProducts(getPaginatedProducts(currentPage, pageSize));
+  }, [tempProducts, currentPage, pageSize]);
+
+  const getPaginatedProducts = (page, size) => {
+    const startIndex = (page - 1) * size;
+    const endIndex = startIndex + size;
+    return tempProducts.slice(startIndex, endIndex);
+  };
+
+  const handlePageChange = (page, pageSize) => {
+    setCurrentPage(page);
+  };
 
   return (
     <>
@@ -298,7 +310,7 @@ function ProductsPage({
           </div>
           <div className="defoo">
             <div className="products ">
-              {tempProducts.map((a) => (
+              {paginatedProducts.map((a) => (
                 <div
                   onClick={() => viewProduct(a.id)}
                   key={a.id}
@@ -372,7 +384,9 @@ function ProductsPage({
                   </div>
                   <div className="productDetails">
                     <h3>
-                      <Link to={`/details/${a.id}`}>{a.title}</Link>
+                      <Link to={`/details/${a.id}`}>
+                        {a.title.slice(0, 23)}
+                      </Link>
                     </h3>
                     <p className="price">
                       {a.oldPrice ? (
@@ -402,7 +416,14 @@ function ProductsPage({
                 </div>
               ))}
             </div>
-            <div className="paginations"></div>
+            <div className="pagination">
+              <Pagination
+                current={currentPage}
+                pageSize={pageSize}
+                total={totalProducts}
+                onChange={handlePageChange}
+              />
+            </div>
           </div>
         </div>
       </div>

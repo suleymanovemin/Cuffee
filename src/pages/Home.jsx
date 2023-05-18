@@ -17,8 +17,6 @@ import HotDealSletter from "../components/HotDealSletter";
 
 import ScrollToTop from "react-scroll-to-top";
 function Home({ user }) {
- 
-
   const notify = () =>
     toast.success("Abunə Olundu!", {
       position: "bottom-right",
@@ -32,7 +30,7 @@ function Home({ user }) {
     });
   return (
     <>
-     <ScrollToTop smooth />
+      <ScrollToTop smooth />
       <Toaster position="top-right" />
       <Helmet>
         <title>Ana Səhifə</title>
@@ -43,11 +41,11 @@ function Home({ user }) {
       <Hero />
       <Servies />
       <Products />
-      <HotDeal  />
-      <LastBlogs/>
-      <HotDealSwiper/>
-      <HotDealSletter/>
-     
+      <HotDeal />
+      <LastBlogs />
+      <HotDealSwiper />
+      <HotDealSletter />
+
       <ToastContainer />
     </>
   );

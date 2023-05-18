@@ -32,14 +32,20 @@ function Products({ products, dispatch, basket, favorites }) {
 
   // Favorite
 
+
+
   const addToFavorite = (id) => {
+
     const favoriteProducts = [...favorites];
+
     const productIndex = favoriteProducts.findIndex((product) => product.id === id);
   
     if (productIndex !== -1) {
       favoriteProducts.splice(productIndex, 1);
     } else {
+
       const productToAdd = products.find((product) => product.id === id);
+
       favoriteProducts.push(productToAdd);
     }
   
@@ -48,6 +54,7 @@ function Products({ products, dispatch, basket, favorites }) {
       payload: favoriteProducts,
     });
     localStorage.setItem("favorites", JSON.stringify(favoriteProducts));
+    
   };
   
   return (

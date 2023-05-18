@@ -1994,6 +1994,7 @@ table {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 30px 0 20px 0;
 }
 .productsFilters + .defoo {
   width: 100%;
@@ -3124,8 +3125,8 @@ table {
 .required {
   color: red;
 }
-.checkOutInformation label,.checkOutInformation 
-table {
+.checkOutInformation label,
+.checkOutInformation table {
   display: block;
   margin: 15px;
 }
@@ -3245,8 +3246,6 @@ table {
   align-items: center;
 }
 
-
-
 /* Not Faound Page */
 
 .sm-screen {
@@ -3348,13 +3347,9 @@ table {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    box-shadow: 0 0 0 10px #442918, 
-                0 0 0 25px #3c2415, 
-                0 0 0 42px #e4e6b2,
-                0 0 0 65px #eff0d1, 
-                10px 120px 0 -25px #3c2415, 
-                70px 90px 0 -25px #3c2415,
-                50px 120px 0 -10px #3c2415;
+    box-shadow: 0 0 0 10px #442918, 0 0 0 25px #3c2415, 0 0 0 42px #e4e6b2,
+      0 0 0 65px #eff0d1, 10px 120px 0 -25px #3c2415, 70px 90px 0 -25px #3c2415,
+      50px 120px 0 -10px #3c2415;
   }
 
   .number {
@@ -3375,13 +3370,9 @@ table {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    box-shadow: 0 0 0 10px #442918, 
-                0 0 0 25px #3c2415, 
-                0 0 0 42px #e4e6b2,
-                0 0 0 65px #eff0d1, 
-                10px 120px 0 -25px #3c2415, 
-                70px 90px 0 -25px #3c2415,
-                50px 120px 0 -10px #3c2415;
+    box-shadow: 0 0 0 10px #442918, 0 0 0 25px #3c2415, 0 0 0 42px #e4e6b2,
+      0 0 0 65px #eff0d1, 10px 120px 0 -25px #3c2415, 70px 90px 0 -25px #3c2415,
+      50px 120px 0 -10px #3c2415;
   }
 
   .number {
@@ -3394,11 +3385,9 @@ table {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    box-shadow: 0 0 0 10px #442918, 
-                0 0 0 25px #3c2415, 
-                0 0 0 42px #e4e6b2,
-                0 0 0 65px #eff0d1;
-    }
+    box-shadow: 0 0 0 10px #442918, 0 0 0 25px #3c2415, 0 0 0 42px #e4e6b2,
+      0 0 0 65px #eff0d1;
+  }
 
   .number {
     font-size: 12em;
@@ -3410,11 +3399,9 @@ table {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    box-shadow: 0 0 0 10px #442918, 
-                0 0 0 25px #3c2415, 
-                0 0 0 40px #e4e6b2,
-                0 0 0 55px #eff0d1;
-    }
+    box-shadow: 0 0 0 10px #442918, 0 0 0 25px #3c2415, 0 0 0 40px #e4e6b2,
+      0 0 0 55px #eff0d1;
+  }
 
   .number {
     font-size: 8em;
@@ -3460,4 +3447,70 @@ table {
     color: #414042;
     font-size: 5em;
   }
+}
+
+/* Pagination */
+
+.pagination {
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ant-pagination li {
+  color: #fff !important;
+  border: 1px solid #e3e3e3 !important;
+  border-radius: 0 !important;
+  width: 42px !important;
+  height: 42px !important;
+  line-height: 42px !important;
+  font-size: 16px !important;
+  margin-right: 9px !important;
+}
+.ant-pagination li.ant-pagination-item-active a {
+  color: #fff !important;
+}
+.ant-pagination li.ant-pagination-item-active {
+  background-color: #be9c79 !important;
+}
+
+/* Admin Panel  */
+.adminLayOut {
+  margin: 50px auto;
+  height: 50vh;
+}
+
+.userDetails {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.userProfile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.userPanel {
+  padding: 20px 30px;
+  background-color: #f9f9f9;
+  width: 100%;
+  height: max-content;
+  border-radius: 20px;
+}
+.information input[type="text"] {
+  width: 100%;
+  padding: 10px 8px;
+  border-radius: 10px;
+  outline: 0;
+  margin: 10px 0;
+  border: 1px solid rgba(128, 128, 128, 0.363);
+}
+.information input[type="submit"] {
+  padding: 10px 8px;
+  background-color: #084cdf;
+  color: #fff;
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
 }

@@ -39,8 +39,8 @@ function LoginModal({ isLoginModalOpen, dispatch, user }) {
 
   const signIn = async (e) => {
     e.preventDefault();
-
     const user = await login(email, password);
+
     setEmail("");
     setPassword("");
 
@@ -58,7 +58,9 @@ function LoginModal({ isLoginModalOpen, dispatch, user }) {
 
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
-    } 
+    } else if (!user) {
+      console.log("Error");
+    }
     if (user?.email !== "admin@gmail.com") {
       navigate("/profile", {
         replace: true,
