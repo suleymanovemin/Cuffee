@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
@@ -15,6 +15,7 @@ import verify from "../icons/verified.png";
 import Quickview from "../modals/Quickview";
 import LoginModal from "../modals/LoginModal";
 import AddToCartModal from "../modals/AddToCartModal";
+
 function Details({
   products,
   dispatch,
@@ -31,37 +32,45 @@ function Details({
   let product = products.find((a) => a.id === +id);
   const [simillarProduct, setSimillarProduct] = useState(
     products.filter(
-      (a) =>
-        a.category_id === product.category_id &&
-        a.id !== product.id 
+      (a) => +a.category_id === +product?.category_id && +a.id !== +product?.id
     )
   );
+  // console.log(navigate);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!product) {
+      navigate("/not-found");
+      return
+    }
+  }, [product, navigate]);
+
   useEffect(() => {
     setSimillarProduct(
-      products.filter(
-        (a) =>
-          a.category_id === product.category_id &&
-          a.id !== product.id 
+      products?.filter(
+        (a) => a?.category_id === product?.category_id && a?.id !== product?.id
       )
     );
-  }, [quickViewProductId]);
-  const [selectedImage, setSelectedImage] = useState(product.image[0]);
+  }, [quickViewProductId, id]);
+  const [selectedImage, setSelectedImage] = useState(product?.image[0]);
   const [activeClass, setActiveClass] = useState(0);
   const changeActive = (a, index) => {
     setSelectedImage(a);
     setActiveClass(index ?? 0);
   };
   useEffect(() => {
-    setSelectedImage(product.image[0]);
+    setSelectedImage(product?.image[0]);
   }, [pathname]);
 
-  const changeId = () => {
-    id = useParams();
-    dispatch({
-      type: "SET_VIEW_ID",
-      payload: id,
-    });
-  };
+  // const changeId = () => {
+  //   id = useParams();
+  //   dispatch({
+  //     type: "SET_VIEW_ID",
+  //     payload: id,
+  //   });
+  // };
+
   const showQuickModal = (id) => {
     dispatch({
       type: "SET_VIEW_MODAL",
@@ -72,12 +81,13 @@ function Details({
       payload: id,
     });
   };
-  const [delay, setDelay] = useState(false);
 
+  const [delay, setDelay] = useState(false);
   const [prodCount, setProdCount] = useState(1);
   const addToProd = (c) => {
     setProdCount((a) => (a + c < 1 ? 1 : a + c));
   };
+
   const addToBasket = (id) => {
     if (delay) {
       return;
@@ -98,6 +108,8 @@ function Details({
       setDelay(false);
     }, 1500);
   };
+
+
   useEffect(() => {
     const storedBasket = JSON.parse(localStorage.getItem("basket"));
     if (storedBasket) {
@@ -107,6 +119,8 @@ function Details({
       });
     }
   }, []);
+
+
   const notAddToBasket = () => {
     if (delay) {
       return;
@@ -117,6 +131,8 @@ function Details({
       setDelay(false);
     }, 1500);
   };
+
+
   const notify = () =>
     toast.success("Məhsul Səbətə Əlavə edildi!", {
       position: "bottom-right",
@@ -128,6 +144,8 @@ function Details({
       progress: undefined,
       theme: "light",
     });
+
+    
   const warning = () =>
     toast.error("Mehsul Stokda Yoxdur", {
       position: "bottom-right",
@@ -195,7 +213,7 @@ function Details({
       <LoginModal />
       <AddToCartModal />
       <Helmet>
-        <title>{product.title}</title>
+        <title>{product?.title}</title>
       </Helmet>
       <div className="container ProductDetail">
         <div className="detailImage">
@@ -203,7 +221,7 @@ function Details({
             <img src={selectedImage} alt="" />
           </div>
           <div className="otherImages">
-            {product.image.map((a, index) => (
+            {product?.image.map((a, index) => (
               <div
                 key={index}
                 className={
@@ -218,20 +236,20 @@ function Details({
         </div>
         <div className="detailContent">
           <div className="detailTitle">
-            <h2>{product.title}</h2>
+            <h2>{product?.title}</h2>
             <div className="detailsPrice">
-              {product.oldPrice ? (
-                <del className="oldPrice">{product.oldPrice}₼</del>
+              {product?.oldPrice ? (
+                <del className="oldPrice">{product?.oldPrice}₼</del>
               ) : (
                 ""
               )}
-              <p>{product.price}₼</p>
+              <p>{product?.price}₼</p>
             </div>
-            <p className={`inStock ${!product.inStock ? "active" : ""}`}>
-              {product.inStock ? "Stokda Var" : "Stokda Yoxdur"}
+            <p className={`inStock ${!product?.inStock ? "active" : ""}`}>
+              {product?.inStock ? "Stokda Var" : "Stokda Yoxdur"}
             </p>
             <hr />
-            <p>{product.content}</p>
+            <p>{product?.content}</p>
             <div className="addToCart">
               <div className="count">
                 <h1>{prodCount}</h1>
@@ -244,9 +262,9 @@ function Details({
                   </button>
                 </div>
               </div>
-              <div className={`toCart ${!product.inStock ? "deactive" : ""}`}>
-                {product.inStock ? (
-                  <button onClick={() => addToBasket(product.id)}>
+              <div className={`toCart ${!product?.inStock ? "deactive" : ""}`}>
+                {product?.inStock ? (
+                  <button onClick={() => addToBasket(product?.id)}>
                     Səbətə at
                   </button>
                 ) : (
@@ -327,13 +345,13 @@ function Details({
           className="mySwiper"
         >
           <div className="products">
-            {simillarProduct.map((a) => (
+            {simillarProduct?.map((a) => (
               <SwiperSlide key={a.id}>
                 <div key={a.id} className="product">
                   <div className="productImage">
                     <div className="demo">
                       <Link
-                        onClick={changeId}
+                        // onClick={changeId}
                         className="hd"
                         to={`/details/${a.id}`}
                       >
@@ -402,17 +420,15 @@ function Details({
                   </div>
                   <div className="productDetails">
                     <h3>
-                      <Link onClick={changeId} to={`/details/${a.id}`}>
-                        {a.title}
-                      </Link>
+                      <Link to={`/details/${a.id}`}>{a?.title}</Link>
                     </h3>
                     <p className="price">
-                      {a.oldPrice ? (
-                        <del className="oldPrice">{a.oldPrice}₼</del>
+                      {a?.oldPrice ? (
+                        <del className="oldPrice">{a?.oldPrice}₼</del>
                       ) : (
                         ""
                       )}
-                      <b>{a.price}₼</b>
+                      <b>{a?.price}₼</b>
                     </p>
                   </div>
                 </div>

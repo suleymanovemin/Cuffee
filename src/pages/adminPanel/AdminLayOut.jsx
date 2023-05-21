@@ -36,8 +36,13 @@ function AdminLayOut({ user, dispatch }) {
     }
   }, [user, navigate]);
 
+
+  const HandleHome =()=>{
+    navigate("/")
+  }
+   const location = useLocation();
   return (
-    <div className="container adminLayOut">
+    <div className="adminLayOut">
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Menu
           defaultSelectedKeys={["/admin"]}
@@ -50,22 +55,29 @@ function AdminLayOut({ user, dispatch }) {
           items={[
             { label: "Home", key: "/admin", icon: <HomeOutlined /> },
             {
-              label: "Dashboard",
-              key: "dashboard",
+              label: "Bloqlar",
+              key: "bloglist",
               icon: <DashboardOutlined />,
             },
             {
               label: "Users List",
-              key: "userList",
+              key: "productList",
               icon: <UnorderedListOutlined />,
             },
-            { label: "Profile", key: "/admin/profile", icon: <UserOutlined /> },
+            { label: "Profil", key: "/admin/profile", icon: <UserOutlined /> },
             {
-              label: "Sign Out",
+              label: "Çıxış Et",
               key: "signout",
               icon: <PoweroffOutlined />,
               danger: true,
               onClick: LogOut,
+            },
+            {
+              label: "Ana Səhifə",
+              key: "getHome",
+              icon: <HomeOutlined />,
+              
+              onClick:HandleHome
             },
           ]}
         ></Menu>

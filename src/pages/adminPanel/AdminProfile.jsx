@@ -39,7 +39,7 @@ function AdminProfile({ user, dispatch }) {
             <h5>{user.email}</h5>
           </div>
         </div>
-        {!user.emailVerified && (
+        {/* {!user.emailVerified && (
           <div>
             <h4>Hesabınız Təstiqlənməyib!</h4>
 
@@ -47,7 +47,7 @@ function AdminProfile({ user, dispatch }) {
               Təsdiq Et
             </Button>
           </div>
-        )}
+        )} */}
       </div>
 
       <div className="information">

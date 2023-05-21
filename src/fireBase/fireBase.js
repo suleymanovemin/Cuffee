@@ -77,11 +77,14 @@ export const update = async (data) => {
 // Email Verification
 
 export const emailVerification = async () => {
+
   try {
+    
     await sendEmailVerification(auth.currentUser);
     toast.success(
       ` Təstiq mail'i ${auth.currentUser.email} adresinə göndərildi! `
     );
+
   } catch (error) {
     toast.error(error.message);
   }

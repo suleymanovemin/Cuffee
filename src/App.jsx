@@ -22,6 +22,8 @@ const AdminLayOut = lazy(() => import("./pages/adminPanel/AdminLayOut"));
 const AdminBlog = lazy(() => import("./pages/adminPanel/AdminBlog"));
 const AdminHome = lazy(() => import("./pages/adminPanel/AdminHome"));
 const AdminProfile = lazy(() => import("./pages/adminPanel/AdminProfile"));
+const AdminProductDetails = lazy(() => import("./pages/adminPanel/AdminProductDetails"));
+
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
 import Checkout from "./pages/Checkout";
@@ -127,10 +129,12 @@ function App({ dispatch, user }) {
         });
       });
   }, []);
-
+  const isAdminRoute = /^\/admin\/.*/.test(pathname);
   return (
     <>
-      {pathname !== "/not-found" && <Header />}
+      {pathname !== "/not-found" && !isAdminRoute && pathname !== "/admin" && (
+        <Header />
+      )}
       <ScrollToTop />
       <Routes>
         {routes.map((a) => (
@@ -157,7 +161,7 @@ function App({ dispatch, user }) {
             }
           />
           <Route
-            path="userList"
+            path="productList"
             element={
               <Suspense fallback={<Loading />}>
                 <AdminPanel />
@@ -165,7 +169,7 @@ function App({ dispatch, user }) {
             }
           />
           <Route
-            path="dashboard"
+            path="bloglist"
             element={
               <Suspense fallback={<Loading />}>
                 <AdminBlog />
@@ -180,12 +184,29 @@ function App({ dispatch, user }) {
               </Suspense>
             }
           />
+          <Route
+            path="profile"
+            element={
+              <Suspense fallback={<Loading />}>
+                <AdminProfile />
+              </Suspense>
+            }
+          />
+          <Route
+            path="productList/:id"
+            element={
+              <Suspense fallback={<Loading />}>
+                <AdminProductDetails />
+              </Suspense>
+            }
+          />
         </Route>
 
-        <Route path="*" element={<Navigate to="/not-found" />} />
+        {/* <Route path="*" element={<Navigate to="/not-found" />} /> */}
       </Routes>
-      {(pathname !== "/not-found" || pathname !== "/admin") && <Footer />}
-      {/* {pathname !== "/admin" && <Footer />} */}
+      {pathname !== "/not-found" && !isAdminRoute && pathname !== "/admin" && (
+        <Footer />
+      )}
     </>
   );
 }

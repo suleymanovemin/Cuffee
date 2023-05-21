@@ -32,29 +32,20 @@ function Products({ products, dispatch, basket, favorites }) {
 
   // Favorite
 
-
-
   const addToFavorite = (id) => {
-
     const favoriteProducts = [...favorites];
-
     const productIndex = favoriteProducts.findIndex((product) => product.id === id);
-  
     if (productIndex !== -1) {
       favoriteProducts.splice(productIndex, 1);
     } else {
-
       const productToAdd = products.find((product) => product.id === id);
-
       favoriteProducts.push(productToAdd);
     }
-  
     dispatch({
       type: "ADD_TO_FAVORITE",
       payload: favoriteProducts,
     });
     localStorage.setItem("favorites", JSON.stringify(favoriteProducts));
-    
   };
   
   return (
@@ -63,7 +54,7 @@ function Products({ products, dispatch, basket, favorites }) {
       <p>Bu həftə ən çox satılan məhsullar!</p>
       <div className="container products">
         
-        {products.slice(0, 8).map((a, index) => (
+        {products.slice(0,8).map((a, index) => (
           <div onClick={() => viewProduct(a.id)} key={a.id} className="product">
             <div className="productImage">
               <div className="demo">

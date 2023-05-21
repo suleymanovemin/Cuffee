@@ -16,6 +16,8 @@ import HotDealSwiper from "../components/HotDealSwiper";
 import HotDealSletter from "../components/HotDealSletter";
 
 import ScrollToTop from "react-scroll-to-top";
+import AccordionMenu from "../components/AccordionMenu";
+import HotProducts from "../components/HotProducts";
 function Home({ user }) {
   const notify = () =>
     toast.success("Abunə Olundu!", {
@@ -43,9 +45,10 @@ function Home({ user }) {
       <Products />
       <HotDeal />
       <LastBlogs />
+      {/* <AccordionMenu/> */}
       <HotDealSwiper />
+      <HotProducts />
       <HotDealSletter />
-
       <ToastContainer />
     </>
   );

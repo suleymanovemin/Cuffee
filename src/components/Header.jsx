@@ -331,7 +331,7 @@ function Header({
                   <span className="totalItems">{favorites.length}</span>
                 </>
               ) : (
-                <span className="favoriteActive"></span>
+                ""
               )}
             </Link>
 

@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import LoginModal from "../modals/LoginModal";
 function About() {
   return (
     <>
       <Helmet>
         <title>Haqqımızda</title>
       </Helmet>
-
+      <LoginModal />
       <div>
         <div className="blogsHeading">
           <h1>Haqqında</h1>

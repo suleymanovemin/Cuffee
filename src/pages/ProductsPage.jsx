@@ -6,6 +6,7 @@ import Quickview from "../modals/Quickview";
 import AddToCartModal from "../modals/AddToCartModal";
 import { Select } from "antd";
 import { Pagination } from "antd";
+import LoginModal from "../modals/LoginModal";
 function ProductsPage({
   products,
   dispatch,
@@ -186,6 +187,7 @@ function ProductsPage({
         <title>Məhsullar</title>
       </Helmet>
       <Quickview />
+      <LoginModal/>
       <AddToCartModal />
       <div className="productsPageHeading">
         <h1>Məhsullar</h1>

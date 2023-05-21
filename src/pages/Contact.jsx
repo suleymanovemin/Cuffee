@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { Slider } from "antd";
+import LoginModal from "../modals/LoginModal";
 function Contact() {
   const handleChange = (e) => {
     console.log(e);
   };
   return (
     <div>
+      <LoginModal />
       <div className="contactHeading">
         <div className="contactTitle">
           <h1>Əlaqə</h1>
