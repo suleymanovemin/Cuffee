@@ -22,7 +22,9 @@ const AdminLayOut = lazy(() => import("./pages/adminPanel/AdminLayOut"));
 const AdminBlog = lazy(() => import("./pages/adminPanel/AdminBlog"));
 const AdminHome = lazy(() => import("./pages/adminPanel/AdminHome"));
 const AdminProfile = lazy(() => import("./pages/adminPanel/AdminProfile"));
-const AdminProductDetails = lazy(() => import("./pages/adminPanel/AdminProductDetails"));
+const AdminProductDetails = lazy(() =>
+  import("./pages/adminPanel/AdminProductDetails")
+);
 
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
@@ -202,7 +204,7 @@ function App({ dispatch, user }) {
           />
         </Route>
 
-        {/* <Route path="*" element={<Navigate to="/not-found" />} /> */}
+        <Route path="*" element={<Navigate to="/not-found" />} />
       </Routes>
       {pathname !== "/not-found" && !isAdminRoute && pathname !== "/admin" && (
         <Footer />

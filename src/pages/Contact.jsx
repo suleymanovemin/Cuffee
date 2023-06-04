@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 import { Slider } from "antd";
 import LoginModal from "../modals/LoginModal";
 function Contact() {
-  const handleChange = (e) => {
-    console.log(e);
-  };
+
   return (
     <div>
       <LoginModal />
@@ -122,12 +120,7 @@ function Contact() {
       </div>
 
       <div>
-        <Slider
-          onChange={(e) => handleChange(e)}
-          range={{ draggableTrack: true }}
-          max={1000}
-          defaultValue={[10, 50]}
-        />
+       
       </div>
     </div>
   );

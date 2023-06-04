@@ -28,8 +28,12 @@ function Details({
     return null;
   }
   let { pathname } = useLocation();
+
+
   let { id } = useParams();
+
   let product = products.find((a) => a.id === +id);
+  
   const [simillarProduct, setSimillarProduct] = useState(
     products.filter(
       (a) => +a.category_id === +product?.category_id && +a.id !== +product?.id
@@ -46,6 +50,8 @@ function Details({
     }
   }, [product, navigate]);
 
+
+
   useEffect(() => {
     setSimillarProduct(
       products?.filter(
@@ -53,6 +59,8 @@ function Details({
       )
     );
   }, [quickViewProductId, id]);
+
+
   const [selectedImage, setSelectedImage] = useState(product?.image[0]);
   const [activeClass, setActiveClass] = useState(0);
   const changeActive = (a, index) => {

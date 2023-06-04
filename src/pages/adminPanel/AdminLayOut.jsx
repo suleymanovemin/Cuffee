@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { logOut } from "../../fireBase/fireBase";
 import { useNavigate, Navigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+
 import {
   HomeOutlined,
   DashboardOutlined,
@@ -36,55 +38,62 @@ function AdminLayOut({ user, dispatch }) {
     }
   }, [user, navigate]);
 
-
-  const HandleHome =()=>{
-    navigate("/")
-  }
-   const location = useLocation();
+  const HandleHome = () => {
+    navigate("/");
+  };
+  const location = useLocation();
   return (
-    <div className="adminLayOut">
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        <Menu
-          defaultSelectedKeys={["/admin"]}
-          onClick={({ key }) => {
-            if (key === "signout") {
-            } else {
-              navigate(key);
-            }
-          }}
-          items={[
-            { label: "Home", key: "/admin", icon: <HomeOutlined /> },
-            {
-              label: "Bloqlar",
-              key: "bloglist",
-              icon: <DashboardOutlined />,
-            },
-            {
-              label: "Users List",
-              key: "productList",
-              icon: <UnorderedListOutlined />,
-            },
-            { label: "Profil", key: "/admin/profile", icon: <UserOutlined /> },
-            {
-              label: "Çıxış Et",
-              key: "signout",
-              icon: <PoweroffOutlined />,
-              danger: true,
-              onClick: LogOut,
-            },
-            {
-              label: "Ana Səhifə",
-              key: "getHome",
-              icon: <HomeOutlined />,
-              
-              onClick:HandleHome
-            },
-          ]}
-        ></Menu>
+    <>
+      <Toaster position="top-right" />
 
-        <Outlet />
+      <div className="adminLayOut">
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <Menu
+            defaultSelectedKeys={["/admin"]}
+            onClick={({ key }) => {
+              if (key === "signout") {
+              } else {
+                navigate(key);
+              }
+            }}
+            items={[
+              { label: "Home", key: "/admin", icon: <HomeOutlined /> },
+              {
+                label: "Bloqlar",
+                key: "bloglist",
+                icon: <DashboardOutlined />,
+              },
+              {
+                label: "Product List",
+                key: "productList",
+                icon: <UnorderedListOutlined />,
+              },
+              {
+                label: "Profil",
+                key: "/admin/profile",
+                icon: <UserOutlined />,
+              },
+              {
+                label: "Ana Səhifə",
+                key: "/",
+                icon: <HomeOutlined />,
+
+                onClick: HandleHome,
+              },
+              {
+                label: "Çıxış Et",
+                key: "signout",
+                icon: <PoweroffOutlined />,
+                danger: true,
+                onClick: LogOut,
+              },
+            ]}
+          ></Menu>
+
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 const t = (a) => a;

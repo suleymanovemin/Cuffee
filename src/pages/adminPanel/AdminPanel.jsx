@@ -1,19 +1,22 @@
 import { connect } from "react-redux";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
+
 function AdminPanel({ products, category }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(6);
 
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
-  const displayedProducts = products.slice(startIndex, endIndex);
+  const displayedProducts =products.length && products.slice(startIndex, endIndex);
 
   const totalPages = Math.ceil(products.length / pageSize);
 
   const goToPage = (page) => {
     setCurrentPage(page);
   };
+  
   return (
     <div className="adminProductList">
       <div className="adminProdFilter">
@@ -27,7 +30,7 @@ function AdminPanel({ products, category }) {
             </tr>
           </thead>
           <tbody>
-            {displayedProducts.map((a) => {
+            {displayedProducts?.map((a) => {
               let ctg = category.find((b) => +b.id === a.category_id);
               return (
                 <tr key={a.id}>
@@ -42,7 +45,9 @@ function AdminPanel({ products, category }) {
                       <span>ID:{a.id}</span>
                     </div>
                   </td>
-                  <td>{ctg.name}</td>
+                  <td className="adminProdCtg">
+                    <Link to={`/admin/productList/${a.id}`}>{ctg.name}</Link>
+                  </td>
                   <td>
                     {a.inStock == true ? (
                       <p className="inStock">In Stock</p>

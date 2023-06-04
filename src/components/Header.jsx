@@ -105,6 +105,9 @@ function Header({
     const value = e.target.value;
     setSearchText(value);
     const filtered = products.filter((product) => {
+      if (value) {
+        value.toLowerCase();
+      }
       return product.title.toLowerCase().includes(value?.toLowerCase());
     });
     setFiltered(filtered);
@@ -151,8 +154,11 @@ function Header({
               <>
                 <div className="basketList">
                   <ul className="basketUl">
+
                     {basket?.map((a) => {
+                      
                       let basketList = products.find((t) => t.id === a.id);
+
                       return (
                         <li key={a.id}>
                           <span className="cartCounter"></span>
@@ -163,6 +169,7 @@ function Header({
                             <h3>{basketList?.title.slice(0, 15)}</h3>
                             <p>{basketList?.price} ₼</p>
                             <p>Ədəd : {a.count}</p>
+
                           </div>
                           <div
                             onClick={() => deleteProduct(a.id)}

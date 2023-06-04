@@ -1,7 +1,10 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+
+
 function Products({ products, dispatch, basket, favorites }) {
+  
   const viewProduct = (id) => {
     dispatch({
       type: "SET_VIEW_ID",
@@ -15,18 +18,26 @@ function Products({ products, dispatch, basket, favorites }) {
       payload: true,
     });
   };
+
   const visibleAddModal = (id) => {
+
+
     const newBasket = [...basket];
     const index = newBasket.findIndex((item) => item.id === id);
 
     if (index >= 0) {
+      
       newBasket[index].count += 1;
+
     } else {
       newBasket.push({ id: id, count: 1 });
     }
+
     localStorage.setItem("basket", JSON.stringify(newBasket));
     dispatch({ type: "SET_BASKET", payload: newBasket });
     dispatch({ type: "SET_VIEW_ADD_MODAL", payload: true });
+    
+
   };
 
 

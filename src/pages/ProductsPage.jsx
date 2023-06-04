@@ -7,6 +7,8 @@ import AddToCartModal from "../modals/AddToCartModal";
 import { Select } from "antd";
 import { Pagination } from "antd";
 import LoginModal from "../modals/LoginModal";
+import { Slider } from "antd";
+
 function ProductsPage({
   products,
   dispatch,
@@ -32,6 +34,23 @@ function ProductsPage({
       const filteredProducts = products.filter((a) => a.category_id === +id);
       setTempProducts(filteredProducts);
     }
+  };
+
+
+  // Price range
+  
+  const handleChange = (price) => {
+    const filteredProducts = [...products];
+    // filteredProducts.sort((a, b) => a.price - b.price);
+
+    const minPrice = price[0];
+    const maxPrice = price[1];
+
+    const filteredByPrice = filteredProducts.filter(
+      (product) => product.price >= minPrice && product.price <= maxPrice
+    );
+
+    setTempProducts(filteredByPrice);
   };
 
   const [previousFilter, setPreviousFilter] = useState(null);
@@ -187,7 +206,7 @@ function ProductsPage({
         <title>Məhsullar</title>
       </Helmet>
       <Quickview />
-      <LoginModal/>
+      <LoginModal />
       <AddToCartModal />
       <div className="productsPageHeading">
         <h1>Məhsullar</h1>
@@ -274,21 +293,13 @@ function ProductsPage({
               </div>
               <div className="filtersCategories">
                 <ul className="priceFiltered">
-                  <li
-                    onClick={() => {
-                      handleFilterChange(10);
-                    }}
-                  >
+                  <li>
                     <input id="inp1" type="checkbox" />
                     <label htmlFor="inp1">
                       <p onClick={() => handlePriceFilter(10, 20)}>10 - 20</p>
                     </label>
                   </li>
-                  <li
-                    onClick={() => {
-                      handleFilterChange(20);
-                    }}
-                  >
+                  <li>
                     <input id="inp2" type="checkbox" />
                     <label htmlFor="inp2">
                       <p onClick={() => handlePriceFilter(20, 40)}>20 - 40</p>
@@ -307,6 +318,12 @@ function ProductsPage({
                     </label>
                   </li>
                 </ul>
+                <Slider
+                  onChange={(e) => handleChange(e)}
+                  range={{ draggableTrack: true }}
+                  max={1000}
+                  defaultValue={[10, 250]}
+                />
               </div>
             </div>
           </div>
