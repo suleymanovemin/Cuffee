@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import LoginModal from "../modals/LoginModal";
 import "react-toastify/dist/ReactToastify.css";
-function BlogDetails({ blogs }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+function BlogDetails({ blogs,user }) {
+  const [name, setName] = useState(user?.displayName ?? "");
+  const [email, setEmail] = useState( user?.email ?? "" );
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   let { id } = useParams();
@@ -57,6 +57,7 @@ function BlogDetails({ blogs }) {
           comment,
           date: currentDate,
           blog_id: id,
+          photoImg:user.photoURL?user.photoURL:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png"
         }),
       })
         .then((response) => response.json())
@@ -119,7 +120,7 @@ function BlogDetails({ blogs }) {
                   <div key={com.id} className="commentDetail">
                     <div className="userProfile">
                       <div className="userPhoto">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png" />
+                        <img src={com?.photoImg} />
                       </div>
                       <div className="userName">
                         <h5>{com?.name}</h5>

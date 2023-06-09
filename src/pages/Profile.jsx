@@ -26,11 +26,13 @@ function Profile({ dispatch, user }) {
     localStorage.removeItem("user");
     navigate("/");
   };
-
-  if (user.email === "admin@gmail.com") {
+  if (user?.email === "admin@gmail.com") {
     navigate("/admin");
   }
-
+  if (!user) {
+    navigate("/");
+    return;
+  }
   const [displayName, setDisplayName] = useState(user.displayName || "");
   const [avatar, setAvatar] = useState(user.photoURL || "");
 
@@ -58,10 +60,10 @@ function Profile({ dispatch, user }) {
           <Toaster position="top-right" />
           <div className="userProfile">
             <div className="userDetails">
-              {user.photoURL && <img src={user.photoURL} />}
+              {user?.photoURL && <img src={user?.photoURL} />}
               <div>
-                <h4>{user.displayName}</h4>
-                <h5>{user.email}</h5>
+                <h4>{user?.displayName}</h4>
+                <h5>{user?.email}</h5>
               </div>
             </div>
             {!user.emailVerified && (

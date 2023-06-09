@@ -59,6 +59,9 @@ function Header({
       navigate("/admin", {
         replace: true,
       });
+    } else if (!user.email) {
+      navigate("/profile");
+      return;
     } else if (user?.email !== "admin@gmail.com") {
       navigate("/profile", {
         replace: true,
@@ -154,9 +157,7 @@ function Header({
               <>
                 <div className="basketList">
                   <ul className="basketUl">
-
                     {basket?.map((a) => {
-                      
                       let basketList = products.find((t) => t.id === a.id);
 
                       return (
@@ -169,7 +170,6 @@ function Header({
                             <h3>{basketList?.title.slice(0, 15)}</h3>
                             <p>{basketList?.price} ₼</p>
                             <p>Ədəd : {a.count}</p>
-
                           </div>
                           <div
                             onClick={() => deleteProduct(a.id)}

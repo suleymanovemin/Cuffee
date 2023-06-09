@@ -15,6 +15,7 @@ import verify from "../icons/verified.png";
 import Quickview from "../modals/Quickview";
 import LoginModal from "../modals/LoginModal";
 import AddToCartModal from "../modals/AddToCartModal";
+import ReactImageZoom from "react-image-zoom";
 
 function Details({
   products,
@@ -23,17 +24,15 @@ function Details({
   quickViewProductId,
   basket,
   favorites,
+  user
 }) {
   if (!products?.length) {
     return null;
   }
   let { pathname } = useLocation();
-
-
   let { id } = useParams();
-
   let product = products.find((a) => a.id === +id);
-  
+  let say = basket.find((a) => a.id === +id);
   const [simillarProduct, setSimillarProduct] = useState(
     products.filter(
       (a) => +a.category_id === +product?.category_id && +a.id !== +product?.id
@@ -46,11 +45,9 @@ function Details({
   useEffect(() => {
     if (!product) {
       navigate("/not-found");
-      return
+      return;
     }
   }, [product, navigate]);
-
-
 
   useEffect(() => {
     setSimillarProduct(
@@ -59,7 +56,6 @@ function Details({
       )
     );
   }, [quickViewProductId, id]);
-
 
   const [selectedImage, setSelectedImage] = useState(product?.image[0]);
   const [activeClass, setActiveClass] = useState(0);
@@ -117,7 +113,6 @@ function Details({
     }, 1500);
   };
 
-
   useEffect(() => {
     const storedBasket = JSON.parse(localStorage.getItem("basket"));
     if (storedBasket) {
@@ -127,7 +122,6 @@ function Details({
       });
     }
   }, []);
-
 
   const notAddToBasket = () => {
     if (delay) {
@@ -139,7 +133,6 @@ function Details({
       setDelay(false);
     }, 1500);
   };
-
 
   const notify = () =>
     toast.success("Məhsul Səbətə Əlavə edildi!", {
@@ -153,7 +146,6 @@ function Details({
       theme: "light",
     });
 
-    
   const warning = () =>
     toast.error("Mehsul Stokda Yoxdur", {
       position: "bottom-right",
@@ -215,6 +207,88 @@ function Details({
       });
     }
   }, []);
+
+  const props = {
+    width: 610,
+    height: 610,
+    zoomWidth: 400,
+    zoomHeigth: 250,
+    img: selectedImage,
+  };
+
+  const [activeTab, setActiveTab] = useState('description');
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
+// 
+
+// comments
+const addComm = () =>
+toast.success("Şərh Əlavə edildi!", {
+  position: "bottom-right",
+  autoClose: 4000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: false,
+  draggable: true,
+  progress: undefined,
+  theme: "light",
+});
+
+const [name, setName] = useState(user?.displayName ?? "");
+const [email, setEmail] = useState( user?.email ?? "" );
+const [comment, setComment] = useState("");
+const [comments, setComments] = useState([]);
+
+const comm = comments.filter((a) => +a.product_id === +id);
+
+useEffect(() => {
+  fetch("http://localhost:3000/productComments")
+    .then((a) => a.json())
+    .then((a) => setComments(a));
+}, []);
+const handleCommentSubmit = (e) => {
+  e.preventDefault();
+
+  if (name !== "" && email !== "" && comment !== "") {
+    const now = new Date();
+    const day = now.getDate() < 10 ? "0" + now.getDate() : now.getDate();
+    const month =
+      now.getMonth() + 1 < 10
+        ? "0" + (now.getMonth() + 1)
+        : now.getMonth() + 1;
+    const year = now.getFullYear();
+    const hours = now.getHours() < 10 ? "0" + now.getHours() : now.getHours();
+    const minutes =
+      now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
+    const seconds =
+      now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds();
+    const currentDate = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
+
+    fetch(`http://localhost:3000/productComments`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        email,
+        comment,
+        date: currentDate,
+        product_id: id,
+        photoImg:user.photoURL?user.photoURL:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png"
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        addComm();
+        setComments([...comments, data]);
+      })
+      .catch((error) => console.log(error));
+  }
+  setName("");
+  setEmail("");
+  setComment("");
+};
   return (
     <>
       <Quickview />
@@ -226,7 +300,8 @@ function Details({
       <div className="container ProductDetail">
         <div className="detailImage">
           <div>
-            <img src={selectedImage} alt="" />
+            <ReactImageZoom {...props} />,
+            {/* <img src={selectedImage} alt="" /> */}
           </div>
           <div className="otherImages">
             {product?.image.map((a, index) => (
@@ -258,6 +333,13 @@ function Details({
             </p>
             <hr />
             <p>{product?.content}</p>
+            {say && (
+              <div className="say">
+                <p>
+                  Bu mehsuldan sebetde <span>{say.count}</span> eded var.{" "}
+                </p>
+              </div>
+            )}
             <div className="addToCart">
               <div className="count">
                 <h1>{prodCount}</h1>
@@ -311,6 +393,122 @@ function Details({
         <div className="featured">
           <img src={verify} alt="" />
           <h3>100% TƏHLÜKƏSİZ ÖDƏMƏ</h3>
+        </div>
+      </div>
+      <div className="descriptions container">
+        <ul>
+          <li
+            className={activeTab === 'description' ? 'active' : ''}
+            onClick={() => handleTabClick('description')}
+          >
+            Description
+          </li>
+          <li
+            className={activeTab === 'comments' ? 'active' : ''}
+            onClick={() => handleTabClick('comments')}
+          >
+            Comments
+          </li>
+        </ul>
+
+        <div
+          className={`productDescription ${
+            activeTab === 'description' ? 'active' : ''
+          }`}
+        >
+           <div className="container about">
+          <div className="aboutLeft">
+            <img src="https://cdn.shopify.com/s/files/1/0562/7736/8889/files/instagram9.jpg?v=1639619482" />
+          </div>
+          <div className="aboutRight">
+            <div className="aboutInfo">
+              <h3>Things You Need To Know</h3>
+            </div>
+            <div className="aboutIntro">
+              <p>
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+              </p>
+            </div>
+          </div>
+          <div className="aboutLeft">
+            <div className="aboutInfo">
+              <h3>Things You Need To Know</h3>
+            </div>
+            <div className="aboutIntro">
+              <p>
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+              </p>
+            </div>
+          </div>
+          <div className="aboutRight">
+            <img src="https://cdn.shopify.com/s/files/1/0562/7736/8889/files/instagram7.jpg?v=1639619482" />
+          </div>
+        </div>
+        </div>
+        <div
+          className={`productComments ${
+            activeTab === 'comments' ? 'active' : ''
+          }`}
+        >
+               <div className="comments">
+            <h3>Şərhlər</h3>
+            {comm.length > 0
+              ? comm.map((com) => (
+                  <div key={com.id} className="commentDetail">
+                    <div className="userProfile">
+                      <div className="userPhoto">
+                        <img src={com?.photoImg} />
+                      </div>
+                      <div className="userName">
+                        <h5>{com?.name}</h5>
+                        <span>{com?.date}</span>
+                      </div>
+                    </div>
+                    <div className="comment">
+                      <p>{com?.comment}</p>
+                    </div>
+                  </div>
+                ))
+              : ""}
+          </div>
+          <h2>Şərh Yaz</h2>
+          <div className="addToComments">
+            <form onSubmit={(e) => handleCommentSubmit(e)}>
+              <label htmlFor="name">Ad Soyad</label>
+              <input
+                value={name}
+                disabled={user}
+                placeholder="Ad Soyad"
+                onChange={(e) => setName(e.target.value)}
+                required
+                id="name"
+                type="text"
+              />
+              <label htmlFor="email">E-mail </label>
+              <input
+                value={email}
+                disabled={user}
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+                id="email"
+                required
+                type="email"
+              />
+              <label htmlFor="comment">Şərhiniz</label>
+              <textarea
+                value={comment}
+                placeholder="Şərhiniz..."
+                onChange={(e) => setComment(e.target.value)}
+                required
+                id="comment"
+              />
+              <input
+                style={{ cursor: "pointer" }}
+                onClick={(e) => handleCommentSubmit(e)}
+                type="submit"
+              />
+            </form>
+          </div>
         </div>
       </div>
       <div className="container simillarProduct">
