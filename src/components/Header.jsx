@@ -79,7 +79,7 @@ function Header({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 400) {
+      if (window.pageYOffset > 500) {
         setNavbarVisible(true);
       } else {
         setNavbarVisible(false);

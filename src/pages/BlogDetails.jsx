@@ -140,6 +140,7 @@ function BlogDetails({ blogs,user }) {
               <label htmlFor="name">Ad Soyad</label>
               <input
                 value={name}
+                disabled={user}
                 placeholder="Ad Soyad"
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -149,6 +150,7 @@ function BlogDetails({ blogs,user }) {
               <label htmlFor="email">E-mail </label>
               <input
                 value={email}
+                disabled={user}
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
                 id="email"

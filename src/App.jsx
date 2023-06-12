@@ -6,6 +6,7 @@ import { Suspense, lazy } from "react";
 import { connect } from "react-redux";
 import Header from "./components/Header";
 import Loading from "./components/Loading";
+import { AnimatePresence, motion } from "framer-motion";
 const Details = lazy(() => import("./pages/Details"));
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -132,80 +133,96 @@ function App({ dispatch, user }) {
       });
   }, []);
   const isAdminRoute = /^\/admin\/.*/.test(pathname);
+  const location = useLocation();
   return (
     <>
       {pathname !== "/not-found" && !isAdminRoute && pathname !== "/admin" && (
         <Header />
       )}
       <ScrollToTop />
-      <Routes>
-        {routes.map((a) => (
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          {routes.map((a) => (
+            <Route
+              key={a.path}
+              path={a.path}
+              element={
+                <Suspense fallback={<Loading />}>
+                  {
+                    <motion.div
+                      transition={{ duration: 0.3 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      {a.element}
+                    </motion.div>
+                  }
+                </Suspense>
+              }
+            />
+          ))}
           <Route
-            key={a.path}
-            path={a.path}
-            element={<Suspense fallback={<Loading />}>{a.element}</Suspense>}
-          />
-        ))}
-        <Route
-          path="/admin"
-          element={
-            <Suspense fallback={<Loading />}>
-              <AdminLayOut />
-            </Suspense>
-          }
-        >
-          <Route
-            index={true}
+            path="/admin"
             element={
               <Suspense fallback={<Loading />}>
-                <AdminHome />
+                <AdminLayOut />
               </Suspense>
             }
-          />
-          <Route
-            path="productList"
-            element={
-              <Suspense fallback={<Loading />}>
-                <AdminPanel />
-              </Suspense>
-            }
-          />
-          <Route
-            path="bloglist"
-            element={
-              <Suspense fallback={<Loading />}>
-                <AdminBlog />
-              </Suspense>
-            }
-          />
-          <Route
-            path="profile"
-            element={
-              <Suspense fallback={<Loading />}>
-                <AdminProfile />
-              </Suspense>
-            }
-          />
-          <Route
-            path="profile"
-            element={
-              <Suspense fallback={<Loading />}>
-                <AdminProfile />
-              </Suspense>
-            }
-          />
-          <Route
-            path="productList/:id"
-            element={
-              <Suspense fallback={<Loading />}>
-                <AdminProductDetails />
-              </Suspense>
-            }
-          />
-        </Route>
+          >
+            <Route
+              index={true}
+              element={
+                <Suspense fallback={<Loading />}>
+                  <AdminHome />
+                </Suspense>
+              }
+            />
+            <Route
+              path="productList"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <AdminPanel />
+                </Suspense>
+              }
+            />
+            <Route
+              path="bloglist"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <AdminBlog />
+                </Suspense>
+              }
+            />
+            <Route
+              path="profile"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <AdminProfile />
+                </Suspense>
+              }
+            />
+            <Route
+              path="profile"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <AdminProfile />
+                </Suspense>
+              }
+            />
+            <Route
+              path="productList/:id"
+              element={
+                <Suspense fallback={<Loading />}>
+                  <AdminProductDetails />
+                </Suspense>
+              }
+            />
+          </Route>
 
-        <Route path="*" element={<Navigate to="/not-found" />} />
-      </Routes>
+          <Route path="*" element={<Navigate to="/not-found" />} />
+        </Routes>
+      </AnimatePresence>
       {pathname !== "/not-found" && !isAdminRoute && pathname !== "/admin" && (
         <Footer />
       )}

@@ -24,7 +24,7 @@ function Details({
   quickViewProductId,
   basket,
   favorites,
-  user
+  user,
 }) {
   if (!products?.length) {
     return null;
@@ -216,79 +216,82 @@ function Details({
     img: selectedImage,
   };
 
-  const [activeTab, setActiveTab] = useState('description');
+  const [activeTab, setActiveTab] = useState("description");
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-// 
+  //
 
-// comments
-const addComm = () =>
-toast.success("Şərh Əlavə edildi!", {
-  position: "bottom-right",
-  autoClose: 4000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: false,
-  draggable: true,
-  progress: undefined,
-  theme: "light",
-});
+  // comments
+  const addComm = () =>
+    toast.success("Şərh Əlavə edildi!", {
+      position: "bottom-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
-const [name, setName] = useState(user?.displayName ?? "");
-const [email, setEmail] = useState( user?.email ?? "" );
-const [comment, setComment] = useState("");
-const [comments, setComments] = useState([]);
+  const [name, setName] = useState(user?.displayName ?? "");
+  const [email, setEmail] = useState(user?.email ?? "");
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
 
-const comm = comments.filter((a) => +a.product_id === +id);
+  const comm = comments.filter((a) => +a.product_id === +id);
 
-useEffect(() => {
-  fetch("http://localhost:3000/productComments")
-    .then((a) => a.json())
-    .then((a) => setComments(a));
-}, []);
-const handleCommentSubmit = (e) => {
-  e.preventDefault();
+  useEffect(() => {
+    fetch("http://localhost:3000/productComments")
+      .then((a) => a.json())
+      .then((a) => setComments(a));
+  }, []);
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
 
-  if (name !== "" && email !== "" && comment !== "") {
-    const now = new Date();
-    const day = now.getDate() < 10 ? "0" + now.getDate() : now.getDate();
-    const month =
-      now.getMonth() + 1 < 10
-        ? "0" + (now.getMonth() + 1)
-        : now.getMonth() + 1;
-    const year = now.getFullYear();
-    const hours = now.getHours() < 10 ? "0" + now.getHours() : now.getHours();
-    const minutes =
-      now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
-    const seconds =
-      now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds();
-    const currentDate = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
+    if (name !== "" && email !== "" && comment !== "") {
+      const now = new Date();
+      const day = now.getDate() < 10 ? "0" + now.getDate() : now.getDate();
+      const month =
+        now.getMonth() + 1 < 10
+          ? "0" + (now.getMonth() + 1)
+          : now.getMonth() + 1;
+      const year = now.getFullYear();
+      const hours = now.getHours() < 10 ? "0" + now.getHours() : now.getHours();
+      const minutes =
+        now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
+      const seconds =
+        now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds();
+      const currentDate = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
 
-    fetch(`http://localhost:3000/productComments`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        comment,
-        date: currentDate,
-        product_id: id,
-        photoImg:user.photoURL?user.photoURL:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png"
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        addComm();
-        setComments([...comments, data]);
+      fetch(`http://localhost:3000/productComments`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          comment,
+          date: currentDate,
+          product_id: id,
+          photoImg: user.photoURL
+            ? user.photoURL
+            : "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+        }),
       })
-      .catch((error) => console.log(error));
-  }
-  setName("");
-  setEmail("");
-  setComment("");
-};
+        .then((response) => response.json())
+        .then((data) => {
+          addComm();
+          setComments([...comments, data]);
+        })
+
+        .catch((error) => console.log(error));
+    }
+    setName("");
+    setEmail("");
+    setComment("");
+  };
   return (
     <>
       <Quickview />
@@ -333,13 +336,13 @@ const handleCommentSubmit = (e) => {
             </p>
             <hr />
             <p>{product?.content}</p>
-            {say && (
-              <div className="say">
-                <p>
-                  Bu mehsuldan sebetde <span>{say.count}</span> eded var.{" "}
-                </p>
-              </div>
-            )}
+
+            <div className={`say ${say ? "active" : ""}`}>
+              <p>
+                Bu mehsuldan sebetde <span>{say?.count}</span> eded var.{" "}
+              </p>
+            </div>
+
             <div className="addToCart">
               <div className="count">
                 <h1>{prodCount}</h1>
@@ -398,14 +401,14 @@ const handleCommentSubmit = (e) => {
       <div className="descriptions container">
         <ul>
           <li
-            className={activeTab === 'description' ? 'active' : ''}
-            onClick={() => handleTabClick('description')}
+            className={activeTab === "description" ? "active" : ""}
+            onClick={() => handleTabClick("description")}
           >
             Description
           </li>
           <li
-            className={activeTab === 'comments' ? 'active' : ''}
-            onClick={() => handleTabClick('comments')}
+            className={activeTab === "comments" ? "active" : ""}
+            onClick={() => handleTabClick("comments")}
           >
             Comments
           </li>
@@ -413,44 +416,54 @@ const handleCommentSubmit = (e) => {
 
         <div
           className={`productDescription ${
-            activeTab === 'description' ? 'active' : ''
+            activeTab === "description" ? "active" : ""
           }`}
         >
-           <div className="container about">
-          <div className="aboutLeft">
-            <img src="https://cdn.shopify.com/s/files/1/0562/7736/8889/files/instagram9.jpg?v=1639619482" />
-          </div>
-          <div className="aboutRight">
-            <div className="aboutInfo">
-              <h3>Things You Need To Know</h3>
+          <div className="container about">
+            <div className="aboutLeft">
+              <img src="https://cdn.shopify.com/s/files/1/0562/7736/8889/files/instagram9.jpg?v=1639619482" />
             </div>
-            <div className="aboutIntro">
-              <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-              </p>
+            <div className="aboutRight">
+              <div className="aboutInfo">
+                <h3>Things You Need To Know</h3>
+              </div>
+              <div className="aboutIntro">
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don't look
+                  even slightly believable. If you are going to use a passage of
+                  Lorem Ipsum, you need to be sure there isn't anything
+                  embarrassing hidden in the middle of text.
+                </p>
+              </div>
+            </div>
+            <div className="aboutLeft">
+              <div className="aboutInfo">
+                <h3>Things You Need To Know</h3>
+              </div>
+              <div className="aboutIntro">
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don't look
+                  even slightly believable. If you are going to use a passage of
+                  Lorem Ipsum, you need to be sure there isn't anything
+                  embarrassing hidden in the middle of text.
+                </p>
+              </div>
+            </div>
+            <div className="aboutRight">
+              <img src="https://cdn.shopify.com/s/files/1/0562/7736/8889/files/instagram7.jpg?v=1639619482" />
             </div>
           </div>
-          <div className="aboutLeft">
-            <div className="aboutInfo">
-              <h3>Things You Need To Know</h3>
-            </div>
-            <div className="aboutIntro">
-              <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-              </p>
-            </div>
-          </div>
-          <div className="aboutRight">
-            <img src="https://cdn.shopify.com/s/files/1/0562/7736/8889/files/instagram7.jpg?v=1639619482" />
-          </div>
-        </div>
         </div>
         <div
           className={`productComments ${
-            activeTab === 'comments' ? 'active' : ''
+            activeTab === "comments" ? "active" : ""
           }`}
         >
-               <div className="comments">
+          <div className="comments">
             <h3>Şərhlər</h3>
             {comm.length > 0
               ? comm.map((com) => (

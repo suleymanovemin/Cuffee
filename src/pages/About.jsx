@@ -38,6 +38,11 @@ function About() {
                 dadlandırıcılar kimi müştərilərimizə xidmət edirik.
               </p>
             </div>
+            <div className="blogDetail">
+              <Link to="/products">
+                <span>ƏTRAFLI BAX &rarr;</span>
+              </Link>
+            </div>
           </div>
           <div className="aboutRight">
             <img src="https://cdn.shopify.com/s/files/1/0606/8191/2503/files/about1.jpg?v=1659671796" />
@@ -69,6 +74,11 @@ function About() {
                 Siz də keyfiyyətli kofe və dadlı qəlyanaltıların tadını çıxarmaq
                 istəyirsinizsə, sizi kofe mağazamıza gözləyirik!
               </p>
+            </div>
+            <div className="blogDetail">
+              <Link to="/products">
+                <span>ƏTRAFLI BAX &rarr;</span>
+              </Link>
             </div>
           </div>
         </div>

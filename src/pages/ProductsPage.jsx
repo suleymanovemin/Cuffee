@@ -36,11 +36,19 @@ function ProductsPage({
     }
   };
 
+  //
+
+  const [activeIndex, setActiveIndex] = useState(4);
+
+  const handleClick = (index) => {
+    setActiveIndex(index);
+  };
 
   // Price range
-  
+
   const handleChange = (price) => {
     const filteredProducts = [...products];
+
     // filteredProducts.sort((a, b) => a.price - b.price);
 
     const minPrice = price[0];
@@ -165,12 +173,9 @@ function ProductsPage({
   // Multi Filter
 
   useEffect(() => {
-    // Herhangi bir filtre değişikliği olduğunda ürünleri filtreleyin
     if (filters.length === 0) {
-      // Hiçbir filtre seçilmediyse tüm ürünleri gösterin
       setFilteredProducts(products);
     } else {
-      // Seçilen filtrelerle ürünleri filtreleyin
       const filtered = products.filter((product) =>
         filters.every((filter) => product.tags.includes(filter))
       );
@@ -224,51 +229,84 @@ function ProductsPage({
             <i className="fa-solid fa-filter"></i>
             <p>Filter</p>
           </div>
-          <div className="sortProducts">
-            <Select
-              showSearch
-              style={{
-                width: 200,
-              }}
-              placeholder="Search to Select"
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                (option?.label ?? "").includes(input)
-              }
-              onChange={(e) => {
-                sortProducts(e);
-              }}
-              // filterSort={(optionA, optionB) =>
-              //   (optionA?.label ?? "")
-              //     .toLowerCase()
-              //     .localeCompare((optionB?.label ?? "").toLowerCase())
-              // }
-              options={[
-                {
-                  value: "1",
-                  label: "Normal",
-                },
-                {
-                  value: "2",
-                  label: "A-dan Z-yə",
-                },
-                {
-                  value: "3",
-                  label: "Z-dən A-ya",
-                },
-                {
-                  value: "4",
-                  label: "Ucuzdan Bahaya",
-                },
-                {
-                  value: "5",
-                  label: "Bahadan Ucuza",
-                },
-              ]}
-            />
+          <div className="gridSettings">
+            <div className="gridDiv">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="48"
+                viewBox="0 -960 960 960"
+                width="48"
+              >
+                <path d="M120-510v-330h330v330H120Zm0 390v-330h330v330H120Zm390-390v-330h330v330H510Zm0 390v-330h330v330H510ZM180-570h210v-210H180v210Zm390 0h210v-210H570v210Zm0 390h210v-210H570v210Zm-390 0h210v-210H180v210Zm390-390Zm0 180Zm-180 0Zm0-180Z" />
+              </svg>
+              <ul className="gridChange">
+                <li
+                  className={activeIndex === 2 ? "active" : ""}
+                  onClick={() => handleClick(2)}
+                >
+                  2
+                </li>
+                <li
+                  className={activeIndex === 3 ? "active" : ""}
+                  onClick={() => handleClick(3)}
+                >
+                  3
+                </li>
+                <li
+                  className={activeIndex === 4 ? "active" : ""}
+                  onClick={() => handleClick(4)}
+                >
+                  4
+                </li>
+
+              </ul>
+            </div>
+            <div className="sortProducts">
+              <Select
+                showSearch
+                style={{
+                  width: 200,
+                }}
+                placeholder="Search to Select"
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  (option?.label ?? "").includes(input)
+                }
+                onChange={(e) => {
+                  sortProducts(e);
+                }}
+                // filterSort={(optionA, optionB) =>
+                //   (optionA?.label ?? "")
+                //     .toLowerCase()
+                //     .localeCompare((optionB?.label ?? "").toLowerCase())
+                // }
+                options={[
+                  {
+                    value: "1",
+                    label: "Normal",
+                  },
+                  {
+                    value: "2",
+                    label: "A-dan Z-yə",
+                  },
+                  {
+                    value: "3",
+                    label: "Z-dən A-ya",
+                  },
+                  {
+                    value: "4",
+                    label: "Ucuzdan Bahaya",
+                  },
+                  {
+                    value: "5",
+                    label: "Bahadan Ucuza",
+                  },
+                ]}
+              />
+            </div>
           </div>
         </div>
-        <div className=" productsPage">
+        <div className="productsPage">
           <div
             className={`productsFilters ${showFilterCatagory ? "active" : ""}`}
           >
@@ -328,7 +366,10 @@ function ProductsPage({
             </div>
           </div>
           <div className="defoo">
-            <div className="products ">
+            <div
+              style={{ gridTemplateColumns: `repeat(${activeIndex},1fr)` }}
+              className="products "
+            >
               {paginatedProducts.map((a) => (
                 <div
                   onClick={() => viewProduct(a.id)}
@@ -418,7 +459,10 @@ function ProductsPage({
                   </div>
                   {a.oldPrice ? (
                     <div
-                      style={{ right: showFilterCatagory ? "-80px" : "-105px" }}
+                    style={{
+                      right: showFilterCatagory ? "-80px" : activeIndex === 2 ? "-130px" : "-105px",
+                      top: activeIndex === 3 ? "50px" : activeIndex === 2 ? "80px" : ""
+                    }}
                       className="discound"
                     >
                       <p>

@@ -116,7 +116,7 @@ function BasketPage({ basket, products, dispatch }) {
                   <Link to="/products">ALIŞ-VERİŞƏ DAVAM ET</Link>
                 </>
               ) : (
-                <Link to="/products">ALIŞ-VERİŞƏ BAŞLA</Link>
+                <Link to="/checkout">ALIŞ-VERİŞƏ BAŞLA</Link>
               )}
             </div>
           </>

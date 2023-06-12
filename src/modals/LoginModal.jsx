@@ -83,7 +83,7 @@ function LoginModal({ isLoginModalOpen, dispatch, user }) {
             e.stopPropagation();
           }}
           className="loginForm"
-          style={{ top: `${scrollY === 0 ? 50 : 150}px` }}
+          // style={{ top: `${scrollY === 0 ? 50 : 150}px` }}
         >
           <div
             style={{ display: showRegister ? "none" : "block" }}
