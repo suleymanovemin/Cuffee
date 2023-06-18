@@ -91,6 +91,7 @@ function Details({
   const addToProd = (c) => {
     setProdCount((a) => (a + c < 1 ? 1 : a + c));
   };
+  const [activeSize, setActiveSize] = useState(null);
 
   const addToBasket = (id) => {
     if (delay) {
@@ -98,11 +99,11 @@ function Details({
     }
     setDelay(true);
     const newBasket = [...basket];
-    const index = newBasket.findIndex((item) => item.id === id);
+    const index = newBasket.findIndex((item) => item.id === id ?? item.size );
     if (index >= 0) {
       newBasket[index].count += prodCount;
     } else {
-      newBasket.push({ id: id, count: prodCount });
+      newBasket.push({ id: id, count: prodCount, size: activeSize });
     }
     setProdCount(1);
     localStorage.setItem("basket", JSON.stringify(newBasket));
@@ -270,8 +271,8 @@ function Details({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name,
-          email,
+          name: user?.displayName ? user?.displayName : name,
+          email: user?.email ? user?.email : email,
           comment,
           date: currentDate,
           product_id: id,
@@ -288,10 +289,15 @@ function Details({
 
         .catch((error) => console.log(error));
     }
-    setName("");
-    setEmail("");
     setComment("");
   };
+
+  // Size active
+
+  const handleSizeClick = (size) => {
+    setActiveSize(size);
+  };
+
   return (
     <>
       <Quickview />
@@ -336,6 +342,18 @@ function Details({
             </p>
             <hr />
             <p>{product?.content}</p>
+
+            <div className="sizes">
+              {product.size.map((size, index) => (
+                <p
+                  key={index}
+                  className={activeSize === size ? "active" : ""}
+                  onClick={() => handleSizeClick(size)}
+                >
+                  {size}
+                </p>
+              ))}
+            </div>
 
             <div className={`say ${say ? "active" : ""}`}>
               <p>

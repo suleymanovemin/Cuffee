@@ -170,6 +170,7 @@ function Header({
                             <h3>{basketList?.title.slice(0, 15)}</h3>
                             <p>{basketList?.price} ₼</p>
                             <p>Ədəd : {a.count}</p>
+                          {a.size && <p>Ölçü :{a?.size}</p>}
                           </div>
                           <div
                             onClick={() => deleteProduct(a.id)}
