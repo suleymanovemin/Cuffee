@@ -132,6 +132,7 @@ function Header({
     }
   }, [pathname]);
   return (
+    
     <>
       <div
         onClick={showCartModal}
@@ -157,6 +158,7 @@ function Header({
               <>
                 <div className="basketList">
                   <ul className="basketUl">
+                    
                     {basket?.map((a) => {
                       let basketList = products.find((t) => t.id === a.id);
 

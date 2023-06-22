@@ -99,7 +99,7 @@ function Details({
     }
     setDelay(true);
     const newBasket = [...basket];
-    const index = newBasket.findIndex((item) => item.id === id ?? item.size );
+    const index = newBasket.findIndex((item) => item.id === id);
     if (index >= 0) {
       newBasket[index].count += prodCount;
     } else {
@@ -344,7 +344,7 @@ function Details({
             <p>{product?.content}</p>
 
             <div className="sizes">
-              {product.size.map((size, index) => (
+              {product.size?.map((size, index) => (
                 <p
                   key={index}
                   className={activeSize === size ? "active" : ""}

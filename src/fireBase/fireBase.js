@@ -77,7 +77,6 @@ export const update = async (data) => {
 // Email Verification
 
 export const emailVerification = async () => {
-
   try {
     
     await sendEmailVerification(auth.currentUser);
