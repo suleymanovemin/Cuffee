@@ -20,13 +20,7 @@ function AddToCartModal({
     });
   };
   const product = products.find((a) => a.id === +quickViewProductId);
-  const changeId = () => {
-    id = useParams();
-    dispatch({
-      type: "SET_VIEW_ID",
-      payload: id,
-    });
-  };
+
   let prod = basket.find((a) => a.id === +quickViewProductId);
 
   return (
@@ -93,7 +87,7 @@ function AddToCartModal({
                   <div className="productImage">
                     <div className="demo">
                       <Link
-                        onClick={changeId}
+                        onClick={visibleAddModal}
                         className="hd"
                         to={`/details/${a.id}`}
                       >
@@ -106,7 +100,7 @@ function AddToCartModal({
                     <h3>
                       <Link
                         title={a.title}
-                        onClick={changeId}
+                        onClick={visibleAddModal}
                         to={`/details/${a.id}`}
                       >
                         {a.title.slice(0, 16)}

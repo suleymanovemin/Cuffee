@@ -71,7 +71,7 @@ const HotProducts = ({ products, dispatch, basket, favorites }) => {
     <>
       <Quickview />
       <div className="prodTitle">
-      <h3>ENDIRIMLI MƏHSULLAR</h3>
+      <h3>ENDİRİMLİ MƏHSULLAR</h3>
       <p>Bu həftənin endirimli məhsulları!</p>
       </div>
       <div className="container hotProducts">

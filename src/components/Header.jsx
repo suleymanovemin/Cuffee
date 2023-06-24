@@ -88,10 +88,10 @@ function Header({
     window.addEventListener("scroll", handleScroll);
   });
 
-  const deleteProduct = (id) => {
-    let newBasket = [...basket.filter((a) => a.id !== id)];
+  const deleteProduct = (id, size) => {
+    let newBasket = [...basket.filter((item) => item.id !== id || item.size !== size)];
     localStorage.setItem("basket", JSON.stringify(newBasket));
-
+  
     dispatch({
       type: "SET_BASKET",
       payload: newBasket,
@@ -172,10 +172,10 @@ function Header({
                             <h3>{basketList?.title.slice(0, 15)}</h3>
                             <p>{basketList?.price} ₼</p>
                             <p>Ədəd : {a.count}</p>
-                          {a.size && <p>Ölçü :{a?.size}</p>}
+                          {a.size && <p>Ölçü : {a?.size}</p>}
                           </div>
                           <div
-                            onClick={() => deleteProduct(a.id)}
+                            onClick={() => deleteProduct(a.id,a.size)}
                             className="deleteProduct"
                           >
                             <i className="fa-solid fa-trash-can"></i>

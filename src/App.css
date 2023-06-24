@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
 }
 .container {
   width: 1240px;
@@ -1428,7 +1430,8 @@ nav ul a.active {
   position: relative;
   padding: 20px;
   width: 55%;
-  height: 540px;
+  height: 580px;
+  
   background-color: #fff;
   margin: 104px 0;
   z-index: -1;
@@ -2083,7 +2086,12 @@ table {
 
 .productsPage {
   display: flex;
+
+  & .products {
+    min-height: 500px;
+  }
 }
+
 .filterIcon {
   border: 1px solid #111111;
   padding: 7px 20px;
@@ -3969,15 +3977,22 @@ table {
 .ant-slider:hover .ant-slider-handle::after {
   box-shadow: 0 0 0 2px #000000;
 }
+.ant-slider.css-dev-only-do-not-override-yp8pcc.ant-slider-horizontal{
+  margin: 40px 0;
+}
+.filtersCategories .filtersSilideHeading{
+  margin: 20px 0;
+
+}
 
 .js-image-zoom__zoomed-image {
   height: 400px !important;
   top: 15% !important;
   /* transform: translateX(-50%) !important; */
 }
-.js-image-zoom__zoomed-area {
+/* .js-image-zoom__zoomed-area {
   height: 250px !important;
-}
+} */
 
 .github {
   color: #084cdf;
@@ -3992,7 +4007,7 @@ table {
 }
 
 .sizes {
-  margin: 40px 0 20px 0;
+  margin: 20px 0;
   display: flex;
   gap: 15px;
   align-items: center;
@@ -4005,10 +4020,17 @@ table {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
   }
   & p.active {
     background-color: #be9c79;
-    
+  }
+}
+.prodSize{
+  margin: 30px 0 0 0;
+}
+.quickViewProduct{
+  & .prodSize{
+    margin: 40px 0;
   }
 }

@@ -52,24 +52,34 @@ function Quickview({
   const addToProd = (c) => {
     setProdCount((a) => (a + c < 1 ? 1 : a + c));
   };
+
+  const [activeSize, setActiveSize] = useState(null);
+
+  const handleSizeClick = (size) => {
+    setActiveSize(size);
+  };
+
   const addToBasket = (id) => {
-    setDelay(true)
     if (delay) {
       return;
     }
+    setDelay(true);
     const newBasket = [...basket];
-    const index = newBasket.findIndex((item) => item.id === id);
+    console.log(newBasket);
+    const index = newBasket.findIndex(
+      (item) => item.id === id && item.size === activeSize
+    );
     if (index >= 0) {
       newBasket[index].count += prodCount;
     } else {
-      newBasket.push({ id: id, count: prodCount });
+      newBasket.push({ id: id, count: prodCount, size: activeSize });
     }
     setProdCount(1);
     localStorage.setItem("basket", JSON.stringify(newBasket));
     dispatch({ type: "SET_BASKET", payload: newBasket });
     notify();
     setTimeout(() => {
-      setDelay(false)
+      setDelay(false);
     }, 1500);
   };
   useEffect(() => {
@@ -124,8 +134,25 @@ function Quickview({
               )}
               <p>{product.price}₼</p>
             </div>
+            
             <hr />
             <p className="detailsContent">{product.content}</p>
+            {product.size && (
+              <div className="prodSize">
+                <h1>Ölçülər</h1>
+                <div className="sizes">
+                  {product.size?.map((size, index) => (
+                    <p
+                      key={index}
+                      className={activeSize === size ? "active" : ""}
+                      onClick={() => handleSizeClick(size)}
+                    >
+                      {size}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="addToCart">
               <div className="count">
                 <h1>{prodCount}</h1>

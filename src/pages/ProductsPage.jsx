@@ -46,11 +46,15 @@ function ProductsPage({
 
   // Price range
 
+  const [minPrice,setMinPrice] = useState(10);
+  const [maxPrice,setMaxPrice] = useState(250);
+
   const handleChange = (price) => {
     const filteredProducts = [...products];
 
     // filteredProducts.sort((a, b) => a.price - b.price);
-
+    setMinPrice(price[0]);
+    setMaxPrice(price[1]);
     const minPrice = price[0];
     const maxPrice = price[1];
 
@@ -356,12 +360,15 @@ function ProductsPage({
                     </label>
                   </li>
                 </ul>
-                <Slider
+             <div>
+             <div class="filtersSilideHeading"><h2> {minPrice}₼ Qiymət {maxPrice}₼</h2></div>
+             <Slider
                   onChange={(e) => handleChange(e)}
                   range={{ draggableTrack: true }}
                   max={1000}
                   defaultValue={[10, 250]}
                 />
+             </div>
               </div>
             </div>
           </div>

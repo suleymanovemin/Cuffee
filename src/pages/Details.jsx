@@ -99,7 +99,10 @@ function Details({
     }
     setDelay(true);
     const newBasket = [...basket];
-    const index = newBasket.findIndex((item) => item.id === id);
+    console.log(newBasket);
+    const index = newBasket.findIndex(
+      (item) => item.id === id && item.size === activeSize
+    );
     if (index >= 0) {
       newBasket[index].count += prodCount;
     } else {
@@ -213,7 +216,7 @@ function Details({
     width: 610,
     height: 610,
     zoomWidth: 400,
-    zoomHeigth: 250,
+    zoomHeigth: 100,
     img: selectedImage,
   };
 
@@ -309,9 +312,10 @@ function Details({
       <div className="container ProductDetail">
         <div className="detailImage">
           <div>
-            <ReactImageZoom {...props} />,
+            <ReactImageZoom {...props} />
             {/* <img src={selectedImage} alt="" /> */}
           </div>
+
           <div className="otherImages">
             {product?.image.map((a, index) => (
               <div
@@ -343,23 +347,28 @@ function Details({
             <hr />
             <p>{product?.content}</p>
 
-            <div className="sizes">
-              {product.size?.map((size, index) => (
-                <p
-                  key={index}
-                  className={activeSize === size ? "active" : ""}
-                  onClick={() => handleSizeClick(size)}
-                >
-                  {size}
-                </p>
-              ))}
-            </div>
+            {product.size && (
+              <div className="prodSize">
+                <h1>Ölçülər</h1>
+                <div className="sizes">
+                  {product.size?.map((size, index) => (
+                    <p
+                      key={index}
+                      className={activeSize === size ? "active" : ""}
+                      onClick={() => handleSizeClick(size)}
+                    >
+                      {size}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
 
-            <div className={`say ${say ? "active" : ""}`}>
+            {/* <div className={`say ${say ? "active" : ""}`}>
               <p>
                 Bu mehsuldan sebetde <span>{say?.count}</span> eded var.{" "}
               </p>
-            </div>
+            </div> */}
 
             <div className="addToCart">
               <div className="count">
