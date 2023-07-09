@@ -13,6 +13,8 @@ function BasketPage({ basket, products, dispatch }) {
     });
   };
 
+  // const 
+
   const handleClick = (id) => {
     const newBasket = [...basket];
     newBasket.push({ id: id, count: prodCount });
