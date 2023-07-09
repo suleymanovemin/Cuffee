@@ -91,7 +91,7 @@ function Details({
   const addToProd = (c) => {
     setProdCount((a) => (a + c < 1 ? 1 : a + c));
   };
-  const [activeSize, setActiveSize] = useState(null);
+  const [activeSize, setActiveSize] = useState("S");
 
   const addToBasket = (id) => {
     if (delay) {

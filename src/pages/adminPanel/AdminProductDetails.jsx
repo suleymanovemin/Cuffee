@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 
 function AdminProductDetails({ products, dispatch }) {
   const { id } = useParams();
+
   const [prod, setProd] = useState({});
   const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ function AdminProductDetails({ products, dispatch }) {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState([]);
 
+  
   useEffect(() => {
     setName(prod.title || "");
     setPrice(prod.price || "");
@@ -69,7 +71,7 @@ function AdminProductDetails({ products, dispatch }) {
           })
           .catch((error) => {
             console.log(error);
-            toast.error("Bir hata oluştu. Məlumatlar yenilənmədi.");
+            toast.error("Bir xəta baş verdi. Məlumatlar yenilənmədi.");
           });
       });
   };
@@ -107,6 +109,8 @@ function AdminProductDetails({ products, dispatch }) {
             />
           </div>
         </div>
+        <br />
+          <input value={prod.category_id} type="text" />
         <div>
           <select name="stockStatus">
             <option value="inStock">In Stock</option>

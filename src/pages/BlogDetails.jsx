@@ -4,9 +4,17 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import LoginModal from "../modals/LoginModal";
 import "react-toastify/dist/ReactToastify.css";
-function BlogDetails({ blogs,user }) {
+
+// Swiper
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
+
+function BlogDetails({ blogs, user }) {
   const [name, setName] = useState(user?.displayName ?? "");
-  const [email, setEmail] = useState( user?.email ?? "" );
+  const [email, setEmail] = useState(user?.email ?? "");
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   let { id } = useParams();
@@ -57,7 +65,9 @@ function BlogDetails({ blogs,user }) {
           comment,
           date: currentDate,
           blog_id: id,
-          photoImg:user.photoURL?user.photoURL:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png"
+          photoImg: user.photoURL
+            ? user.photoURL
+            : "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
         }),
       })
         .then((response) => response.json())
@@ -171,6 +181,25 @@ function BlogDetails({ blogs,user }) {
                 type="submit"
               />
             </form>
+          </div>
+          <div className="smillarBlogs">
+            <Swiper
+              navigation={true}
+              modules={[Navigation]}
+              className="mySwiper"
+            >
+              <div className="smillarBlog">
+              {blogs?.map((a) => (
+                <>
+                  <SwiperSlide>
+                      <div>
+                      <img src={a.image} alt="" />
+                      </div>
+                  </SwiperSlide>
+                </>
+              ))}
+              </div>
+            </Swiper>
           </div>
         </div>
         <ToastContainer

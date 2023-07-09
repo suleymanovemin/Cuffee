@@ -65,7 +65,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="productBy">© 2023 CUFEE. Made with <i class="fa-solid fa-heart"></i> by<a target="_blank" href="https://github.com/suleymanovemin" class="github">Emin</a></div>
+        <div className="productBy">© 2023 CUFEE. Made with <i className="fa-solid fa-heart"></i> by<a target="_blank" href="https://github.com/suleymanovemin" className="github">Emin</a></div>
       </div>
     </footer>
   );

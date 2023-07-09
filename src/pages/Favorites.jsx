@@ -59,7 +59,7 @@ function Favorites({ favorites, dispatch, basket }) {
           </div>
         </div>
         <div className="favoritesTable container">
-          {favorites.length ? (
+          {favorites.length>0 ? (
             <table>
               <thead>
                 <tr>
@@ -71,15 +71,15 @@ function Favorites({ favorites, dispatch, basket }) {
                 </tr>
               </thead>
               <tbody>
-                {favorites.map((favorite) => {
+                {favorites?.map((favorite) => {
                   let prod = basket.find((a) => +a.id === +favorite.id);
 
                   return (
-                    <tr key={favorite.id}>
+                    <tr key={favorite?.id}>
                       <td>
                         <div className="favProdImage">
-                          <Link to={`/details/${favorite.id}`}>
-                            <img src={favorite.image[0]} alt={favorite.title} />
+                          <Link to={`/details/${favorite?.id}`}>
+                            <img src={favorite?.image[0]} alt={favorite.title} />
                           </Link>
                         </div>
                       </td>

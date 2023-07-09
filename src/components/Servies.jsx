@@ -1,7 +1,31 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { motion } from "framer-motion";
+
+
 function Servies() {
+  // Framer Motion
+  const container = {
+    visible: {
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.4,
+      },
+    },
+  };
+
+
+  const item = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+    },
+  };
+
+  
   const servies = [
     {
       image:
@@ -91,9 +115,12 @@ function Servies() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="coffeesRow">
+      <motion.div
+      variants={container}
+      className="coffeesRow">
         {coffeesRow.map((b, c) => (
-          <div
+          <motion.div
+          variants={item}
             key={c}
             style={{ backgroundImage: `url(${b.image})` }}
             className="coffeeItem"
@@ -104,9 +131,9 @@ function Servies() {
               <p>{b.content}</p>
               <Link to="/products">{b.button}</Link>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

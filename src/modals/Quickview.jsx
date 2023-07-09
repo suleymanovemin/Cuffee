@@ -53,10 +53,11 @@ function Quickview({
     setProdCount((a) => (a + c < 1 ? 1 : a + c));
   };
 
-  const [activeSize, setActiveSize] = useState(null);
+  const [activeSize, setActiveSize] = useState("S");
 
   const handleSizeClick = (size) => {
     setActiveSize(size);
+    console.log(activeSize);
   };
 
   const addToBasket = (id) => {
@@ -67,7 +68,7 @@ function Quickview({
     const newBasket = [...basket];
     console.log(newBasket);
     const index = newBasket.findIndex(
-      (item) => item.id === id && item.size === activeSize
+      (item) => item.id === id && item.size == activeSize
     );
     if (index >= 0) {
       newBasket[index].count += prodCount;
@@ -144,7 +145,7 @@ function Quickview({
                   {product.size?.map((size, index) => (
                     <p
                       key={index}
-                      className={activeSize === size ? "active" : ""}
+                      className={activeSize == size ? "active" : ""}
                       onClick={() => handleSizeClick(size)}
                     >
                       {size}

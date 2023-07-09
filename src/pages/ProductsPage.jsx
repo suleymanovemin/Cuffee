@@ -8,6 +8,7 @@ import { Select } from "antd";
 import { Pagination } from "antd";
 import LoginModal from "../modals/LoginModal";
 import { Slider } from "antd";
+import { motion } from "framer-motion";
 
 function ProductsPage({
   products,
@@ -67,22 +68,11 @@ function ProductsPage({
 
   const [previousFilter, setPreviousFilter] = useState(null);
 
-  const handlePriceFilter = (min, max) => {
-    if (previousFilter) {
-      setTempProducts([...products]);
-      setPreviousFilter(null);
-      return;
-    }
-
-    const filteredProducts = tempProducts.filter(
-      (product) => product.price >= min && product.price <= max
+  const handleBrandsFilter = (brands) => {
+    const filteredProducts = products.filter((product) =>
+      brands.includes(product.brand)
     );
-
-    filteredProducts.sort((a, b) => a.price - b.price);
-
     setTempProducts(filteredProducts);
-
-    setPreviousFilter({ min, max });
   };
 
   const showQuickModal = () => {
@@ -209,6 +199,25 @@ function ProductsPage({
     setCurrentPage(page);
   };
 
+    // Framer Motion
+    const container = {
+      visible: {
+        transition: {
+          delayChildren: 0.3,
+          staggerChildren: 0.4,
+        },
+      },
+    };
+  
+  
+    const item = {
+      hidden: {
+        opacity: 0,
+      },
+      visible: {
+        opacity: 1,
+      },
+    };
   return (
     <>
       <Helmet>
@@ -331,37 +340,37 @@ function ProductsPage({
                 </ul>
               </div>
               <div className="filtersSilideHeading">
-                <h2>Qiymət</h2>
+                <h2>Brendlər</h2>
               </div>
               <div className="filtersCategories">
                 <ul className="priceFiltered">
                   <li>
                     <input id="inp1" type="checkbox" />
                     <label htmlFor="inp1">
-                      <p onClick={() => handlePriceFilter(10, 20)}>10 - 20</p>
+                      <p onClick={() => handleBrandsFilter("A")}>A Brendi</p>
                     </label>
                   </li>
                   <li>
                     <input id="inp2" type="checkbox" />
                     <label htmlFor="inp2">
-                      <p onClick={() => handlePriceFilter(20, 40)}>20 - 40</p>
+                      <p onClick={() => handleBrandsFilter("B")}>B Brendi</p>
                     </label>
                   </li>
                   <li>
                     <input id="inp3" type="checkbox" />
                     <label htmlFor="inp3">
-                      <p onClick={() => handlePriceFilter(40, 60)}>40 - 60</p>
+                      <p onClick={() => handleBrandsFilter("C")}>C Brendi</p>
                     </label>
                   </li>
                   <li>
                     <input id="inp4" type="checkbox" />
                     <label htmlFor="inp4">
-                      <p onClick={() => handlePriceFilter(60, 80)}>60 - 80</p>
+                      <p onClick={() => handleBrandsFilter("D")}>D Brendi</p>
                     </label>
                   </li>
                 </ul>
              <div>
-             <div class="filtersSilideHeading"><h2> {minPrice}₼ Qiymət {maxPrice}₼</h2></div>
+             <div className="filtersSilideHeading"><h2> {minPrice}₼ Qiymət {maxPrice}₼</h2></div>
              <Slider
                   onChange={(e) => handleChange(e)}
                   range={{ draggableTrack: true }}
@@ -372,13 +381,18 @@ function ProductsPage({
               </div>
             </div>
           </div>
-          <div className="defoo">
-            <div
+          <div
+           className="defoo">
+            <motion.div
+            initial="hidden"
+            animate="visible"
+              variants={container}
               style={{ gridTemplateColumns: `repeat(${activeIndex},1fr)` }}
               className="products "
             >
               {paginatedProducts.map((a) => (
-                <div
+                <motion.div
+                variants={item}
                   onClick={() => viewProduct(a.id)}
                   key={a.id}
                   className="product"
@@ -483,9 +497,9 @@ function ProductsPage({
                   ) : (
                     ""
                   )}
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
             <div className="pagination">
               <Pagination
                 current={currentPage}
