@@ -34,6 +34,7 @@ export const register = async (email, password) => {
       email,
       password
     );
+    toast.success("Qeydiyyatdan keçdiz.");
     return user;
   } catch (error) {
     toast.error(error.message);

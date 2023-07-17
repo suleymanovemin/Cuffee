@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -81,6 +81,16 @@ function BlogDetails({ blogs, user }) {
     setEmail("");
     setComment("");
   };
+
+  const [smillarBlogs, setSimillarBlogs] = useState([]);
+
+  useEffect(() => {
+    const filteredBlogs = blogs.filter((a) => a.id != id);
+    setSimillarBlogs(filteredBlogs);
+  }, [id]);
+
+  console.log(smillarBlogs);
+
   return (
     <>
       <LoginModal />
@@ -182,22 +192,33 @@ function BlogDetails({ blogs, user }) {
               />
             </form>
           </div>
-          <div className="smillarBlogs">
+          <div className="an">
+            <h3>BƏNZƏR BLOQLAR</h3>
             <Swiper
+              slidesPerView={2}
+              spaceBetween={20}
               navigation={true}
               modules={[Navigation]}
               className="mySwiper"
             >
-              <div className="smillarBlog">
-              {blogs?.map((a) => (
-                <>
-                  <SwiperSlide>
+              <div className="smillarBlogs">
+                {smillarBlogs?.map((a) => (
+                  <SwiperSlide key={a.id}>
+                    <div className="smillarBlog">
                       <div>
-                      <img src={a.image} alt="" />
+                        <Link to={`/blog/${a.id}`}>
+                          <img src={a.image} alt="" />
+                        </Link>
                       </div>
+                      <div className="blogOverlay">
+                        <Link  to={`/blog/${a.id}`}>
+                          <h3>{a.title}</h3>
+                          <p>{a.name}</p>
+                        </Link>
+                      </div>
+                    </div>
                   </SwiperSlide>
-                </>
-              ))}
+                ))}
               </div>
             </Swiper>
           </div>

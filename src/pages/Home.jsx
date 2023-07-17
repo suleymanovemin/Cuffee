@@ -45,7 +45,7 @@ function Home({ user }) {
       <Products />
       <HotDeal />
       <LastBlogs />
-      {/* <AccordionMenu/> */}
+      <AccordionMenu/>
       <HotDealSwiper />
       <HotProducts />
       <HotDealSletter />

@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { useState } from "react";
+
 function BasketPage({ basket, products, dispatch }) {
   const deleteProduct = (id) => {
     let newBasket = [...basket.filter((a) => a.id !== id)];
@@ -13,7 +14,7 @@ function BasketPage({ basket, products, dispatch }) {
     });
   };
 
-  // const 
+
 
   const handleClick = (id) => {
     const newBasket = [...basket];
