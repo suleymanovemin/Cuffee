@@ -21,11 +21,15 @@ function Products({ products, dispatch, basket, favorites }) {
   const visibleAddModal = (id) => {
     const newBasket = [...basket];
     const index = newBasket.findIndex((item) => item.id === id);
-
+    const size = products.find((item) => item.id === id);
     if (index >= 0) {
       newBasket[index].count += 1;
     } else {
-      newBasket.push({ id: id, count: 1 });
+      if (size.size) {
+        newBasket.push({ id: id, count: 1, size: "S" });
+      } else {
+        newBasket.push({ id: id, count: 1 });
+      }
     }
 
     localStorage.setItem("basket", JSON.stringify(newBasket));
@@ -64,7 +68,6 @@ function Products({ products, dispatch, basket, favorites }) {
     },
   };
 
-
   const item = {
     hidden: {
       opacity: 0,
@@ -79,14 +82,18 @@ function Products({ products, dispatch, basket, favorites }) {
       <h3>ÇOX SATILANLAR</h3>
       <p>Bu həftə ən çox satılan məhsullar!</p>
       <motion.div
-      variants={container}
-      initial="hidden"
-      animate="visible"
-      className="container products">
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className="container products"
+      >
         {products.slice(0, 8).map((a, index) => (
           <motion.div
-          variants={item}
-          onClick={() => viewProduct(a.id)} key={a.id} className="product">
+            variants={item}
+            onClick={() => viewProduct(a.id)}
+            key={a.id}
+            className="product"
+          >
             <div className="productImage">
               <div className="demo">
                 <Link className="hd" to={`/details/${a.id}`}>

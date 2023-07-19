@@ -9,7 +9,7 @@ const text3 = `
 Qeydiyatdan keçərək giriş edə bilərsiz
 `;
 const text4 = `
-Profil hissəsindən şifənizi dəyişə bilərsiz
+Profil hissəsindən şifrənizi asanlıqla dəyişə bilərsiz
 `;
 const text5 = `
 Bəli,bütün şəxsi məlumatlarınız qorunur

@@ -6,7 +6,7 @@ function Checkout({ basket, products }) {
       <div className="checkOut">
         <div className="checkOutInformation">
           <header>
-            <span>Cufee - Coffee Shops &amp; Cafes Shopify Theme</span>
+            <span>Cufee - Coffee Shops &amp; Payment</span>
           </header>
 
           <div className="d-flex">

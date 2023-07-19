@@ -101,7 +101,7 @@ function ProductsPage({
     if (index >= 0) {
       newBasket[index].count += 1;
     } else {
-      newBasket.push({ id: id, count: 1 });
+      newBasket.push({ id: id, count: 1,size:"S" });
     }
     localStorage.setItem("basket", JSON.stringify(newBasket));
     dispatch({ type: "SET_BASKET", payload: newBasket });
@@ -345,25 +345,25 @@ function ProductsPage({
               <div className="filtersCategories">
                 <ul className="priceFiltered">
                   <li>
-                    <input id="inp1" type="checkbox" />
+                    <input id="inp1" type="radio" name="chec" />
                     <label htmlFor="inp1">
                       <p onClick={() => handleBrandsFilter("A")}>A Brendi</p>
                     </label>
                   </li>
                   <li>
-                    <input id="inp2" type="checkbox" />
+                    <input id="inp2" type="radio" name="chec" />
                     <label htmlFor="inp2">
                       <p onClick={() => handleBrandsFilter("B")}>B Brendi</p>
                     </label>
                   </li>
                   <li>
-                    <input id="inp3" type="checkbox" />
+                    <input id="inp3" type="radio" name="chec" />
                     <label htmlFor="inp3">
                       <p onClick={() => handleBrandsFilter("C")}>C Brendi</p>
                     </label>
                   </li>
                   <li>
-                    <input id="inp4" type="checkbox" />
+                    <input id="inp4" type="radio" name="chec" />
                     <label htmlFor="inp4">
                       <p onClick={() => handleBrandsFilter("D")}>D Brendi</p>
                     </label>

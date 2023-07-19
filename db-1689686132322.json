@@ -1,0 +1,596 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373"
+      ],
+      "title": "French Press",
+      "price": "45",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are goasdawdasing to use a passage of Lorem Ipsum, you need to...",
+      "category_id": 1,
+      "brends": "apple",
+      "inStock": true,
+      "brand": "A",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 2,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_8b20a1eb-9242-4e34-a118-ca0c120898ba.jpg?v=1659667359",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_867017ea-9c76-4f30-9353-78b4bd3abbcd.jpg?v=1659667359"
+      ],
+      "title": "Flowers Coffeee",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "price": "20",
+      "category_id": 1,
+      "inStock": true,
+      "brand": "A",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 3,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_de631cf3-e53f-4237-a1a8-5d574f3dad61.jpg?v=1659667356",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_f6d7f3ef-5adc-4115-930b-5b6dcd978b58.jpg?v=1659667356"
+      ],
+      "title": "Espresso Grinder",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "oldPrice": "42",
+      "price": "26",
+      "inStock": true,
+      "brand": "A",
+      "category_id": 2
+    },
+    {
+      "id": 4,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_b2a286a5-13ae-4dec-9fbf-5ce6c3ceb9b2.jpg?v=1659667352",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_3d06eeed-48cd-4a9f-8d2b-869671a1e081.jpg?v=1659667352"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "inStock": true,
+      "title": "Dummya Coffee",
+      "price": "20",
+      "oldPrice": "45",
+      "brand": "A",
+      "category_id": 1,
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 5,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_153e4a4b-2916-4fdb-948d-f0b27cb66f4d.jpg?v=1659667348",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_fcca0511-9e52-4463-9d4f-ea89a543e633.jpg?v=1659667348"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "inStock": true,
+      "oldPrice": 45,
+      "title": "Custom Variety Pack",
+      "price": "25",
+      "brand": "B",
+      "category_id": 2
+    },
+    {
+      "id": 6,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_e94721b2-c8e4-413d-b9b1-e06cbda614ba.jpg?v=1659667345",
+        "https://cdn.shopify.com/s/files/1/0606/8191/2503/products/3_c3ab2378-138a-423a-92bf-deaa9d86e8c0.jpg?v=1659667345"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "inStock": true,
+      "title": "Coffee Mastems Specialty",
+      "oldPrice": 48,
+      "price": "28",
+      "category_id": 1,
+      "brand": "B",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 7,
+      "brand": "B",
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_7aa7889a-dbbf-44a6-8b12-a5ba83042673.jpg?v=1659667341",
+        "https://cdn.shopify.com/s/files/1/0606/8191/2503/products/2_428d4084-1ed9-4686-8379-39f0e4df5438.jpg?v=1659667341",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_0ff40b1d-c05a-4caa-a078-e4c665d10b8e.jpg?v=1659667337"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "inStock": true,
+      "title": "Coffee Grinder",
+      "price": "45",
+      "oldPrice": 48,
+      "category_id": 2
+    },
+    {
+      "id": 8,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_0ff40b1d-c05a-4caa-a078-e4c665d10b8e.jpg?v=1659667337",
+        "https://cdn.shopify.com/s/files/1/0606/8191/2503/products/3_ab68766b-4b37-4693-be78-767606c60e84.jpg?v=1659667337"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "title": "Coffee Beans People",
+      "price": "19",
+      "category_id": 1,
+      "brand": "B",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 9,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "title": "Mockup Coffee",
+      "price": "18",
+      "category_id": 2,
+      "brand": "B",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 10,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "title": "Metallic Coffee",
+      "price": "17",
+      "category_id": 1,
+      "brand": "B",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 11,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365"
+      ],
+      "title": "Kimbo Napolitano Premium",
+      "price": "17",
+      "category_id": 1,
+      "brand": "B",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 12,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363"
+      ],
+      "title": "Kicking Horse Coffee",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "price": "17",
+      "category_id": 1,
+      "brand": "C",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 13,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363"
+      ],
+      "title": "Kicking Horse Coffee",
+      "price": "24",
+      "category_id": 1,
+      "brand": "C",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to..",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 14,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365"
+      ],
+      "title": "Kimbo Napolitano Premium",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "price": "17",
+      "brand": "C",
+      "category_id": 1,
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 15,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369"
+      ],
+      "title": "Metallic Coffee",
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "price": "17",
+      "category_id": 1,
+      "brand": "C",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "S"
+      ]
+    },
+    {
+      "id": 16,
+      "image": [
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373",
+        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373"
+      ],
+      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
+      "title": "Mockup Coffee",
+      "price": "18",
+      "brand": "C",
+      "category_id": 1
+    },
+    {
+      "id": 17,
+      "image": [
+        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/09/PRODUCT-dbEt1jVTaN.jpg?resize=600%2C600&ssl=1",
+        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/09/BIA_PRESS1.jpg?resize=209%2C300&ssl=1"
+      ],
+      "content": "Praktik və dadlı süzgəcli qəhvə, dəmləmə və bitki çayları hazırlamaq üçün istifadə edilən kofe pressidir. Müasir dizaynı və Moka Express-in formasını xatırladan xüsusi tutacağı var. 18/10 paslanmayan poladdan hazırlanmış gövdə. Borosilikat şüşə qab qabyuyan maşında yuyula bilər, uzunömürlülük üçün əl ilə yuyulması tövsiyə olunur.",
+      "title": "Bialetti French Press Preziosa 350 ml",
+      "price": "50",
+      "category_id": 2,
+      "brand": "D",
+      "inStock": true
+    },
+    {
+      "id": 18,
+      "image": [
+        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/03/milk_jug.jpg?resize=600%2C600&ssl=1",
+        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/03/milk_jug.jpg?resize=600%2C600&ssl=1"
+      ],
+      "content": "Cilalanmış paslanmayan poladdan süd köpürtmə qabı 350ml.",
+      "title": "Delonghi Milk frothing jug 350ml DLSC 060",
+      "price": "25",
+      "category_id": 2,
+      "brand": "D",
+      "inStock": true
+    },
+    {
+      "id": 19,
+      "image": [
+        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/09/470fcffc40f4f69097ca3e13b4972e4b.jpg?resize=600%2C600&ssl=1",
+        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/09/3.webp?resize=100%2C100&ssl=1",
+        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/09/2.webp?resize=100%2C100&ssl=1"
+      ],
+      "content": "Brikka espressonu əsl italyan barında təqdim edilənə mümkün qədər yaxın edən yeganə qəhvə dəmləyicisidir. Qəhvə adi moka ilə müqayisədə daha güclü və zəngindir. Amma təbii ki, onun əsas üstünlüyü qalın və ətirli köpükdür. Və bu köpüyü daha da yaxşılaşdırmaq üçün biz klapan sistemini kökündən yenidən dizayn etdik.",
+      "title": "Bialetti Brikka Qəhvədəmləyən",
+      "price": "85",
+      "category_id": 2,
+      "brand": "D",
+      "inStock": true
+    },
+    {
+      "id": 20,
+      "image": [
+        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/03/ecam550-65-sb-kofemashina-delonghi-2_600.jpg?w=600&ssl=1",
+        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/03/ecam550-65-sb-kofemashina-delonghi-3_600.jpg?resize=100%2C100&ssl=1"
+      ],
+      "content": "Brikka espressonu əsl italyan barında təqdim edilənə mümkün qədər yaxın edən yeganə qəhvə dəmləyicisidir. Qəhvə adi moka ilə müqayisədə daha güclü və zəngindir. Amma təbii ki, onun əsas üstünlüyü qalın və ətirli köpükdür. Və bu köpüyü daha da yaxşılaşdırmaq üçün biz klapan sistemini kökündən yenidən dizayn etdik.",
+      "title": "De’Longhi PrimaDonna Class ECAM550.65.SB",
+      "price": "2469",
+      "category_id": 2,
+      "brand": "D",
+      "inStock": true
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "name": "Alı Bayramov",
+      "title": "Espresso nədir?",
+      "content": "Espresso, İtaliya mənbəli olan və ən populyar kahvə növlərindən biridir. Əslində, \"espresso\" sözü İtaliyaca \"təzyiq altında su ilə keçirilmiş\" anlamına gəlir. Bu mənada, espresso hazırlanması üçün qida hazırlama texnikası və kahvə üzərinə təzyiq tətbiq edilir.\n\nEspresso, tipik olaraq küçədəki kafelərdə və ya evdə kahvə avtomatlarında hazırlanır. Ən populyar üsul, espresso makinasıdır. Bu cihaz, kahvə köpüyü və ya \"crema\" olaraq bilinən qırmızımsı qıvrımlı qatı hissə ilə birlikdə qısa bir süre ərzində su və kahvə tozunu təzyiq altında keçirir. Daha sonra, nəticə olaraq əldə edilən kəskin kahvə içki, bir neçə süd və ya sütsuz kahvə içkilərinə əlavə edilə bilər.\n\nEspresso, səthiyyəli bir kahvə dozasına malikdir və tipik olaraq 30 ml-lik bir fincanla servis olunur. İçki, güclü və tələsməkən tərkibə malik olduğu üçün, təzələdikdən sonra qısa bir müddətdə tükənməlidir.\n",
+      "image": "https://cdn.shopify.com/s/files/1/0606/8191/2503/articles/blog6_1024x1024.jpg?v=1659668529",
+      "date": "2022-04-26"
+    },
+    {
+      "id": 2,
+      "name": "Aylin Mahmudova",
+      "title": "Qəhvə reseptləri: Soyuq köpüklü qəhvə",
+      "content": "Qəhvə insanların gününün bir parçasına çevrilmiş bir içkidir. Bəziləri qəhvə dənələri ilə məşğul olmağı xoşlayır, bəziləri isə praktik şəkildə hazır qəhvədən istifadə edir. Bu yazıda sizə soyuq köpüklü qəhvə hazırlamaq üçün sadə resept təqdim edəcəyəm. \n\nMateriallar:\n-1 stəkan soyuq qəhvə\n- 2 xörək qaşığı şəkər\n- 1 stəkan süd\n- 1/2 çay qaşığı vanil ekstraktı\n- buz kubları\n\nNecə etmək olar:\n1 . Soyuq qəhvə və şəkəri bir qaba qoyun və şəkəri tökün, əriyənə qədər qarışdırın.\n2. Südü vanil ekstraktı və köpüklü qaba tökün. Blenderlə də köpürdə bilərsiniz.\n3. Buz kublarını stəkana qoyun. n4. Qəhvə qarışığını stəkanlara bölün.\n5. Üzərinə köpürdülmüş süd əlavə edin.\n6. İsteğe bağlı olaraq zövqünüzə görə şokolad sousu və ya darçın səpərək süfrəyə verin.\n\nSoyuq köpüklü qəhvənizdən həzz alın! İştahınız bol olsun!.Soyuq köpüklü qəhvə isti yay günlərində təravətləndirmək üçün əla seçimdir. Bu dadlı içkini hazırlamaq üçün sizə lazım olan maddələr: qəhvə, buz, süd və şəkər. Qəhvə və şəkər qarışdırılır və qaynar su əlavə edilir. Daha sonra qarışım soyuducuda soyumağa buraxılır və buzla süfrəyə verilir.",
+      "image": "https://cdn.shopify.com/s/files/1/0606/8191/2503/articles/blog6_1024x1024.jpg?v=1659668529",
+      "date": "2022-04-25"
+    },
+    {
+      "id": 3,
+      "name": "Emre Kaya",
+      "title": "Qəhvə Dünyasında Səyahət: Braziliya",
+      "content": "Braziliya qəhvə dünyasının ən əhəmiyyətli ölkələrindən biridir. Dünyada istehsal edilən qəhvənin təxminən üçdə birini təmin edir və Braziliya qəhvəsi kimi tanınan qəhvə növləri də çox məşhurdur. Bu yazıda siz Braziliyada qəhvə istehsalı haqqında bilməli olduğunuz şeylər haqqında daha çox məlumat əldə edəcəksiniz. .\n\nBraziliya qəhvə istehsalı üçün ideal iqlimə və coğrafiyaya malikdir. Ölkənin cənub-şərq bölgəsindəki San Paulo, Minas Gerais və Parana bölgələri təxminən təxminən istehsal edir. Dünya qəhvə istehsalının 70 faizi.Braziliya qəhvəsi adətən yüksək dağlıq bölgələrdə yetişdirilir və adətən düz torpaqlarda olur.\n\nBraziliya 19-cu əsrin sonlarında qəhvə ixracında dünya lideri oldu.Bu dövrdə Braziliyada qəhvə plantasiyaları 1888-ci ildə köləliyin rəsmi ləğvi ilə sona çatan köləlik sistemində işləyən minlərlə afrikalı quldan istifadə edərək geniş miqyaslı istehsala keçdi və hal-hazırda Braziliyada qəhvə istehsalı müasir və davamlı şəkildə həyata keçirilir.\n\nBraziliya qəhvəsi ümumiyyətlə aşağı turşuluğu və orta şirinliyi ilə tanınır. Braziliyalı qəhvə istehsalçıları qəhvənin aromasına və dadına təsir edən emal üsulları üzərində işləyirlər. Bəzi istehsalçılar meyvə notlarını qoruyaraq qəhvələrini təbii şəkildə emal edir, digərləri isə qəhvəni yuyulmuş və ya yarı yuyulmuş şəkildə emal edərək daha yumşaq dadlı qəhvə istehsal edirlər.\n\nBraziliyada qəhvə istehsalı ölkə iqtisadiyyatı üçün mühüm resurs olaraq qalır. Qəhvə istehsalçıları dayanıqlı istehsal üsullarından istifadə etməklə həm qəhvə keyfiyyətini yaxşılaşdırmaq, həm də təbii ehtiyatları qorumaq üçün çalışırlar.Braziliyada qəhvə mədəniyyəti sadəcə bir içki istehlak etməkdən daha çox şeydir.",
+      "image": "https://cdn.shopify.com/s/files/1/0606/8191/2503/articles/blog6_1024x1024.jpg?v=1659668529",
+      "date": "2022-04-24"
+    },
+    {
+      "id": 4,
+      "name": "Ilkin Məmmədov",
+      "title": "Qəhvə Toxumlarının Sirri",
+      "content": "Qəhvə, bir çox insanın günə başlarkən və enerji ehtiyacını qarşılamaq üçün üstünlük etdiyi məşhur bir içkidir. Lakin, bir fincan qəhvənin ardında gizlənən sirri ne qədər bilirik? Qəhvenin möhkəmliyini təşkil edən şey əslində toxumlarıdır. Qəhvə toxumları, bu sihirli içkinin dadını və aromasını müəyyən edən mənbələrdir.\n\nQəhvə toxumları, qəhvə bitkisinin meyvəsinin daxilində olan toxumlardır. Bu meyvə, olgunlaşdıqca qırmızı və ya sarı rəngə dönüşür və içərisində iki toxum tapılır. Bu toxumlar, qəhvə istehsalı üçün toplanır, işlənir və qızardılır.\n\nİşləmə prosesi, qəhvə toxumlarının dadı üzərində böyük təsir sahibidir. İşləmə mərhələləri arasında yuyulma, quru işləmə və doğal işləmə olur. Hər bir metod, toxumların xüsusi dad və aroma profilini dəyişdirir.\n\nQəhvə toxumları qızardıldıqda, içərisindəki nişastaların yanması ilə birlikdə müxtəlif birləşiklər meydana gəlir. Bu birləşiklər, qəhvenin dadını, aromasını və rəngini təsirləyir. Bundan başqa, qızardılma dərəcəsi, toxumların açıq, orta və qara qızardılmış olmasını müəyyən edir.\n\nQəhvə toxumları, qəhvə demləndikdə su ilə əlaqələndikdə dad və qüvvətlərini azad edir. İsti suyun toxumlarla etkileşimi, içkinin xüsusiyyətlərini və dadını formalaşdırır. Bundan əlavə, suyun temperaturu, demlənmiş içkinin keyfiyyətini təsirləyir. Bu səbəbdən, keyfiyyətli bir qəhvə toxumlarına əsaslanan demləmə əldə etmək mühüm bir əhəmiyyətə malikdir.\n\nQəhvə toxumlarının tərkibi, dadı və keyfiyyəti, qəhvenin məşhur bir içki olmasında böyük rolu olan elementlərdir. Bu səbəbdən, qəhvə toxumlarına və onların işləməsinə əhəmiyyət vermək, mükəmməl bir qəhvə təcrübəsinin əsasını təşkil edir.",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "date": "2022-04-24"
+    },
+    {
+      "id": 5,
+      "name": "Fərid Mutallimov",
+      "title": "Qəhvə Dəmləmə Metodları",
+      "content": "Qəhvə, dünyada çox sevilən və tərcümə edilən bir içkidir. Bir fincan qəhvə ilə günə enerji ilə başlamaq bir çox insan üçün rutin hələ gəlmişdir. İndi, qəhvə dəmləmə metodlarına bir göz ataq və bu metodların qəhvənin dadı, aroması və hissiyyatı üzərindəki təsirlərini müəyyən edək.\n\n1. Filtr dəmləmə: Bu metod çox yayğın olan və sadə bir dəmləmə üsuludur. Qəhvə tozunu filtər vasitəsi ilə su ilə keçirərək demləmə edirik. Bu metod, çox istifadə olunan kahve makinesi və filtrlər ilə edilir.\n\n2. French press: Bu metodda qəhvə tozunu suda qısaldıqdan sonra, demləmə aparıcısı ilə toxumları aşağı salaraq süzəcək əməliyyatı edirik. Bu metod, daha qalıcı və dolğun bir dad təcrübəsi təmin edir.\n\n3. Espresso: Bu metodda qəhvə tozunu isti su ilə təzyiq altında aparatdan keçirərək demləmə edirik. Nəticədə alınan espresso, yoğun dad və süzgün qəhvə qatı ilə xarakterizə olunur.\n\nQəhvə dəmləməsi şəxsi zövq və tercihlərə bağlı olaraq dəyişə bilər. Hər metodun fərqli bir dad və hissiyyat təcrübəsi yaratdığını unutmayın. Önəmli olan, sizin üçün ən məmnun edici olan metodu tapmaqdır.",
+      "image": "https://plus.unsplash.com/premium_photo-1669374537636-518629de3b85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "date": "2022-04-24"
+    },
+    {
+      "id": 6,
+      "name": "Faiq Qasımov",
+      "title": "Qəhvənin Sağlamlıq Üstünlükləri",
+      "content": "Qəhvə, içərisində kofein adlanan stimulasiya edici bir maddə olan bitki kökünün tozudur. Bu içki, günə enerji və təzələk verməklə yanaşı, bir çox sağlamlıq üstünlüklərinə də malikdir. İşə görənlər, öğrəncilər və bir çox insan qəhvənin sağlamlıq faydalarından yararlanır. İştə bu yazıda qəhvənin sağlamlıq üstünlüklərini müzakirə edəcəyik.\n\n1. Yüksək antioksidan məzmunu: Qəhvə, bir çox antioksidanlarla dolu olan bir içkidir. Antioksidanlar, serbest radikalları yatışdırmaq və xərçəngə yol verməmək kimi sağlamlıq üstünlüklərinə malikdir.\n\n2. Zühurkar dərmanlar: Qəhvə, bir çox şəkildə qan dövranını və fiziki performansı tənzimləyən maddələrlə zənginləşdirilmişdir. Bu, performansı artırmaq, enerji səviyyələrini yüksəltmək və sportda daha yüksək performans göstərmək üçün idealdir.\n\n3. Beyin funksiyalarını tənzimləmək: Qəhvə, yüksək kofein məzmunu sayəsində beyin funksiyalarını tənzimləyən bir təsirə malikdir. Yığılmış və narahat olmuş hissələrdə zövq almaq, konsentrasiya və yaddaşın güclənməsi üçün qəhvə tüketimi təklif olunur.\n\nQəhvə tüketimi, bəzi insanlar üçün belə əhəmiyyətli tərəfdaşdır. Lakin, unutmayın ki həmişə mərsiyyətli miqdarda və kişilərə uyğun olaraq qəhvə tüketmək ən yaxşı seçimdir.",
+      "image": "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "date": "2022-04-24"
+    }
+  ],
+  "blogComments": [
+    {
+      "name": "Ənkə Coder",
+      "email": "admin@gmail.com",
+      "comment": "dxfcghj",
+      "date": "08.07.2023 15:32:35",
+      "blog_id": "5",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 1
+    }
+  ],
+  "productComments": [
+    {
+      "name": "Tarik Cummings",
+      "email": "midajypazi@mailinator.com",
+      "comment": "Quis voluptatem Imp",
+      "date": "06.06.2023 15:27:01",
+      "product_id": "1",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 1
+    },
+    {
+      "name": "Raven Mccullough",
+      "email": "cacatofo@mailinator.com",
+      "comment": "Non officia labore e",
+      "date": "06.06.2023 15:28:40",
+      "product_id": "1",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 2
+    },
+    {
+      "name": "Emin Suleymanov",
+      "email": "admin@gmail.com",
+      "comment": "Non commodi aperiam ",
+      "date": "09.06.2023 21:00:23",
+      "product_id": "5",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 3
+    },
+    {
+      "name": "Amos Cummings",
+      "email": "qaputola@mailinator.com",
+      "comment": "Excepturi aperiam do",
+      "date": "09.06.2023 21:00:42",
+      "product_id": "1",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 4
+    },
+    {
+      "name": "Emin Suleymanov",
+      "email": "admin@gmail.com",
+      "comment": "Nostrud aliquip omni",
+      "date": "12.06.2023 17:24:02",
+      "product_id": "1",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 5
+    },
+    {
+      "name": "Emin Suleymanov",
+      "email": "suleymanov.ramin1998@gmail.com",
+      "comment": "",
+      "date": "17.06.2023 16:52:21",
+      "product_id": "2",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 6
+    },
+    {
+      "name": "Emin Suleymanovsadw",
+      "email": "admin@gmail.com",
+      "comment": "awsed",
+      "date": "18.06.2023 13:18:44",
+      "product_id": "3",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 7
+    },
+    {
+      "name": "Emin Suleymanov",
+      "email": "admin@gmail.com",
+      "comment": "awdas",
+      "date": "18.06.2023 13:21:06",
+      "product_id": "3",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 8
+    },
+    {
+      "name": "Emin Suleymanov",
+      "email": "admin@gmail.com",
+      "comment": "awsdfg",
+      "date": "18.06.2023 13:22:45",
+      "product_id": "3",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 9
+    },
+    {
+      "name": "Emin Suleymanov",
+      "email": "admin@gmail.com",
+      "comment": "awsedrcgvhbj",
+      "date": "18.06.2023 13:23:27",
+      "product_id": "3",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 10
+    },
+    {
+      "name": "aszxdfcg",
+      "email": "szxdfcgvh",
+      "comment": "zsdxfgvh",
+      "date": "18.06.2023 13:24:12",
+      "product_id": "2",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 11
+    },
+    {
+      "name": "Elman Kerimli",
+      "email": "elmankerimli058@gmail.com",
+      "comment": "awesrdtfyg",
+      "date": "18.06.2023 16:01:26",
+      "product_id": "3",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 12
+    },
+    {
+      "name": "Elman Kerimli",
+      "email": "elmankerimli058@gmail.com",
+      "comment": "azsxdcfgvb",
+      "date": "18.06.2023 16:10:11",
+      "product_id": "2",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 13
+    },
+    {
+      "name": "Elman Kerimli",
+      "email": "elmankerimli058@gmail.com",
+      "comment": "edrftgyh",
+      "date": "18.06.2023 16:10:20",
+      "product_id": "2",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 14
+    },
+    {
+      "name": "Elman Kerimli",
+      "email": "elmankerimli058@gmail.com",
+      "comment": "dcrgv",
+      "date": "18.06.2023 16:10:26",
+      "product_id": "2",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 15
+    },
+    {
+      "name": "Emin Suleymanov",
+      "email": "emin2@gmail.com",
+      "comment": "awsedrft",
+      "date": "21.06.2023 21:37:59",
+      "product_id": "2",
+      "photoImg": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "id": 16
+    },
+    {
+      "name": "Emin Suleymanov",
+      "email": "emin2@gmail.com",
+      "comment": "as",
+      "date": "21.06.2023 21:38:11",
+      "product_id": "2",
+      "photoImg": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "id": 17
+    },
+    {
+      "name": "Alisa Waters",
+      "email": "lyrahecu@mailinator.com",
+      "comment": "In veniam est proi",
+      "date": "23.06.2023 01:25:10",
+      "product_id": "2",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 18
+    },
+    {
+      "name": "Yasir Morgan",
+      "email": "zoguc@mailinator.com",
+      "comment": "Sit consequuntur te",
+      "date": "24.06.2023 22:17:12",
+      "product_id": "1",
+      "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
+      "id": 19
+    },
+    {
+      "name": "Emin Suleymanov",
+      "email": "admin@gmail.com",
+      "comment": "Sunt porro ut et mo",
+      "date": "24.06.2023 22:22:42",
+      "product_id": "3",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 20
+    },
+    {
+      "name": "Ənkə Coder",
+      "email": "admin@gmail.com",
+      "comment": "5drftyghui",
+      "date": "01.07.2023 22:48:39",
+      "product_id": "1",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 21
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Coffee"
+    },
+    {
+      "id": 2,
+      "name": "Device"
+    }
+  ]
+}

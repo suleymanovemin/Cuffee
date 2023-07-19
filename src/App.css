@@ -1709,6 +1709,9 @@ nav ul a.active {
   color: #be9c79;
   display: none;
 }
+.basketProdIncremet{
+  display: flex;
+}
 
 /* Hot Deal || Packaged Coffee */
 
@@ -2668,6 +2671,26 @@ table {
 .addToComments input {
   width: 100%;
 }
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-400px);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.swiperTitle.active {
+  animation: slideIn 1.3s cubic-bezier(.215, .61, .355, 1);
+ 
+}.ant-collapse-content-box{
+  background-color: #BE9C79;
+
+  & p{
+    color: #fff;
+  }
+}
 .addToComments input,
 .addToComments textarea {
   margin: 15px 0;
@@ -3180,6 +3203,8 @@ table {
   object-fit: cover;
   transition: 0.4s;
   transform: scale(1.2);
+  display: block;
+  
 }
 .aboutRight img:hover,
 .aboutLeft img:hover {
@@ -3572,7 +3597,7 @@ table {
 }
 .ant-collapse-item {
   margin: 10px 0;
-  border: none !important;
+  /* border: none !important; */
 }
 .ant-collapse-icon-position-start {
   border: none !important;
@@ -3587,28 +3612,6 @@ table {
 .scroll-to-top svg {
   fill: #fff;
 }
-/* .scroll-to-top::before {
-  transform: skewX(-45deg);
-  left: -100%;
-  display: block;
-  content: "";
-  width: 50%;
-  height: 100%;
-
-  content: "";
-  position: absolute;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 100%
-  );
-  top: 0;
-  transition: 0.3s;
-  border-radius: 8px;
-}
-.scroll-to-top:hover {
-  top: 0;
-} */
 /* COFFEE MUG */
 
 .coffee-mug {

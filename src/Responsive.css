@@ -52,20 +52,20 @@
   .cartIcon {
     margin-right: 20px;
   }
-  .discound{
+  .discound {
     right: -80px;
   }
-  .basketActive::after{
+  .basketActive::after {
     display: none;
   }
-  .totalItems{
+  .totalItems {
     display: block;
   }
-  .quickViewProduct{
+  .quickViewProduct {
     width: 80%;
   }
-  .lastBlogs{
-    grid-template-columns: repeat(1,0.8fr);
+  .lastBlogs {
+    grid-template-columns: repeat(1, 0.8fr);
     justify-content: center;
     text-align: center;
   }
@@ -80,45 +80,48 @@
   .productIcon {
     display: none;
   }
-  .packagetImage{
+  .packagetImage {
     width: 535px;
   }
-  .packagetImage img{
+  .packagetImage img {
     width: 100%;
   }
-  .packagetContent h1{
-  font-size: 30px;
+  .packagetContent h1 {
+    font-size: 30px;
   }
-  .packagetContent li{
-  font-size: 15px;
-  line-height:35px;
+  .packagetContent li {
+    font-size: 15px;
+    line-height: 35px;
   }
-  .detailImage{
+  .detailImage {
     width: 418px;
     height: 418px;
   }
-  .ProductDetail{
+  .ProductDetail {
     gap: 35px;
   }
-  .subscribe{
+  .subscribe {
     display: block;
-    
   }
-  .subInput form{
+  .subInput form {
     display: block;
     width: 80%;
   }
-  .subInput form input{
+  .subInput form input {
     width: 100%;
   }
-  .subInput form button{
+  .subInput form button {
     margin-top: 15px;
     width: 100%;
   }
-  .lastBlogs{
-    grid-template-columns: repeat(1,0.6fr);
+  .lastBlogs {
+    grid-template-columns: repeat(1, 0.6fr);
     justify-content: center;
     text-align: center;
+  }
+  .detailImage img {
+    width: 325px !important;
+    height: 325px !important;
   }
 }
 
@@ -158,53 +161,78 @@
   .productDetails h3 {
     padding-bottom: 1px;
   }
-  .miniCart{
+  .miniCart {
     width: 290px;
   }
-  .basketDetails h3{
+  .basketDetails h3 {
     font-size: 18px;
   }
-  .discound{
+  .discound {
     right: -60px;
   }
   .packaged {
     display: block;
   }
-  .packagetImage{
+  .packagetImage {
     width: 100%;
   }
-  .packagetImage img{
+  .packagetImage img {
     width: 100%;
   }
-  .ProductDetail{
+  .ProductDetail {
     display: block;
   }
-  .detailContent{
+  .detailContent {
     margin-top: 110px;
   }
-  .featuredServices{
-    grid-template-columns: repeat(1,1fr);
+  .featuredServices {
+    grid-template-columns: repeat(1, 1fr);
   }
-  .detailImage{
+  .detailImage {
     width: 395px;
     height: 395px;
   }
-  .footerRow{
+  .footerRow {
     align-items: center;
     text-align: center;
     justify-content: center;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
-  .footerAbout > ul{
+  .footerAbout > ul {
     text-align: center;
   }
-  .socialMedia > ul{
+  .socialMedia > ul {
     justify-content: center;
   }
-  .footerAbout h4::before{
+  .footerAbout h4::before {
     left: 50%;
     transform: translateX(-50%);
   }
+  .qualityImage {
+    display: none;
+  }
+  .accordion {
+    width: 100%;
+  }
+  .detailImage img {
+    width: 325px !important;
+    height: 325px !important;
+  }
+  .otherImg img {
+    max-width: 90px;
+    max-height: 90px;
+    display: block;
+  }
+  .js-image-zoom__zoomed-area {
+    display: none !important;
+  }
+  .about {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .productDescription.active {
+    height: 900px;
+  }
+
 }
 
 /* Mobile M */
@@ -237,37 +265,37 @@
   .burgerMenu {
     width: 240px;
   }
-  .miniCart{
+  .miniCart {
     width: 260px;
   }
   .basketDetails {
     font-size: 14px;
   }
-  .discound{
+  .discound {
     right: -50px;
   }
-  .detailImage{
+  .detailImage {
     width: 350px;
     height: 350px;
   }
-  .heroSwiperSecond .swiperTitle{
+  .heroSwiperSecond .swiperTitle {
     left: 0;
   }
 }
 
 /* Mobile S */
 
-@media screen and (max-width: 320px){
-  .discound{
+@media screen and (max-width: 320px) {
+  .discound {
     top: 10px;
     right: -48px;
   }
-  .detailImage{
+  .detailImage {
     width: 290px;
     height: 290px;
   }
-  .lastBlogs{
-    grid-template-columns: repeat(1,0.5fr);
+  .lastBlogs {
+    grid-template-columns: repeat(1, 0.5fr);
     justify-content: center;
     text-align: center;
   }

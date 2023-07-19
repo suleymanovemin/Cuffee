@@ -34,7 +34,7 @@ export const register = async (email, password) => {
       email,
       password
     );
-    toast.success("Qeydiyyatdan keçdiz.");
+    toast.success("Qeydiyyat uğurla tamalandı!.");
     return user;
   } catch (error) {
     toast.error(error.message);
@@ -79,12 +79,10 @@ export const update = async (data) => {
 
 export const emailVerification = async () => {
   try {
-    
     await sendEmailVerification(auth.currentUser);
     toast.success(
       ` Təstiq mail'i ${auth.currentUser.email} adresinə göndərildi! `
     );
-
   } catch (error) {
     toast.error(error.message);
   }
