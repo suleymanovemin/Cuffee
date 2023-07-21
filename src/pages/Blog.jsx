@@ -11,7 +11,7 @@ function Blog({ blogs }) {
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
 
-  const pageSize = 4;
+  const pageSize = 3;
   const totalProducts = blogs.length;
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);

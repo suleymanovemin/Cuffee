@@ -99,7 +99,7 @@ function Details({
     }
     setDelay(true);
     const newBasket = [...basket];
-    console.log(newBasket);
+    const size = products.find((item) => item.id === id);
     const index = newBasket.findIndex(
       (item) => item.id === id && item.size === activeSize
     );

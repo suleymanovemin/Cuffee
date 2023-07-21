@@ -101,27 +101,57 @@ function App({ dispatch, user }) {
     },
   ];
 
-  const API = "http://192.168.0.104:3000";
+  const API = "http://localhost:3000";
+  // useEffect(() => {
+  //   fetch(`${API}/products`)
+  //     .then((a) => a.json())
+  //     .then((b) => {
+  //       dispatch({
+  //         type: "SET_PRODUCTS",
+  //         payload: b,
+  //       });
+  //     });
+  // }, []);
   useEffect(() => {
-    fetch(`${API}/products`)
-      .then((a) => a.json())
-      .then((b) => {
+    fetch(
+      "https://raw.githubusercontent.com/suleymanovemin/finalProject/master/data.json"
+    )
+      .then((response) => response.json())
+      .then((data) => {
         dispatch({
           type: "SET_PRODUCTS",
-          payload: b,
+          payload: data.products,
         });
+      })
+      .catch((error) => {
+        console.error("Xəta baş verdi!!:", error);
       });
   }, []);
   useEffect(() => {
-    fetch(`${API}/blogs`)
-      .then((a) => a.json())
-      .then((b) => {
+    fetch(
+      "https://raw.githubusercontent.com/suleymanovemin/finalProject/master/data.json"
+    )
+      .then((response) => response.json())
+      .then((data) => {
         dispatch({
-          type: "SET_BLOGS",
-          payload: b,
-        });
+                  type: "SET_BLOGS",
+                  payload: data.blogs,
+                });
+      })
+      .catch((error) => {
+        console.error("Xəta baş verdi!!:", error);
       });
   }, []);
+  // useEffect(() => {
+  //   fetch(`${API}/blogs`)
+  //     .then((a) => a.json())
+  //     .then((b) => {
+  //       dispatch({
+  //         type: "SET_BLOGS",
+  //         payload: b,
+  //       });
+  //     });
+  // }, []);
   useEffect(() => {
     fetch(`${API}/category`)
       .then((a) => a.json())

@@ -1589,8 +1589,8 @@ nav ul a.active {
   width: 100%;
 }
 .basketImage {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
 }
 .basketList {
   position: relative;
@@ -1625,6 +1625,16 @@ nav ul a.active {
 }
 .basketDetails {
   margin-left: 15px;
+}
+.basketDetails p {
+ font-size: 14px;
+}
+.basketDetails h3 {
+  font-size: 16px;
+  text-align: justify;
+  color: #111111;
+  text-decoration: none;
+  font-weight: 400;
 }
 .deleteProduct {
   position: absolute;
@@ -1709,8 +1719,23 @@ nav ul a.active {
   color: #be9c79;
   display: none;
 }
-.basketProdIncremet{
+.basketProdIncremet {
+  margin: 5px 0;
+  width: 80px;
+  height: 27px;
   display: flex;
+  align-items: center;
+  font-size: 16px;
+  justify-content: center;
+  border: 1px solid #00000044;
+}
+.basketProdIncremet button {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 /* Hot Deal || Packaged Coffee */
@@ -2507,7 +2532,7 @@ table {
   & h3,
   p {
     color: #fff;
-    transition: .3s;
+    transition: 0.3s;
   }
   & h3:hover,
   p:hover {
@@ -2682,12 +2707,12 @@ table {
 }
 
 .swiperTitle.active {
-  animation: slideIn 1.3s cubic-bezier(.215, .61, .355, 1);
- 
-}.ant-collapse-content-box{
-  background-color: #BE9C79;
+  animation: slideIn 1.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.ant-collapse-content-box {
+  background-color: #be9c79;
 
-  & p{
+  & p {
     color: #fff;
   }
 }
@@ -3204,7 +3229,6 @@ table {
   transition: 0.4s;
   transform: scale(1.2);
   display: block;
-  
 }
 .aboutRight img:hover,
 .aboutLeft img:hover {

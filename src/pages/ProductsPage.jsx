@@ -97,12 +97,17 @@ function ProductsPage({
   const visibleAddModal = (id) => {
     const newBasket = [...basket];
     const index = newBasket.findIndex((item) => item.id === id);
-
+    const size = products.find((item) => item.id === id);
     if (index >= 0) {
       newBasket[index].count += 1;
     } else {
-      newBasket.push({ id: id, count: 1,size:"S" });
+      if (size.size) {
+        newBasket.push({ id: id, count: 1, size: "S" });
+      } else {
+        newBasket.push({ id: id, count: 1 });
+      }
     }
+
     localStorage.setItem("basket", JSON.stringify(newBasket));
     dispatch({ type: "SET_BASKET", payload: newBasket });
     dispatch({ type: "SET_VIEW_ADD_MODAL", payload: true });

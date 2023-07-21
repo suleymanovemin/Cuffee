@@ -123,6 +123,44 @@
     width: 325px !important;
     height: 325px !important;
   }
+  .newSteller ul {
+    flex-wrap: wrap;
+  }
+  .newSteller ul li {
+    width: 100%;
+  }
+  .newSteller input {
+    width: 100%;
+  }
+  .subIn {
+    margin: 15px 0;
+  }
+  .newSteller button {
+    top: 150%;
+    left: -50%;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .newSteller ul li:nth-of-type(1) > div:nth-of-type(1) {
+    /* margin: 10px 0;
+    border: none; */
+    display: none;
+  }
+  .newSteller ul li:nth-of-type(1) div h3 {
+    border: none;
+  }
+  .newSteller .container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .newSteller li {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 /* Mobile L */
@@ -232,7 +270,34 @@
   .productDescription.active {
     height: 900px;
   }
-
+  .newSteller ul {
+    flex-wrap: wrap;
+  }
+  .newSteller ul li {
+    width: 100%;
+  }
+  .newSteller input {
+    width: 100%;
+  }
+  .subIn {
+    margin: 15px 0;
+  }
+  .newSteller button {
+    top: 150%;
+    left: -50%;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .newSteller ul li:nth-of-type(1) div {
+    margin: 10px 0;
+    border: none;
+  }
+  .newSteller ul li:nth-of-type(1) div h3 {
+    border: none;
+  }
+  .aboutServies .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* Mobile M */

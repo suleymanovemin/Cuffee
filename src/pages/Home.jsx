@@ -30,6 +30,8 @@ function Home({ user }) {
       progress: undefined,
       theme: "light",
     });
+
+
   return (
     <>
       <ScrollToTop smooth />
@@ -45,7 +47,7 @@ function Home({ user }) {
       <Products />
       <HotDeal />
       <LastBlogs />
-      <AccordionMenu/>
+      <AccordionMenu />
       <HotDealSwiper />
       <HotProducts />
       <HotDealSletter />

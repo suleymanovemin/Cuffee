@@ -134,21 +134,19 @@ function Header({
     }
   }, [pathname]);
 
-  const prodIncrement = (id, amount) => {
+  const prodIncrement = (a, amount) => {
+    console.log(a);
     const updatedBasket = basket.map((item) => {
-      if (item.id === id) {
-        // Update the count of the clicked product
+      console.log(item);
+      if (item.id === a.id ) {
         const updatedCount = item.count + amount;
-  
-        // If the updated count is greater than 0, update the count
-        // If the updated count is 0 or less, remove the product from the basket
+
         if (updatedCount > 0) {
           return {
             ...item,
             count: updatedCount,
           };
         } else {
-          // Remove the product from localStorage
           const newBasket = basket.filter((product) => product.id !== id);
           localStorage.setItem("basket", JSON.stringify(newBasket));
           return null;
@@ -156,17 +154,15 @@ function Header({
       }
       return item;
     });
-  
-    // Filter out the null values to remove the products with count less than or equal to 0 from the basket
+
     const filteredBasket = updatedBasket.filter((item) => item !== null);
-  
-    // Dispatch the updated basket to Redux state
+
     dispatch({
       type: "SET_BASKET",
       payload: filteredBasket,
     });
   };
-  
+
   return (
     <>
       <div
@@ -206,11 +202,11 @@ function Header({
                             <h3>{basketList?.title.slice(0, 15)}</h3>
                             <p>{basketList?.price} ₼</p>
                             <div className="basketProdIncremet">
-                              <button onClick={() => prodIncrement(a.id, -1)}>
+                              <button onClick={() => prodIncrement(a, -1)}>
                                 -
                               </button>
-                              <p>Ədəd : {a.count}</p>
-                              <button onClick={() => prodIncrement(a.id, 1)}>
+                              <p>{a.count}</p>
+                              <button onClick={() => prodIncrement(a, 1)}>
                                 +
                               </button>
                             </div>
