@@ -153,12 +153,12 @@ function App({ dispatch, user }) {
   //     });
   // }, []);
   useEffect(() => {
-    fetch(`${API}/category`)
+    fetch(`https://raw.githubusercontent.com/suleymanovemin/finalProject/master/data.json `)
       .then((a) => a.json())
       .then((b) => {
         dispatch({
           type: "SET_CATEGORY",
-          payload: b,
+          payload: b.category,
         });
       });
   }, []);
