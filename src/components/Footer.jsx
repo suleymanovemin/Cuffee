@@ -30,10 +30,10 @@ function Footer() {
             </div>
           </div>
           <div className="footerAbout">
-            <h4>Help & Information</h4>
+            <h4>Yardım & Məlumat</h4>
             <ul>
               <li>
-                <Link>About Us</Link>
+                <Link>Haqqımızda</Link>
               </li>
               <li>
                 <Link>Privacy Policy</Link>
@@ -47,7 +47,7 @@ function Footer() {
             </ul>
           </div>
           <div className="footerAbout">
-            <h4>Help & Information</h4>
+            <h4>Haqqımızda</h4>
             <ul>
               <li>
                 <Link>About Us</Link>

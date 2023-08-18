@@ -12,7 +12,7 @@ function HotDeal() {
             />
           </div>
           <div className="packagetContent">
-            <h1>PURE PACKAGED COFFEE</h1>
+            <h1>TƏMİZ PAKETLƏNMİŞ COFFEE</h1>
             <div className="packagetInner">
               <ul>
                 <li>Enerji verir və düşünmə qabiliyyətinizi artırır</li>
@@ -23,7 +23,7 @@ function HotDeal() {
               </ul>
             </div>
             <div className="shopNow">
-              <Link to="/products">SHOP NOW</Link>
+              <Link to="/products">İNDİ SATIN AL</Link>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@
         "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373"
       ],
       "title": "French Press",
-      "price": "45",
+      "price": "45.99",
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are goasdawdasing to use a passage of Lorem Ipsum, you need to...",
       "category_id": 1,
       "brends": "apple",
@@ -18,7 +18,8 @@
         "L",
         "M",
         "S"
-      ]
+      ],
+      "oldPrice": "85"
     },
     {
       "id": 2,
@@ -47,7 +48,6 @@
       ],
       "title": "Espresso Grinder",
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
-      "oldPrice": "42",
       "price": "26",
       "inStock": true,
       "brand": "A",
@@ -81,9 +81,8 @@
       ],
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
       "inStock": true,
-      "oldPrice": 45,
       "title": "Custom Variety Pack",
-      "price": "25",
+      "price": "86.99",
       "brand": "B",
       "category_id": 2
     },
@@ -408,6 +407,51 @@
       "blog_id": "1",
       "photoImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/2048px-Windows_10_Default_Profile_Picture.svg.png",
       "id": 3
+    },
+    {
+      "name": "Emin Süleymanov",
+      "email": "admin@gmail.com",
+      "comment": "Cupidatat aliquip it",
+      "date": "13.08.2023 13:12:31",
+      "blog_id": "5",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 4
+    },
+    {
+      "name": "Emin Süleymanov",
+      "email": "admin@gmail.com",
+      "comment": "Minim quos dolorem n",
+      "date": "13.08.2023 13:12:59",
+      "blog_id": "5",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 5
+    },
+    {
+      "name": "Emin Süleymaasnov",
+      "email": "admin@gmail.com",
+      "comment": "sadaw",
+      "date": "13.08.2023 13:13:58",
+      "blog_id": "5",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 6
+    },
+    {
+      "name": "Emin Süleymanov",
+      "email": "admin@gmail.com",
+      "comment": "awfvs",
+      "date": "13.08.2023 13:15:46",
+      "blog_id": "5",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 7
+    },
+    {
+      "name": "Emin Süleymanov",
+      "email": "admin@gmail.com",
+      "comment": "Saepe praesentium vo",
+      "date": "18.08.2023 11:23:27",
+      "blog_id": "5",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 8
     }
   ],
   "productComments": [
@@ -608,6 +652,15 @@
       "product_id": "1",
       "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
       "id": 22
+    },
+    {
+      "name": "Emin Süleymanov",
+      "email": "admin@gmail.com",
+      "comment": "Sunt ut nulla qui v",
+      "date": "18.08.2023 11:24:49",
+      "product_id": "6",
+      "photoImg": "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "id": 23
     }
   ],
   "category": [

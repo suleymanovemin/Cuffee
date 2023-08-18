@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Slider } from "antd";
 import LoginModal from "../modals/LoginModal";
 function Contact() {
-
   return (
     <div>
       <LoginModal />
@@ -22,10 +21,12 @@ function Contact() {
           <div className="contactUs">
             <h5>Əlaqə</h5>
             <p>
-              If you would like to know more about our policies, you can consult
-              our Terms and Conditions. You will also be able to follow your
-              order (tracking number will be provided in an e-mail after
-              ordering). You wish to return some items?
+              Salam! "Cuffee"ə xoş gəlmisiniz. Sizə necə kömək edə bilərik?
+              Fikirləriniz bizim üçün dəyərlidir və sizə təqdim etdiyimiz
+              "Cuffee" təcrübəsini təkmilləşdirməkdə bizə yardımçı olur.
+              Markamızla bağlı bütün sual, şərh və fikirləriniz üçün bizimlə
+              Cuffee-az@cuffee.com elektron ünvanı vasitəsilə əlaqə saxlaya
+              bilər.
             </p>
             <div className="contactInfo">
               <div>
@@ -35,9 +36,9 @@ function Contact() {
                 <div>
                   <h3>Adresss</h3>
                   <p>
-                    Click the icon in the bottom right of the page to talk to
-                    our agents during business hours. At other times we will
-                    respond as soon as possible.
+                    İş saatları ərzində agentlərimizlə danışmaq üçün səhifənin
+                    sağ altındakı işarəyə klikləyin. Digər vaxtlarda mümkün
+                    qədər tez cavab verəcəyik.
                   </p>
                 </div>
               </div>
@@ -57,8 +58,8 @@ function Contact() {
                 <div>
                   <h3>İş Vaxtı</h3>
                   <p>
-                    Monday to Friday 09:30 - 17:30 <br /> Saturday & Sunday
-                    10:00 - 15:00
+                    Bazar ertəsindən cüməyə 09:30 - 17:30 <br />
+                    Şənbə və Bazar 10:00-15:00
                   </p>
                 </div>
               </div>
@@ -86,7 +87,7 @@ function Contact() {
           </div>
         </div>
         <div className="sendMessage">
-          <h1>Send Us A Message</h1>
+          <h1>Bizə Mesaj Göndərin</h1>
           <form>
             <div>
               <input placeholder="Adınız..." type="text" />
@@ -105,23 +106,23 @@ function Contact() {
             </div>
             <div>
               <h3>
-                SIGN UP <br /> FOR NEWSLETTER
+                {" "}
+                XƏBƏRLƏR ÜÇÜN <br />
+                ABUNƏ OLUN
               </h3>
             </div>
           </li>
           <li>
-            <p>Subscribe to the weekly newsletter for all the latest updates</p>
+            <p>Bütün ən son yeniləmələr üçün həftəlik bülletenə abunə olun</p>
           </li>
           <li className="subIn">
             <input placeholder="E-mail adress..." type="text" />
-            <button>Subscribe</button>
+            <button>Abunə Ol</button>
           </li>
         </ul>
       </div>
 
-      <div>
-       
-      </div>
+      <div></div>
     </div>
   );
 }

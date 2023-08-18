@@ -58,12 +58,18 @@ function AddToCartModal({
               Səbətdə bu məhsuldan <span>{prod?.count}</span> <br /> ədəd var.
             </p>
             <p className="totalPrice">
-              Toplam Ödəniş :{" "}
+              Toplam Ödəniş :
               <span>
-                {basket.reduce((acc, curr) => {
-                  const product = products.find((p) => p.id === curr.id);
-                  return acc + curr?.count * product?.price;
-                }, 0)}
+                {basket
+                  .reduce((acc, curr) => {
+                    const product = products.find((p) => p.id === curr.id);
+                    if (product) {
+                      const totalPriceForProduct = curr.count * product.price;
+                      return acc + totalPriceForProduct;
+                    }
+                    return acc;
+                  }, 0)
+                  .toFixed(2)}
                 ₼
               </span>
             </p>

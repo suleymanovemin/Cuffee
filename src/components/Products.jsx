@@ -163,7 +163,7 @@ function Products({ products, dispatch, basket, favorites }) {
               </p>
             </div>
 
-            {a.oldPrice ? (
+            {a.oldPrice &&a.oldPrice > a.price ? (
               <div className="discound">
                 <p>
                   -{(((a.oldPrice - a.price) / a.oldPrice) * 100).toFixed(0)}%

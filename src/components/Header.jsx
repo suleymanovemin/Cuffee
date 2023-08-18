@@ -289,7 +289,7 @@ function Header({
                   </li>
                   <li>
                     <NavLink onClick={showBurgerMenu} to="/blog">
-                      Blog
+                      Bloq
                     </NavLink>
                   </li>
                   <li>
@@ -351,7 +351,7 @@ function Header({
                 <NavLink to="/about">Haqqımızda</NavLink>
               </li>
               <li>
-                <NavLink to="/blog">Blog</NavLink>
+                <NavLink to="/blog">Bloq</NavLink>
               </li>
               <li>
                 <NavLink to="/products">Mağaza</NavLink>

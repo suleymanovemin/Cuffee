@@ -54,8 +54,8 @@ function HotDealSwiper() {
               </Link>
             </div>
             <div className="coffeeSwiperContent">
-              <Link to="/products">New Collection</Link>
-              <p>It is a long established fact that a reader</p>
+              <Link to="/products">Yeni Kolleksiya</Link>
+              <p>Yeni gələn kofelərimizi kəşf edin</p>
             </div>
           </div>
         </SwiperSlide>
@@ -70,8 +70,8 @@ function HotDealSwiper() {
               </Link>
             </div>
             <div className="coffeeSwiperContent">
-              <Link to="/products">New Collection</Link>
-              <p>It is a long established fact that a reader</p>
+              <Link to="/products">Yeni Kolleksiya</Link>
+              <p>Yeni gələn kofelərimizi kəşf edin</p>
             </div>
           </div>
         </SwiperSlide>
@@ -86,8 +86,8 @@ function HotDealSwiper() {
               </Link>
             </div>
             <div className="coffeeSwiperContent">
-              <Link to="/products">New Collection</Link>
-              <p>It is a long established fact that a reader</p>
+              <Link to="/products">Yeni Kolleksiya</Link>
+              <p>Yeni gələn kofelərimizi kəşf edin</p>
             </div>
           </div>
         </SwiperSlide>
@@ -102,8 +102,8 @@ function HotDealSwiper() {
               </Link>
             </div>
             <div className="coffeeSwiperContent">
-              <Link to="/products">New Collection</Link>
-              <p>It is a long established fact that a reader</p>
+              <Link to="/products">Yeni Kolleksiya</Link>
+              <p>Yeni gələn kofelərimizi kəşf edin</p>
             </div>
           </div>
         </SwiperSlide>
@@ -118,8 +118,8 @@ function HotDealSwiper() {
               </Link>
             </div>
             <div className="coffeeSwiperContent">
-              <Link to="/products">New Collection</Link>
-              <p>It is a long established fact that a reader</p>
+              <Link to="/products">Yeni Kolleksiya</Link>
+              <p>Yeni gələn kofelərimizi kəşf edin</p>
             </div>
           </div>
         </SwiperSlide>
@@ -134,8 +134,8 @@ function HotDealSwiper() {
               </Link>
             </div>
             <div className="coffeeSwiperContent">
-              <Link to="/products">New Collection</Link>
-              <p>It is a long established fact that a reader</p>
+              <Link to="/products">Yeni Kolleksiya</Link>
+              <p>Yeni gələn kofelərimizi kəşf edin</p>
             </div>
           </div>
         </SwiperSlide>

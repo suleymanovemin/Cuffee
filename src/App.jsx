@@ -101,7 +101,7 @@ function App({ dispatch, user }) {
     },
   ];
 
-  const API = "http://localhost:3000";
+  // const API = "http://localhost:3000";
   // useEffect(() => {
   //   fetch(`${API}/products`)
   //     .then((a) => a.json())
@@ -134,9 +134,9 @@ function App({ dispatch, user }) {
       .then((response) => response.json())
       .then((data) => {
         dispatch({
-                  type: "SET_BLOGS",
-                  payload: data.blogs,
-                });
+          type: "SET_BLOGS",
+          payload: data.blogs,
+        });
       })
       .catch((error) => {
         console.error("Xəta baş verdi!!:", error);
@@ -152,14 +152,29 @@ function App({ dispatch, user }) {
   //       });
   //     });
   // }, []);
+  // useEffect(() => {
+  //   fetch(`${API}/category`)
+  //     .then((a) => a.json())
+  //     .then((b) => {
+  //       dispatch({
+  //         type: "SET_CATEGORY",
+  //         payload: b,
+  //       });
+  //     });
+  // }, []);
   useEffect(() => {
-    fetch(`${API}/category`)
-      .then((a) => a.json())
+    fetch(
+      "https://raw.githubusercontent.com/suleymanovemin/finalProject/master/data.json"
+    )
+      .then((response) => response.json())
       .then((b) => {
         dispatch({
           type: "SET_CATEGORY",
-          payload: b,
+          payload: b.category,
         });
+      })
+      .catch((error) => {
+        console.error("Xəta baş verdi!!:", error);
       });
   }, []);
   const isAdminRoute = /^\/admin\/.*/.test(pathname);

@@ -60,8 +60,8 @@ function BlogDetails({ blogs, user }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name,
-          email,
+          name: user?.displayName ? user?.displayName : name,
+          email: user?.email ? user?.email : email,
           comment,
           date: currentDate,
           blog_id: id,
@@ -77,8 +77,7 @@ function BlogDetails({ blogs, user }) {
         })
         .catch((error) => console.log(error));
     }
-    setName("");
-    setEmail("");
+
     setComment("");
   };
 

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function HotDealSletter() {
@@ -34,8 +34,8 @@ function HotDealSletter() {
         <div className="subIcon">
           <i className="fa-solid fa-envelope-open"></i>
         </div>
-        <h3>Newsletter Signup</h3>
-        <p>Join our list and get 15% off your first purchase!</p>
+        <h3>Yeniliklərdən Xəbərdar Ol !</h3>
+        <p>İlk alışınıza 15% endirim qazanın!</p>
         <div className="subInput">
           <form
             onSubmit={(e) => {

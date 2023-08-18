@@ -40,12 +40,14 @@ function Hero() {
                 src="https://cdn.shopify.com/s/files/1/0606/8191/2503/files/s1.jpg?v=1659690901"
                 alt=""
               />
-              <div className={`swiperTitle ${activeIndex === 0 ? "active" : ""}`}>
+              <div
+                className={`swiperTitle ${activeIndex === 0 ? "active" : ""}`}
+              >
                 <h3>Enough Best Tea</h3>
                 <h3>Pure Coffee</h3>
                 <h3>
-                  Aliqua id fugiat irure ex duis ea quis id quis ad et. <br />
-                  Sunt qui esse pariatur duis deserunt
+                  Cuffee alətləri almaq və ya birdəfəlik qəhvə <br /> sifarişi vermək
+                  istəyirsiniz?
                 </h3>
                 <Link to="/products">ALIŞ-VERİŞ ET</Link>
               </div>
@@ -59,12 +61,14 @@ function Hero() {
                 src="https://cdn.shopify.com/s/files/1/0606/8191/2503/files/s2.jpg?v=1659690856"
                 alt=""
               />
-              <div className={`swiperTitle ${activeIndex === 1 ? "active" : ""}`}>
+              <div
+                className={`swiperTitle ${activeIndex === 1 ? "active" : ""}`}
+              >
                 <h3>Enough Best Tea</h3>
                 <h3>Coffee Moka</h3>
                 <h3>
-                  Aliqua id fugiat irure ex duis ea quis id quis ad et. <br />
-                  Sunt qui esse pariatur duis deserunt
+                Cuffee alətləri almaq və ya birdəfəlik qəhvə <br /> sifarişi vermək
+                  istəyirsiniz?
                 </h3>
                 <Link to="products">ALIŞ-VERİŞ ET</Link>
               </div>

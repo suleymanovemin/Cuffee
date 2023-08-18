@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Autoplay } from "swiper";
 import { motion } from "framer-motion";
-
 
 function Servies() {
   // Framer Motion
@@ -15,7 +15,6 @@ function Servies() {
     },
   };
 
-
   const item = {
     hidden: {
       opacity: 0,
@@ -25,7 +24,6 @@ function Servies() {
     },
   };
 
-  
   const servies = [
     {
       image:
@@ -76,7 +74,6 @@ function Servies() {
     },
   ];
 
-
   return (
     <div className="container">
       <div className="allServies">
@@ -96,7 +93,13 @@ function Servies() {
           </div>
         ))}
       </div>
-      <Swiper className="mySwiper allServiesSwiper ">
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 5000,
+        }}
+        className="mySwiper allServiesSwiper "
+      >
         {servies.map((a, b) => (
           <SwiperSlide key={b}>
             <div className="servies">
@@ -115,12 +118,10 @@ function Servies() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <motion.div
-      variants={container}
-      className="coffeesRow">
+      <motion.div variants={container} className="coffeesRow">
         {coffeesRow.map((b, c) => (
           <motion.div
-          variants={item}
+            variants={item}
             key={c}
             style={{ backgroundImage: `url(${b.image})` }}
             className="coffeeItem"

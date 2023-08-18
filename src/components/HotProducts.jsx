@@ -14,6 +14,12 @@ const HotProducts = ({ products, dispatch, basket, favorites }) => {
       payload: id,
     });
   };
+  const viewProduct = (id) => {
+    dispatch({
+      type: "SET_VIEW_ID",
+      payload: id,
+    });
+  };
 
   //   Quick Modal
 
@@ -71,8 +77,8 @@ const HotProducts = ({ products, dispatch, basket, favorites }) => {
     <>
       <Quickview />
       <div className="prodTitle">
-      <h3>ENDİRİMLİ MƏHSULLAR</h3>
-      <p>Bu həftənin endirimli məhsulları!</p>
+        <h3>ENDİRİMLİ MƏHSULLAR</h3>
+        <p>Bu həftənin endirimli məhsulları!</p>
       </div>
       <div className="container hotProducts">
         <Swiper
@@ -186,14 +192,18 @@ const HotProducts = ({ products, dispatch, basket, favorites }) => {
                     </p>
                   </div>
                   {a.oldPrice ? (
-              <div className="discound">
-                <p>
-                  -{(((a.oldPrice - a.price) / a.oldPrice) * 100).toFixed(0)}%
-                </p>
-              </div>
-            ) : (
-              ""
-            )}
+                    <div className="discound">
+                      <p>
+                        -
+                        {(((a.oldPrice - a.price) / a.oldPrice) * 100).toFixed(
+                          0
+                        )}
+                        %
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </SwiperSlide>
             ))}

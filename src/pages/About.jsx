@@ -88,7 +88,7 @@ function About() {
               <div className="abSerIcon">
                 <i className="fa-solid fa-compass-drafting"></i>
               </div>
-              <h4>Desing</h4>
+              <h4>Dizayn</h4>
               <p>
                 Praesent metus tellus, elementum eu, semper Vestibulum volutpat
                 pretium libero
@@ -98,7 +98,7 @@ function About() {
               <div className="abSerIcon">
                 <i className="fa-regular fa-lightbulb"></i>
               </div>
-              <h4>Inovation</h4>
+              <h4>Yenilik</h4>
               <p>
                 Praesent metus tellus, elementum eu, semper Vestibulum volutpat
                 pretium libero
@@ -108,7 +108,7 @@ function About() {
               <div className="abSerIcon">
                 <i className="fa-solid fa-road"></i>
               </div>
-              <h4>Journey</h4>
+              <h4>Səyahət</h4>
               <p>
                 Praesent metus tellus, elementum eu, semper Vestibulum volutpat
                 pretium libero
@@ -124,18 +124,17 @@ function About() {
               </div>
               <div>
                 <h3>
-                  SIGN UP <br /> FOR NEWSLETTER
+                  XƏBƏRLƏR ÜÇÜN <br />
+                  ABUNƏ OLUN
                 </h3>
               </div>
             </li>
             <li>
-              <p>
-                Subscribe to the weekly newsletter for all the latest updates
-              </p>
+              <p>Bütün ən son yeniləmələr üçün həftəlik bülletenə abunə olun</p>
             </li>
             <li className="subIn">
               <input placeholder="E-mail adress..." type="text" />
-              <button>Subscribe</button>
+              <button>Abunə Ol</button>
             </li>
           </ul>
         </div>
