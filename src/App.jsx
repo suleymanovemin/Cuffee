@@ -163,10 +163,15 @@ function App({ dispatch, user }) {
   //     });
   // }, []);
   useEffect(() => {
+<<<<<<< HEAD
     fetch(
       "https://raw.githubusercontent.com/suleymanovemin/finalProject/master/data.json"
     )
       .then((response) => response.json())
+=======
+    fetch(`https://raw.githubusercontent.com/suleymanovemin/finalProject/master/data.json `)
+      .then((a) => a.json())
+>>>>>>> 9a3550a99bd2c790ce8550830cff59c27707ab72
       .then((b) => {
         dispatch({
           type: "SET_CATEGORY",
