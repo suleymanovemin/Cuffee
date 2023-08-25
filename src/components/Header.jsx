@@ -135,10 +135,8 @@ function Header({
   }, [pathname]);
 
   const prodIncrement = (a, amount) => {
-    console.log(a);
     const updatedBasket = basket.map((item) => {
-      console.log(item);
-      if (item.id === a.id ) {
+      if (item.id === a.id && item.size === a.size) {
         const updatedCount = item.count + amount;
 
         if (updatedCount > 0) {

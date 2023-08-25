@@ -36,27 +36,27 @@ function Footer() {
                 <Link>Haqqımızda</Link>
               </li>
               <li>
-                <Link>Privacy Policy</Link>
+                <Link>Gizlilik Siyasəti</Link>
               </li>
               <li>
-                <Link>Privacy Policy</Link>
+                <Link>Şərtlər və qaydalar</Link>
               </li>
               <li>
-                <Link>Privacy Policy</Link>
+                <Link>Məhsulların qaytarılması</Link>
               </li>
             </ul>
           </div>
           <div className="footerAbout">
-            <h4>Haqqımızda</h4>
+            <h4>Bizim Haqqımızda</h4>
             <ul>
               <li>
-                <Link>About Us</Link>
+                <Link to="/contact">Əlaqə</Link>
               </li>
               <li>
-                <Link>Privacy Policy</Link>
+                <Link to="/products">Aksesuarlar</Link>
               </li>
               <li>
-                <Link>Privacy Policy</Link>
+                <Link to="/">Ana Səhifə</Link>
               </li>
               <li>
                 <Link>Privacy Policy</Link>
@@ -65,7 +65,16 @@ function Footer() {
           </div>
         </div>
 
-        <div className="productBy">© 2023 CUFEE. Made with <i className="fa-solid fa-heart"></i> by<a target="_blank" href="https://github.com/suleymanovemin" className="github">Emin</a></div>
+        <div className="productBy">
+          © 2023 CUFEE. Made with <i className="fa-solid fa-heart"></i> by
+          <a
+            target="_blank"
+            href="https://github.com/suleymanovemin"
+            className="github"
+          >
+            Emin
+          </a>
+        </div>
       </div>
     </footer>
   );
