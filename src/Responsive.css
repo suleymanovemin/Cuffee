@@ -371,9 +371,9 @@
   .blogHeading{
     margin: 70px 0 0 0;
   }
-  /* .lastBlogPicture {
-    min-width: 280px;
-  } */
+  .lastBlogPicture {
+    min-width: 300px;
+  }
 }
 
 /* Mobile S */
