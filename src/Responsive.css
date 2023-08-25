@@ -367,6 +367,15 @@
   .heroSwiperSecond .swiperTitle {
     left: 0;
   }
+  .lastBlog {
+    /* width: 95%; */
+  }
+  .blogHeading {
+    margin: 70px 0 0 0;
+  }
+  .lastBlogPicture {
+    min-width: 280px;
+  }
 }
 
 /* Mobile S */
