@@ -72,7 +72,7 @@ function Footer() {
             href="https://github.com/suleymanovemin"
             className="github"
           >
-            Emilll
+            Emin
           </a>
         </div>
       </div>
