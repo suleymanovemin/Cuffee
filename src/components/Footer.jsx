@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer>
-{/*       Ən dəyərli pərəstişkarım Fuada Sayqılar (Babalar sözünü tutar!!) */}
+<div className="Ən böyük pərəstişkarlarım Fuaf və Akşinə sayqılar (Babalar sözünü tutar :))"/>
       <div className="container footerInner">
         <div className="footerRow">
           <div className="footerInfo">
