@@ -112,6 +112,7 @@ function App({ dispatch, user }) {
   //       });
   //     });
   // }, []);
+  
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/suleymanovemin/finalProject/master/data.json"
