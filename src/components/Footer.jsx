@@ -67,7 +67,7 @@ function Footer() {
         </div>
 
         <div className="productBy">
-          © 2023 CUFFEE. Made with <i className="fa-solid fa-heart"></i> by
+          © 2022 CUFFEE. Made with <i className="fa-solid fa-heart"></i> by
           <a
             target="_blank"
             href="https://github.com/suleymanovemin"
