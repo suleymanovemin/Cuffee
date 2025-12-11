@@ -24,12 +24,12 @@
     {
       "id": 2,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_8b20a1eb-9242-4e34-a118-ca0c120898ba.jpg?v=1659667359",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_867017ea-9c76-4f30-9353-78b4bd3abbcd.jpg?v=1659667359"
+        "https://kaffeproducts.com/cdn/shop/files/KF1000X-shopify-2nd-image_900x.jpg?v=1739669047",
+        "https://kaffeproducts.com/cdn/shop/files/KF1000X-05_a78aaade-e8fd-46ba-b605-38c993bb78d7_900x.jpg?v=1739669047"
       ],
       "title": "Flowers Coffeee",
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
-      "price": "20",
+      "price": "249.99",
       "category_id": 1,
       "inStock": true,
       "brand": "A",
@@ -56,13 +56,13 @@
     {
       "id": 4,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_b2a286a5-13ae-4dec-9fbf-5ce6c3ceb9b2.jpg?v=1659667352",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_3d06eeed-48cd-4a9f-8d2b-869671a1e081.jpg?v=1659667352"
+        "https://kaffeproducts.com/cdn/shop/files/KF6075-shopify-2nd-image_900x.jpg?v=1739669041",
+        "https://kaffeproducts.com/cdn/shop/files/KF6075-01_900x.jpg?v=1739669041"
       ],
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
       "inStock": true,
       "title": "Dummya Coffee",
-      "price": "20",
+      "price": "89.99",
       "oldPrice": "45",
       "brand": "A",
       "category_id": 1,
@@ -76,8 +76,8 @@
     {
       "id": 5,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_153e4a4b-2916-4fdb-948d-f0b27cb66f4d.jpg?v=1659667348",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/2_fcca0511-9e52-4463-9d4f-ea89a543e633.jpg?v=1659667348"
+        "https://kaffeproducts.com/cdn/shop/files/KF4041-02_0f4cd684-fd18-4782-b981-4853b869e986_900x.jpg?v=1745837992",
+        "https://kaffeproducts.com/cdn/shop/files/KF4041-02_4d618ec7-0e92-478f-b2db-b7f2a5a76427_900x.jpg?v=1745837992"
       ],
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
       "inStock": true,
@@ -89,14 +89,14 @@
     {
       "id": 6,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_e94721b2-c8e4-413d-b9b1-e06cbda614ba.jpg?v=1659667345",
-        "https://cdn.shopify.com/s/files/1/0606/8191/2503/products/3_c3ab2378-138a-423a-92bf-deaa9d86e8c0.jpg?v=1659667345"
+        "https://kaffeproducts.com/cdn/shop/files/KF6061-shopify-2nd-image_1_900x.jpg?v=1739669040",
+        "https://kaffeproducts.com/cdn/shop/files/KF6061-01_36608034-8b37-4870-adf4-0ca7e2a6c351_900x.jpg?v=1741599030"
       ],
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
       "inStock": true,
       "title": "Coffee Mastems Specialty",
-      "oldPrice": 48,
-      "price": "28",
+      "oldPrice": 68,
+      "price": "45",
       "category_id": 1,
       "brand": "B",
       "size": [
@@ -110,9 +110,9 @@
       "id": 7,
       "brand": "B",
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_7aa7889a-dbbf-44a6-8b12-a5ba83042673.jpg?v=1659667341",
-        "https://cdn.shopify.com/s/files/1/0606/8191/2503/products/2_428d4084-1ed9-4686-8379-39f0e4df5438.jpg?v=1659667341",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_0ff40b1d-c05a-4caa-a078-e4c665d10b8e.jpg?v=1659667337"
+        "https://kaffeproducts.com/cdn/shop/files/KF940-02-1_1570d2e7-25de-43bc-bfc2-91a217d5759d_900x.jpg?v=1739669125",
+        "https://kaffeproducts.com/cdn/shop/files/KF9040-01_900x.jpg?v=1739669126",
+        "https://kaffeproducts.com/cdn/shop/files/KF9040-02_ef57d31d-d872-4749-b315-dd4e638f80f6_900x.jpg?v=1739669126"
       ],
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
       "inStock": true,
@@ -124,8 +124,8 @@
     {
       "id": 8,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_0ff40b1d-c05a-4caa-a078-e4c665d10b8e.jpg?v=1659667337",
-        "https://cdn.shopify.com/s/files/1/0606/8191/2503/products/3_ab68766b-4b37-4693-be78-767606c60e84.jpg?v=1659667337"
+        "https://kaffeproducts.com/cdn/shop/files/KF0007ST_1_83f372eb-28f6-482e-9400-7fd17391a793_900x.png?v=1739669114",
+        "https://kaffeproducts.com/cdn/shop/files/KF0007ST_3_900x.jpg?v=1739669115"
       ],
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
       "title": "Coffee Beans People",
@@ -142,8 +142,8 @@
     {
       "id": 9,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373"
+        "https://kaffeproducts.com/cdn/shop/files/Shopify_KFCT01_Main_Image_No_Packaging_900x.jpg?v=1739669105",
+        "https://kaffeproducts.com/cdn/shop/files/KFCT01-54-02_3e109b73-4d72-4b05-9985-dd8cbcd17c83_900x.jpg?v=1739669103"
       ],
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
       "title": "Mockup Coffee",
@@ -160,8 +160,8 @@
     {
       "id": 10,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369"
+        "https://kaffeproducts.com/cdn/shop/files/La_Colombe_Corsica_Front_900x.png?v=1739669121",
+        "https://kaffeproducts.com/cdn/shop/files/La_Colombe_Corsica_Back_900x.png?v=1739669121"
       ],
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
       "title": "Metallic Coffee",
@@ -178,8 +178,8 @@
     {
       "id": 11,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365"
+        "https://kaffeproducts.com/cdn/shop/files/KFCF04B-00_900x.jpg?v=1753192471",
+        "https://kaffeproducts.com/cdn/shop/files/KFCF04B-02_900x.jpg?v=1753192471"
       ],
       "title": "Kimbo Napolitano Premium",
       "price": "17",
@@ -195,8 +195,8 @@
     {
       "id": 12,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363"
+        "https://kaffeproducts.com/cdn/shop/files/KF2071-shopify-2nd-image_2705aeed-316a-43a2-8375-64acc89659cc_900x.jpg?v=1742397746",
+        "https://kaffeproducts.com/cdn/shop/files/KF2071-01_1e5d64bd-1a36-45f6-8709-c9b3be29877c_900x.jpg?v=1742397746"
       ],
       "title": "Kicking Horse Coffee",
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
@@ -213,8 +213,8 @@
     {
       "id": 13,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_a363962e-91d4-4873-884b-e8f126bf468a.jpg?v=1659667363"
+        "https://kaffeproducts.com/cdn/shop/files/KF5010-02_84557cd0-dc0d-4e75-87a4-4f93471e3fd9_900x.jpg?v=1739669139",
+        "https://kaffeproducts.com/cdn/shop/files/KF5010-03_900x.jpg?v=1739669139"
       ],
       "title": "Kicking Horse Coffee",
       "price": "24",
@@ -231,8 +231,8 @@
     {
       "id": 14,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_90a7a9ef-fe95-4b90-9f5d-9122bbd0d173.jpg?v=1659667365"
+        "https://kaffeproducts.com/cdn/shop/files/KF1010-02_900x.jpg?v=1739669174",
+        "https://kaffeproducts.com/cdn/shop/files/KF1010-02_900x.jpg?v=1739669174"
       ],
       "title": "Kimbo Napolitano Premium",
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
@@ -249,8 +249,8 @@
     {
       "id": 15,
       "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_cc6e7b3c-2f51-40fd-8968-0d4caa620011.jpg?v=1659667369"
+        "https://kaffeproducts.com/cdn/shop/files/website_main-image_KF3030G_1000x1000_e5c5a25a-4cea-4b2d-90ed-00a09f829ae7_900x.jpg?v=1742397325",
+        "https://kaffeproducts.com/cdn/shop/files/KF3030G-03_55717f96-202b-49f5-b9a4-9feffaef10a0_900x.jpg?v=1742397325"
       ],
       "title": "Metallic Coffee",
       "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
@@ -263,72 +263,8 @@
         "M",
         "S"
       ]
-    },
-    {
-      "id": 16,
-      "image": [
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373",
-        "//cdn.shopify.com/s/files/1/0606/8191/2503/products/1_98217439-da48-44f9-8935-ddea42659d37.jpg?v=1659667373"
-      ],
-      "content": "Things You Need To Know There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to...",
-      "title": "Mockup Coffee",
-      "price": "18",
-      "brand": "C",
-      "category_id": 1
-    },
-    {
-      "id": 17,
-      "image": [
-        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/09/PRODUCT-dbEt1jVTaN.jpg?resize=600%2C600&ssl=1",
-        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/09/BIA_PRESS1.jpg?resize=209%2C300&ssl=1"
-      ],
-      "content": "Praktik və dadlı süzgəcli qəhvə, dəmləmə və bitki çayları hazırlamaq üçün istifadə edilən kofe pressidir. Müasir dizaynı və Moka Express-in formasını xatırladan xüsusi tutacağı var. 18/10 paslanmayan poladdan hazırlanmış gövdə. Borosilikat şüşə qab qabyuyan maşında yuyula bilər, uzunömürlülük üçün əl ilə yuyulması tövsiyə olunur.",
-      "title": "Bialetti French Press Preziosa 350 ml",
-      "price": "50",
-      "category_id": 2,
-      "brand": "D",
-      "inStock": true
-    },
-    {
-      "id": 18,
-      "image": [
-        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/03/milk_jug.jpg?resize=600%2C600&ssl=1",
-        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/03/milk_jug.jpg?resize=600%2C600&ssl=1"
-      ],
-      "content": "Cilalanmış paslanmayan poladdan süd köpürtmə qabı 350ml.",
-      "title": "Delonghi Milk frothing jug 350ml DLSC 060",
-      "price": "25",
-      "category_id": 2,
-      "brand": "D",
-      "inStock": true
-    },
-    {
-      "id": 19,
-      "image": [
-        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/09/470fcffc40f4f69097ca3e13b4972e4b.jpg?resize=600%2C600&ssl=1",
-        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/09/3.webp?resize=100%2C100&ssl=1",
-        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/09/2.webp?resize=100%2C100&ssl=1"
-      ],
-      "content": "Brikka espressonu əsl italyan barında təqdim edilənə mümkün qədər yaxın edən yeganə qəhvə dəmləyicisidir. Qəhvə adi moka ilə müqayisədə daha güclü və zəngindir. Amma təbii ki, onun əsas üstünlüyü qalın və ətirli köpükdür. Və bu köpüyü daha da yaxşılaşdırmaq üçün biz klapan sistemini kökündən yenidən dizayn etdik.",
-      "title": "Bialetti Brikka Qəhvədəmləyən",
-      "price": "85",
-      "category_id": 2,
-      "brand": "D",
-      "inStock": true
-    },
-    {
-      "id": 20,
-      "image": [
-        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/03/ecam550-65-sb-kofemashina-delonghi-2_600.jpg?w=600&ssl=1",
-        "https://i0.wp.com/cofferica.com/wp-content/uploads/2022/03/ecam550-65-sb-kofemashina-delonghi-3_600.jpg?resize=100%2C100&ssl=1"
-      ],
-      "content": "Brikka espressonu əsl italyan barında təqdim edilənə mümkün qədər yaxın edən yeganə qəhvə dəmləyicisidir. Qəhvə adi moka ilə müqayisədə daha güclü və zəngindir. Amma təbii ki, onun əsas üstünlüyü qalın və ətirli köpükdür. Və bu köpüyü daha da yaxşılaşdırmaq üçün biz klapan sistemini kökündən yenidən dizayn etdik.",
-      "title": "De’Longhi PrimaDonna Class ECAM550.65.SB",
-      "price": "2469",
-      "category_id": 2,
-      "brand": "D",
-      "inStock": true
     }
+   
   ],
   "blogs": [
     {
